@@ -1,0 +1,25 @@
+//- 登录弹窗
+.login-loading
+    .login-pop
+        img(src="/images/close.png").close
+        .login-nav
+            .login-nav-und
+                p.login-active 登录育方
+                p 加入育方
+        .login-way
+            .login-way-phone
+                .login-inp-phone
+                    p
+                        img(src="/images/phone.png")
+                    input#inputPhone(type="text" placeholder="请输入手机号" maxlength="11")
+                    span.send-code 发送验证码
+                    span.send-timer 60s
+                .login-inp-code
+                    p
+                        img(src="/images/code.png")
+                    input#inputCode(type="text" placeholder="请输入验证码")
+                .login-btn 登录
+            .login-way-code
+                p.login-code-img
+                    img(src="/images/QRcode.png")
+                p 扫一扫加入育方

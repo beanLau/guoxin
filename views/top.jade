@@ -1,0 +1,45 @@
+header
+    .header-wrap
+        .head-left.fl
+            img.logo(src="/images/logo.png")
+            h3.title 育方教育——家庭教育内容和解决方案的提供者
+        .head-right.fr
+            .nav
+                if pagePath == '/'
+                    a(href="/").nav-item.active-nav
+                        span.nav-item-title 首页
+                        span.nav-item-en  HOME
+                else
+                    a(href="/").nav-item
+                        span.nav-item-title 首页
+                        span.nav-item-en  HOME
+                if pagePath == '/course'
+                    a(href="/course").nav-item.active-nav
+                        span.nav-item-title 课程介绍
+                        span.nav-item-en  COURSE
+                else
+                    a(href="/course").nav-item
+                        span.nav-item-title 课程介绍
+                        span.nav-item-en  COURSE
+                if pagePath == '/news'|| pagePath =='/newsDetail'
+                    a(href="/news").nav-item.active-nav
+                        span.nav-item-title 育儿资讯
+                        span.nav-item-en  NEWS
+                else
+                    a(href="/news").nav-item
+                        span.nav-item-title 育儿资讯
+                        span.nav-item-en  NEWS
+                if pagePath == '/evaluation' || pagePath == '/evaluationDetail'
+                    a(href="/evaluation").nav-item.active-nav
+                        span.nav-item-title 家长测评
+                        span.nav-item-en  EVALUATION
+                else
+                    a(href="/evaluation").nav-item
+                        span.nav-item-title 家长测评
+                        span.nav-item-en  EVALUATION
+            .login-wrap
+                if yfpcdata&&yfpcdata.token
+                    span.welcome= yfpcdata.nickName
+                    span.loginout 退出
+                else
+                    span.signin  登录

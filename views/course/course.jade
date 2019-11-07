@@ -1,0 +1,69 @@
+extends ../header.jade
+block headlink
+    link(rel='stylesheet',href='/views/course/course.css')
+block content
+    include ../top.jade
+
+    //-广告位
+    .adverte
+        a(href="javascript:;")
+            img(src="/images/adverte_course.png")
+    //- 课程介绍
+    .course-scope
+        h3 课程介绍
+        p 加入育方，手把手教你教子有方
+        ul.course-tiem
+            li
+                h3.course-item-title
+                    p 育方体系
+                    span 育儿有道，教子有方
+                ol.system-item
+                    li.system-item-img
+                        div.system-item-shaow
+                            h3 教育评测
+                            p 一站式家庭教育线上教育平台
+                            p 0-18岁家庭教育与成长支持系统
+                    li.system-item-img
+                        div.system-item-shaow
+                            h3 专业体系
+                            p 专业的家庭教育模型
+                            p 多元、系统和全覆盖的家庭教育课程与体系
+                    li.system-item-img
+                        div.system-item-shaow
+                            h3 家庭个性化专职指导
+                            p 家庭教育一对一国内首家专职服务中心
+                            p 您身边的家庭教育指导和支持专家
+            li
+                h3.course-item-title
+                    p 育方计划
+                    span 0-18岁个性化家庭教育
+                ol.system-item
+                    li.system-item-img
+                        div.system-item-shaow
+                            h3 呵护计划
+                            p 0-6岁个性化家庭教育专职指导
+                    li.system-item-img
+                        div.system-item-shaow
+                            h3 成长计划
+                            p 6-12岁个性化家庭教育专职指导
+                    li.system-item-img
+                        div.system-item-shaow
+                            h3 腾飞计划
+                            p 12-18岁个性化家庭教育专职指导
+            li
+                h3.course-item-title
+                    p 专业教育
+                ol.system-item
+                    li.system-item-img
+                        div.system-item-shaow.no-after
+                            h3 父母必修课
+                    li.system-item-img
+                        div.system-item-shaow.no-after
+                            h3 父母专业课
+                    li.system-item-img
+                        div.system-item-shaow.no-after
+                            h3 家庭教育指导师
+
+    include ../footer.jade
+block headjs
+    script(src='/views/course/course.js')

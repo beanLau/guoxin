@@ -1,0 +1,120 @@
+body{
+    padding-top: 90px;
+    background-color: #f6f6f6;
+}
+.adverte img{
+    width: 100%;
+}
+/* news_detail */
+.crumbs{
+    margin: 55px auto 0;
+    max-width: 960px;
+    font-size: 18px;
+    color: #666;
+}
+.crumbs>a{
+    color: #666;
+}
+.crumbs>a:hover{
+    color: #1C80ED;
+}
+.crumbs>span:last-of-type{
+    color: #1C80ED;
+}
+.gt{
+    margin:0 5px;
+}
+
+
+.news-detail-scope{
+    margin: 24px auto 0;
+    max-width: 960px;
+    min-height: 500px;
+    overflow: hidden;
+    clear: both;
+}
+.news-detail{
+    padding: 30px 20px 80px;
+    float: left;
+    max-width: 698px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.news-title{
+    font-size:29px;
+    color:rgba(17,17,17,1);
+}
+.new-timer{
+    margin: 20px 0;
+    font-size:16px;
+    color:rgba(102,102,102,1);
+}
+.new-timer>span{
+    margin-right: 40px;
+}
+.news-adverte{
+    float: right;
+    width: 240px;
+}
+.adverte-img>img{
+    width: 100%;
+}
+.news-content{
+    margin-top: 25px;
+}
+.news-content img{
+    max-width: 100%;
+}
+.other-news{
+    margin-top: 60px;
+}
+.other-news>a{
+    margin-bottom: 17px;
+    display: block;
+    font-size: 21px;
+    color:#333;
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+}
+.other-news>a:hover{
+    color: #1C80ED;
+}
+.recommend-news{
+    margin-top: 22px;
+    padding: 25px 15px 15px;
+    background-color: #fff;
+}
+.recommend-news>h3{
+    font-size:22px;
+    color:rgba(17,17,17,1);
+}
+.recommend-news>a{
+    position: relative;
+    display: block;
+    padding-left: 15px;
+    height: 48px;
+    line-height: 48px;
+    font-size:16px;
+    color: #111;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-bottom: 1px solid #ccc;
+
+}
+.recommend-news>a:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content:'\2022';
+    display: inline-block;
+    font-size: 24px;
+    color: #1C80ED;
+}
+.recommend-news>a:last-of-type{
+    border: none;
+}
+.recommend-news>a:hover{
+    color: #1C80ED;
+}

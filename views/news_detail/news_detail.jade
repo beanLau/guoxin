@@ -1,0 +1,39 @@
+extends ../header.jade
+block headlink
+    link(rel='stylesheet',href='/views/news_detail/news_detail.css')
+block content
+    include ../top.jade
+    //- 面包屑
+    .crumbs 您当前位置：
+        a(href="javascript:window.history.back(-1);") 育儿资讯
+        span.gt &gt;
+        span 详情
+    //- 新闻详情
+    .news-detail-scope
+        .news-detail
+            .news-title #{data.title}
+            .new-timer
+                span 发表时间：#{data.publishTime}
+                span 阅读：#{data.readNum}
+            //- 广告位
+            .adverte
+                a(href="javascript:;")
+                    img(src="/images/adverte_news_detail.png")
+            //- 新闻内容
+            .news-content !{data.content}
+            .other-news
+                if data.up
+                    a(href="/newsDetail?id=#{data.up.id}") 上一篇：#{data.up.title}
+                if data.down
+                     a(href="/newsDetail?id=#{data.down.id}") 下一篇：#{data.down.title}
+        .news-adverte
+            a(href="/evaluation").adverte-img
+                img(src="/images/adverte_news.png")
+            ul.recommend-news
+                h3 育儿常识
+                each item in randomList
+                    a(href="/newsDetail?id=#{item.id}") #{item.title}
+
+    include ../footer.jade
+block headjs
+    script(src='/views/news_detail/news_detail.js')

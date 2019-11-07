@@ -1,0 +1,133 @@
+body{
+    padding-top: 90px;
+}
+.adverte img{
+    width: 100%;
+}
+/* 课程介绍 */
+.course-scope{
+    padding: 70px 0 0;
+    margin: 0 auto;
+    max-width: 960px;
+}
+.course-scope>h3{
+    font-size:30px;
+    text-align: center;
+    color: #111;
+}
+.course-scope>p{
+    margin-top: 20px;
+    font-size:19px;
+    text-align: center;
+    color: #666;
+}
+.course-scope>p:after{
+    margin: 20px auto 0;
+    content: '';
+    display: block;
+    width:45px;
+    height:4px;
+    background:rgba(28,128,237,1);
+}
+.course-item-title{
+    padding-left: 16px;
+    min-height:32px;
+    line-height: 25px;
+    font-size:26px;
+    color:#111;
+    border-left: 4px solid rgba(28,128,237,1);
+}
+.course-item-title>p{
+    display: inline-block;
+    vertical-align: middle;
+}
+.course-item-title>span{
+    margin-left: 22px;
+    font-size:19px;
+    color:rgba(102,102,102,1);
+    vertical-align: middle;
+}
+.system-item{
+    margin-top: 23px;
+    text-align: center;
+}
+.system-item>li{
+    display: inline-block;
+    width:304px;
+    height:200px;
+    vertical-align: top;
+}
+.system-item-img{
+    background-size: 100% 100%;
+}
+.system-item-shaow{
+    padding-top: 60px;
+    height: 100%;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+}
+.system-item-img:first-of-type{
+    background-image: url(/images/cousrse_01.png);
+}
+.system-item-img:nth-of-type(2){
+    background-image: url(/images/cousrse_02.png);
+}
+.system-item-img:nth-of-type(3){
+    background-image: url(/images/cousrse_03.png);
+}
+.system-item-img:nth-of-type(4){
+    background-image: url(/images/cousrse_04.png);
+}
+.system-item-img:nth-of-type(5){
+    background-image: url(/images/cousrse_05.png);
+}
+.system-item-img:nth-of-type(6){
+    background-image: url(/images/cousrse_06.png);
+}
+.system-item-img:nth-of-type(7){
+    background-image: url(/images/cousrse_07.png);
+}
+.system-item-img:nth-of-type(8){
+    background-image: url(/images/cousrse_08.png);
+}
+.system-item-img:nth-of-type(9){
+    background-image: url(/images/cousrse_09.png);
+}
+.system-item-img:nth-of-type(10){
+    background-image: url(/images/cousrse_10.png);
+}
+.system-item-img:nth-of-type(11){
+    background-image: url(/images/cousrse_11.png);
+}
+.system-item-img:nth-of-type(12){
+    background-image: url(/images/cousrse_12.png);
+}
+.system-item-shaow>h3{
+    font-size:26px;
+}
+.system-item .system-item-img:nth-of-type(2){
+    margin: 0 19px;
+}
+.system-item-shaow>h3:after{
+    margin:15px auto;
+    content: '';
+    display: block;
+    width:37px;
+    height:2px;
+    background:rgba(255,255,255,1);
+}
+.course-tiem>li{
+    margin-bottom: 70px;
+}
+.course-tiem>li:last-of-type{
+    margin-bottom: 115px;
+}
+.no-after{
+    padding-top: 90px;
+}
+.no-after>h3:after{
+    content: '';
+    display: none;
+}

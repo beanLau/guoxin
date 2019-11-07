@@ -1,0 +1,39 @@
+extends ../header.jade
+block headlink
+    link(rel='stylesheet',href='/views/evaluation_detail/evaluation_detail.css')
+block content
+    include ../top.jade
+    //- 面包屑
+    .crumbs 您当前位置：
+        a(href="javascript:window.history.back(-1);") 家长测评
+        span.gt &gt;
+        span 测评
+    //- 测评
+    .news-detail-scope
+        .news-detail
+            .evaluation-test
+                h3.test-title
+                .evaluation-title
+                    span.test-sort
+                ul.evaluation-options
+                    //- li
+                    //-     input(type="radio", name="opt")#opt0
+                    //-     label(for="opt0")
+                    //-         span
+                    //-         | A. 不会请教或学习不会请教或学习不会请教或学习不会请教或学习不会请教或学习
+                    
+                .evaluation-btn
+                    p.evaluation-btn-pre 上一题
+                    p.evaluation-btn-next 下一题
+                    p.look-answer 查看答案
+        .news-adverte
+            a(href="/evaluation").adverte-img
+                img(src="/images/adverte_news.png")
+            ul.recommend-news
+                h3 育儿常识
+                each item in randomList
+                    a(href="/newsDetail?id=#{item.id}") #{item.title}
+
+    include ../footer.jade
+block headjs
+    script(src='/views/evaluation_detail/evaluation_detail.js')

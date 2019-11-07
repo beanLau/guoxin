@@ -1,0 +1,141 @@
+body{
+    padding-top: 90px;
+}
+.adverte img{
+    width: 100%;
+}
+/* news */
+.news{
+    margin: 0 auto;
+    max-width: 960px;
+    border-bottom: 1px solid #aaa;
+}
+.nav-news{
+    font-size: 0;
+    max-width: 688px;
+    min-height: 40px;
+}
+.nav-news>li{
+    position: relative;
+    display: inline-block;
+    font-size:18px;
+    height: 41px;
+    line-height: 36px;
+}
+.nav-news>li>a{
+    padding: 0 27px;
+    display: inline-block;
+    height: 100%;
+    color: #333;
+}
+.news{
+    margin-top: 55px;
+}
+.nav-news .newsNav-active>a{
+    font-weight: bold;
+    color: #111;
+}
+.nav-news>li:after{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    width: 0;
+    bottom: 0;
+    height: 2px;
+    background-color:#1C80ED;
+    transition: all 0.5s;
+}
+.nav-news>li:hover:after{
+    width: 100%;
+    transition: all 0.5s;
+}
+.nav-news>li:hover>a{
+    font-weight: bold;
+    color: #111;
+}
+.nav-news .newsNav-active:after{
+    width: 100%;
+}
+.news-list-scope{
+    margin: 24px auto 0;
+    max-width: 960px;
+    min-height: 500px;
+    overflow: hidden;
+    clear: both;
+}
+.news-list{
+    float: left;
+    width: 688px;
+    overflow: hidden;
+}
+.news-list>li{
+    padding-top: 30px;
+    height: 140px;
+    border-bottom: 1px solid #bbb;
+}
+.news-adverte{
+    float: right;
+    width: 240px;
+}
+.news-adverte>img{
+    width: 100%;
+}
+.news-title{
+    font-size:22px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.news-title>a{
+    display: inline-block;
+    color: #111;
+}
+.news-title>a:hover{
+    color: #1C80ED;
+}
+.news-timer{
+    margin-top: 20px;
+}
+.news-timer>span{
+    font-size:16px;
+    color: #666;
+}
+.news-timer>span:first-of-type{
+    margin-right: 40px;
+}
+.page{
+    margin: 64px 0 110px;
+}
+/* page */
+.page{
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+.page>a{
+    margin: 0 6px;
+    display: inline-block;
+    width:40px;
+    height:28px;
+    line-height: 28px;
+    color: #333;
+    border:1px solid rgba(187,187,187,1);
+    vertical-align: middle;
+}
+.page>a:hover{
+    color: #1C80ED;
+}
+.page>.pre,.page>.next{
+    width: auto;
+    border: none;
+}
+.page>.page-active{
+    color: #fff;
+    background-color: #1C80ED;
+}
+.page>.page-active:hover{
+    color: #fff;
+}

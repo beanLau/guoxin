@@ -1,0 +1,53 @@
+extends ../header.jade
+block headlink
+    link(rel='stylesheet',href='/views/evaluation/evaluation.css')
+block content
+    include ../top.jade
+    //- 广告位
+    .adverte
+        a(href="javascript:;")
+            img(src="/images/adverte_course.png")
+    
+    //- 测评
+    .news-list-scope
+        ul.news-list
+            each item in evalList.rows
+                li
+                    .news-title
+                        a(href="javascript:;") #{item.evalName}
+                    .news-timer
+                        span #{item.testCount}人已测
+                    if item.isFree == 1 || item.isBuy == 1
+                        a(href="javascript:;" data-href="/evaluationDetail?id=#{item.id}").news-list-btn.isLogin 开始测试
+                    else
+                        a(href="javascript:;").news-list-btn.pay 购买
+        .news-adverte
+            ul.recommend-news
+                h3 育儿常识
+                each item in randomList
+                    a(href="/newsDetail?id=#{item.id}") #{item.title}
+    //- page
+    .page
+        if evalList&&evalList.total>1
+            -pageUrl='/evaluation?page=';
+            -pageTotal=evalList.total;
+            -page=parseInt(urlQuery.page?urlQuery.page:1);
+            if !(page==undefined || page == 1)
+                a(href="#{pageUrl}#{page-1}").pre 上一页
+                if page >2
+                    a(href="#{pageUrl}#{1}") 1
+                    if pageTotal>3
+                        span ...
+                a(href="#{pageUrl}#{page-1}") #{page-1}
+            a(href="#{pageUrl}#{page}").page-active #{page}
+            if !(1==pageTotal || page == pageTotal)
+                a(href="#{pageUrl}#{(page+1)}") #{(page-0+1)}
+                if (page-0+1)<pageTotal
+                    if pageTotal>3
+                        span ...
+                    a(href="#{pageUrl}#{pageTotal}") #{pageTotal}
+                a(href="#{pageUrl}#{(page+1)}").next 下一页
+
+    include ../footer.jade
+block headjs
+    script(src='/views/evaluation/evaluation.js')
