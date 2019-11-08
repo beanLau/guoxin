@@ -43,51 +43,10 @@
 }
 /* top样式end */
 
-.container{
-    max-width: 1200px;
-}
-.carousel {
-    height: 500px;
-    margin-bottom: 60px;
-    margin-top: -210px;
-}
-.carousel-caption {
-    z-index: 10;
-}
-.carousel .item {
-    height: 500px;
-    background-color: #777;
-}
-.carousel-caption {
-    z-index: 10;
-}
-.carousel-inner{
-    position: absolute;
-}
-.carousel-inner > .item > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 500px;
-}
 .page-content{
-    margin-top: -80px;
-    padding: 20px;
+    padding: 20px 0;
     z-index: 1;
     background: #fff;
-}
-.top-bg{
-    background-image: url(../../images/banner.png);
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-size: cover;
-    height: 500px;
-    margin-top: -210px;
-}
-.tianqi{
-    padding-left: 20px;
-    margin-bottom: 10px;
 }
 .gx-panel{
     border: 1px solid #403fff;
@@ -118,57 +77,6 @@
 }
 .gx-panel-body{
     padding: 20px 10px;
-}
-.gonggao-item,.news-item{
-    height: 16px;
-    line-height: 16px;
-    position: relative;
-    font-size: 10px;
-    padding-bottom: 10px;
-    box-sizing: content-box;
-    padding-left: 26px;
-    overflow: hidden;
-    text-overflow:ellipsis;
-    white-space: nowrap;
-}
-.gonggao-item::after{
-    content: "";
-    position: absolute;
-    left: 10px;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-    border: 1px solid #0200FB;
-    z-index: 1;
-    background: #fff;
-    top: 1px;
-}
-.gonggao-item::before{
-    content: "";
-    position: absolute;
-    left: 15px;
-    height: 25px;
-    width: 1px;
-    background: #403fff;
-    
-}
-.news-item::before{
-    content: "";
-    position: absolute;
-    left: 10px;
-    width: 2px;
-    height: 2px;
-    border-radius: 1px;
-    background: #0200FB;
-    z-index: 1;
-    top: 6px;
-}
-.gonggao-item:last-of-type::before{
-    height: 10px;
-    
-}
-.gonggao-item:last-of-type{
-    padding-bottom: 0;
 }
 .gx-btn-list{
 
@@ -204,9 +112,120 @@
 }
 .middle-pic{
     width: 100%;
-    margin: 20px 0;
     border-radius: 10px;
 }
+
+
+#main_left_title {
+    width: 100%;
+    height: 38px;
+    margin-bottom: 11px;
+    background: url(http://www.hgstc.com/images/design/nei_14.jpg) no-repeat;
+    background-size: cover;
+    font-family: "微软雅黑", Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    text-align: center;
+    line-height: 38px;
+}
+#main_left_menu {
+    height: auto;
+}
+#main_left_menu ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+#main_left_menu ul li {
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    overflow: hidden;
+    background: url(http://www.hgstc.com/images/design/nei_21.jpg);
+    background-size: cover;
+    text-align: center;
+}
+#main_left_menu ul li {
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    overflow: hidden;
+    background: url(http://www.hgstc.com/images/design/nei_21.jpg);
+    background-size: cover;
+    text-align: center;
+}
+
+#main_left_menu ul li.nei_menu_on a {
+    color: #CC3300;
+}
+a, a:link, a:visited {
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+}
+#main_left_menu ul li.nei_menu_off a {
+    color: #1F5996;
+}
+#nengrong_right_top {
+    width: 100%;
+    height: 36px;
+    border-bottom: 1px #DDD solid;
+    clear: both;
+}
+#nengrong_right_top h5 {
+    height: 36px;
+    font-family: "微软雅黑", Arial;
+    font-size: 14px;
+    font-weight: bold;
+    color: #CC3300;
+    line-height: 36px;
+    white-space: nowrap;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+}
+#nengrong_right_top span {
+    height: 36px;
+    font-size: 12px;
+    line-height: 36px;
+    white-space: nowrap;
+    color: #999;
+    float: right;
+}
+#nengrong_right_top span a {
+    color: #999;
+}
+a, a:link, a:visited {
+    font-size: 12px;
+    color: #666;
+    text-decoration: none;
+}
+#nengrong {
+    padding-top: 26px;
+}
+
+.content {
+    line-height: 180%;
+    font-size: 12px;
+}
+.news_img_2 {
+    width: auto;
+    height: auto;
+    float: right;
+    margin-left: 15px;
+}
+.content p {
+    line-height: 180%;
+    font-size: 12px;
+    text-indent: 2em;
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 12px;
+}
+
 
 
 
@@ -234,4 +253,7 @@
 }
 .mg20{
     margin-top: 20px;
+}
+.footer-wrap{
+    padding: 0;
 }
