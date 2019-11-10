@@ -1,7 +1,7 @@
 nav.navbar.navbar-default
     .container
         .top-img-wrap
-            img(src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2662373233,2184225911&fm=26&gp=0.jpg")
+            img(src="/images/top_bg.jpg")
         .navbar-header
             button.navbar-toggle.collapsed(data-toggle="collapse",data-target="#navbar",aria-expanded="false",aria-controls="navbar")
                 span.sr-only Toggle
@@ -45,17 +45,17 @@ nav.navbar.navbar-default
                         span.caret
                     ul.dropdown-menu
                         li
-                            a(href="#") 钟表型式检验报告查询
+                            a(href="/report") 钟表型式检验报告查询
                         li
-                            a(href="#") 司法技术鉴定报告查询
+                            a(href="/report?type=1") 司法技术鉴定报告查询
                         li
-                            a(href="#") 二手表检验证书查询
+                            a(href="/report?type=2") 二手表检验证书查询
                         li
-                            a(href="#") 眼镜型式检验报告查询
+                            a(href="/report?type=3") 眼镜型式检验报告查询
                         li
-                            a(href="#") 皮具型式检验证书查询
+                            a(href="/report?type=4") 皮具型式检验证书查询
                         li
-                            a(href="#") 皮具真伪检验证书查询
+                            a(href="/report?type=5") 皮具真伪检验证书查询
                 li.dropdown
                     a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 办事大厅
                         span.caret
@@ -79,7 +79,7 @@ nav.navbar.navbar-default
                         li
                             a(href="/literature?type=2") 考核标准
                 li
-                    a(href="#") 消费警示
+                    a(href="/warn") 消费警示
             ul.nav.navbar-nav.navbar-right
                 li
                     a(href="#") 登录

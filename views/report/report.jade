@@ -1,0 +1,11 @@
+extends ../layout.jade
+head
+  block headlink
+    link(rel='stylesheet',href='/views/report/report.css')
+
+body
+  block content
+    include report_tmp.jade
+  block headjs
+    script(src='/plugins/My97DatePicker/WdatePicker.js')
+    script(src='/views/report/report.js')

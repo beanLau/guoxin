@@ -1,0 +1,33 @@
+#nengrong_list.content
+    #my_content_div
+        form.form-inline
+            .form-group
+                label(for="keywords") 关键词：
+                input(type="text",id="keywords",placeholder="请输入关键词").form-control.input-sm.keywords
+            .form-group
+                select(style="margin-left:10px;").form-control.input-sm
+                    option(value="") 选择搜索范围
+                    option(value="bg_codenum") 报告序列号
+                    option(value="cp_name") 产品名称
+                    option(value="cp_danwei") 送检单位
+            .form-group
+                label(for="begindate",style="margin-left:10px;") 送样日期：
+                input(type="text",onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:ss'})").Wdate#begindate
+                span 至
+                input(type="text",onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:ss'})").Wdate#enddate
+            button(type="submit").btn.btn-default.btn-sm.search-btn 查 询
+            a(href="/report?type="+reportType) 查看全部钟表报告
+        .table-content
+            table(width="100%",border="0",cellpadding="0",cellspacing="1").table.table-bordered
+                tbody
+                    tr
+                        th 序列号
+                        th 报告类别
+                        th 产品类别
+                        th 产品名称
+                        th 检测项目
+                        th 到样时间
+                        th 签发日期
+                        th 操作
+                    tr 
+                        td(colspan="8").no-data 暂无数据

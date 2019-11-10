@@ -1,0 +1,89 @@
+.container.page-content
+    .row
+        .col-xs-12
+            img(src="../../images/adverte_course.png").middle-pic
+    .row.mg20
+        .col-sm-3.col-sx-12.gx-btn-list
+            div
+                #main_left_title 报告查询
+                #main_left_menu
+                    ul
+                        if (!reportType || reportType == 0)
+                            li.nei_menu_on
+                                a(href="#",title="钟表型式检验报告查询") 钟表型式检验报告查询
+                        else
+                            li.nei_menu_off
+                                a(href="/report",title="钟表型式检验报告查询") 钟表型式检验报告查询
+                        if  reportType == 1
+                            li.nei_menu_on
+                                a(href="#",title="司法技术鉴定报告查询") 司法技术鉴定报告查询
+                        else
+                            li.nei_menu_off
+                                a(href="/report?type=1",title="司法技术鉴定报告查询") 司法技术鉴定报告查询
+                        if  reportType == 2
+                            li.nei_menu_on
+                                a(href="#",title="二手表检验证书查询") 二手表检验证书查询
+                        else
+                            li.nei_menu_off
+                                a(href="/report?type=2",title="二手表检验证书查询") 二手表检验证书查询
+                        if  reportType == 3
+                            li.nei_menu_on
+                                a(href="#",title="眼镜型式检验报告查询") 眼镜型式检验报告查询
+                        else
+                            li.nei_menu_off
+                                a(href="/report?type=3",title="眼镜型式检验报告查询") 眼镜型式检验报告查询
+                        if  reportType == 4
+                            li.nei_menu_on
+                                a(href="#",title="皮具型式检验证书查询") 皮具型式检验证书查询
+                        else
+                            li.nei_menu_off
+                                a(href="/report?type=4",title="皮具型式检验证书查询") 皮具型式检验证书查询
+                        if  reportType == 5
+                            li.nei_menu_on
+                                a(href="#",title="皮具真伪检验证书查询") 皮具真伪检验证书查询
+                        else
+                            li.nei_menu_off
+                                a(href="/report?type=5",title="皮具真伪检验证书查询") 皮具真伪检验证书查询
+            div
+                include ../quickbtn.jade
+        .col-sm-9.col-xs-12
+            #nengrong_right_top
+                if reportType == 0
+                    h5 钟表型式检验报告查询
+                else if reportType == 1
+                    h5 司法技术鉴定报告查询
+                else if reportType == 2
+                    h5 二手表检验证书查询
+                else if reportType == 3
+                    h5 眼镜型式检验报告查询
+                else if reportType == 4
+                    h5 皮具型式检验证书查询
+                else
+                    h5 皮具真伪检验证书查询
+                span 您的位置：
+                    a(href="/") 首页&nbsp;&gt;&nbsp;
+                    a(href="/report") 报告查询&nbsp;&gt;&nbsp;
+                    if reportType == 0
+                        a(href="#") 钟表型式检验报告查询
+                    else if reportType == 1
+                        a(href="#") 司法技术鉴定报告查询
+                    else if reportType == 2
+                        a(href="#") 二手表检验证书查询
+                    else if reportType == 3
+                        a(href="#") 眼镜型式检验报告查询
+                    else if reportType == 4
+                        a(href="#") 皮具型式检验证书查询
+                    else
+                        a(href="#") 皮具真伪检验证书查询
+            if reportType == 0
+                include zb.jade
+            else if reportType == 1
+                include sf.jade
+            else if reportType == 2
+                include es.jade
+            else if reportType == 3
+                include yj.jade
+            else if reportType == 4
+                include pjxs.jade
+            else
+                include pjzw.jade

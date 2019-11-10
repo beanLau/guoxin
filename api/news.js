@@ -1,13 +1,14 @@
 const fetch = require('./utils');
 
 // 获取资讯类型
-let getInformationTypeList = function(ctx){
+let getNoticeList = function(ctx, data){
     return fetch({ 
-        method: 'POST',
-        url: 'Information/getInformationTypeList',
+        method: 'get',
+        url: 'menhu/mhNotice/noticeList',
         headers:{
             "token": ctx.cookies.get('yfpctoken')
-        }
+        },
+        body:data
     })
 }
 
@@ -25,7 +26,7 @@ let getInformationPageList = function(ctx,data){
 
 
 module.exports = {
-    getInformationTypeList,
+    getNoticeList,
     getInformationPageList
 }
 

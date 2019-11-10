@@ -1,7 +1,7 @@
 const request = require('request')
 
 // const apiUrl = "http://192.168.1.5/education-pc/"
-const apiUrl = "http://api.fw8.com/education-pc/"
+const apiUrl = "http://47.105.110.118:8080/jeecg-boot/"
 const fetch = function (options,ctx) {
     ctx = ctx || {}
     let token,url = options.url
