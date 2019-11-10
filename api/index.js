@@ -15,7 +15,7 @@ let getNoticeList = function(ctx, data){
 // 行业信息
 let getHangyeList = function(ctx,data){
     return fetch({ 
-        method: 'POST',
+        method: 'get',
         url: 'menhu/mhNotice/hangyeList',
         headers:{
             "token": ctx.cookies.get('yfpctoken')
@@ -27,7 +27,7 @@ let getHangyeList = function(ctx,data){
 // 技术文献
 let getTecDocList = function(ctx,data){
     return fetch({ 
-        method: 'POST',
+        method: 'get',
         url: 'menhu/mhNotice/tecDocList',
         headers:{
             "token": ctx.cookies.get('yfpctoken')

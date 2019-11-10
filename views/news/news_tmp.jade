@@ -14,7 +14,7 @@
                         else
                             li.nei_menu_off
                                 a(href="/news",title="行业信息") 行业信息
-                        if  newsType
+                        if  newsType == 1
                             li.nei_menu_on
                                 a(href="#",title="公告通知") 公告通知
                         else
@@ -42,25 +42,33 @@
                             each item,index in newsList
                                 li
                                     span
-                                        a(href="#") [ 专题报道 ]
+                                        a(href="#") #{item.source}
                                         a(href="").a_li_list #{item.title}
                                         img(src="http://www.hgstc.com/images/hot.gif", alt="")
-
                         nav(aria-label="Page navigation")
                             ul.pagination
-                                li.disabled
-                                    a(href="#",aria-label="Previous")
-                                        span(aria-hidden="true") &laquo;
-                                li.active
-                                    a(href="#") 1
-                                li
-                                    a(href="#") 2
-                                li
-                                    a(href="#") 3
-                                li
-                                    a(href="#") 4
-                                li
-                                    a(href="#") 5
-                                li
-                                    a(href="#",aria-label="Next")
-                                        span(aria-hidden="true") &raquo;
+                                if pageInfo.current == 1
+                                    li.disabled
+                                        a(href="#",aria-label="Previous")
+                                            span(aria-hidden="true") &laquo;
+                                else
+                                    li
+                                        a(href="/news?type="+newsType + "&page=" + (pageInfo.current - 1),aria-label="Previous")
+                                            span(aria-hidden="true") &laquo;
+                                - let n = 1;
+                                while n <= pageInfo.pages
+                                    if n == pageInfo.current
+                                        li.active
+                                            a(href="#") #{n++}
+                                    else
+                                        li
+                                            a(href="/news?type="+newsType + "&page=" + n) #{n++}
+                                
+                                if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
+                                    li.disabled
+                                        a(href="#",aria-label="Next")
+                                            span(aria-hidden="true") &raquo;
+                                else
+                                    li
+                                        a(href="/news?type="+newsType + "&page=" + (pageInfo.current + 1),aria-label="Next")
+                                            span(aria-hidden="true") &raquo;

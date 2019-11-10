@@ -1,11 +1,46 @@
 const router = require('koa-router')();
+const literatureapi = require('../api/literature.js');
 
 router.get('/literature', async (ctx) => {
     let yfpcdata = ctx.cookies.get('yfpcdata') || '{}'
     yfpcdata = decodeURIComponent(yfpcdata)
     yfpcdata = JSON.parse(yfpcdata)
     
-    let urlQuery = ctx.request.query;
+    let urlQuery = ctx.request.query
+    let literatureList = [];
+    let resLiteratureList;
+    let pageInfo = {
+        current: 1,
+        pages: 1,
+        total: 0
+    }
+    //通用标准
+    if(!urlQuery.type || urlQuery.type == 0){ //通用标准
+        resLiteratureList = await literatureapi.getRuleList(ctx,{
+            pageNo: urlQuery.page || 1,
+            pageSize: 10
+        });
+    }else if(urlQuery.type == 1){ //技术文献
+        resLiteratureList = await literatureapi.getTecDocList(ctx,{
+            pageNo: urlQuery.page || 1,
+            pageSize: 10
+        });
+    }else{ //考核标准
+        resLiteratureList = await literatureapi.getKhbzList(ctx,{
+            pageNo: urlQuery.page || 1,
+            pageSize: 10
+        });
+    }
+    if(resLiteratureList.code == 0){
+        try {
+            literatureList = resLiteratureList.result.records || []
+            pageInfo.current = resLiteratureList.result.current
+            pageInfo.pages = resLiteratureList.result.pages
+            pageInfo.total = resLiteratureList.result.total
+        } catch (error) {
+            
+        }
+    }
 
     await ctx.render('literature/literature', {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站',
@@ -13,7 +48,7 @@ router.get('/literature', async (ctx) => {
         yfpcdata: yfpcdata,
         urlQuery,
         literatureType: urlQuery.type || 0,
-        literatureList: [{id:1,title:"防震手表国际标准",content: "本国际标准准规定了手表防震性能的最低要求及相应的试验方法。",date: "2019-11-09",count: 2393}]
+        literatureList: literatureList
     })
 })
 
