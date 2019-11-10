@@ -1,6 +1,6 @@
 const fetch = require('./utils');
 
-// 获取资讯类型
+// 通知公告
 let getNoticeList = function(ctx, data){
     return fetch({ 
         method: 'get',
@@ -12,11 +12,11 @@ let getNoticeList = function(ctx, data){
     })
 }
 
-// 分页获取资讯列表
-let getInformationPageList = function(ctx,data){
+// 行业信息
+let getHangyeList = function(ctx,data){
     return fetch({ 
         method: 'POST',
-        url: 'Information/getInformationPageList',
+        url: 'menhu/mhNotice/hangyeList',
         headers:{
             "token": ctx.cookies.get('yfpctoken')
         },
@@ -27,6 +27,6 @@ let getInformationPageList = function(ctx,data){
 
 module.exports = {
     getNoticeList,
-    getInformationPageList
+    getHangyeList
 }
 

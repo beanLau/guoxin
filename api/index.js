@@ -1,33 +1,45 @@
-const fetch = require('./utils')
+const fetch = require('./utils');
+
+// 通知公告
+let getNoticeList = function(ctx, data){
+    return fetch({ 
+        method: 'get',
+        url: 'menhu/mhNotice/noticeList',
+        headers:{
+            "token": ctx.cookies.get('yfpctoken')
+        },
+        body:data
+    })
+}
+
+// 行业信息
+let getHangyeList = function(ctx,data){
+    return fetch({ 
+        method: 'POST',
+        url: 'menhu/mhNotice/hangyeList',
+        headers:{
+            "token": ctx.cookies.get('yfpctoken')
+        },
+        body:data
+    })
+}
+
+// 技术文献
+let getTecDocList = function(ctx,data){
+    return fetch({ 
+        method: 'POST',
+        url: 'menhu/mhNotice/tecDocList',
+        headers:{
+            "token": ctx.cookies.get('yfpctoken')
+        },
+        body:data
+    })
+}
+
 
 module.exports = {
-    // 获取验证码
-    getCode: function (ctx) {
-        return fetch({
-            method: 'POST',
-            url: 'login/sendSmsCode',
-            body: ctx.request.body
-        }, ctx)
-    },
-    //立即报名调用快捷登录接口
-    quickLogin: function (ctx) {
-        return fetch({
-            method: 'POST',
-            url: 'login/tellogin',
-            body: ctx.request.body
-        }, ctx)
-    },
-    loginout: function (ctx) {
-        let yfpcdata = ctx.cookies.get('yfpcdata') || '{}'
-        yfpcdata = decodeURIComponent(yfpcdata)
-        yfpcdata = JSON.parse(yfpcdata)
-        return fetch({
-            method: 'POST',
-            url: 'login/loginout',
-            headers: {
-                "token": yfpcdata.token || ""
-            },
-            body: ctx.request.body
-        }, ctx)
-    }
+    getNoticeList,
+    getHangyeList,
+    getTecDocList
 }
+
