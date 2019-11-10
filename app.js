@@ -6,12 +6,14 @@ const router = new Router()
 const app = new Koa()
 
 const index = require('./routes/index')
-const list = require('./routes/list')
-const course = require('./routes/course')
+const orgdesc = require('./routes/orgdesc')
 const news = require('./routes/news')
 const newsDetail = require('./routes/news_detail')
-const evaluation = require('./routes/evaluation')
-const evaluationDetail = require('./routes/evaluation_detail')
+const public = require('./routes/public')
+
+
+const literature = require('./routes/literature')
+const warn = require('./routes/warn')
 
 
 app.use(views('views', {
@@ -24,11 +26,13 @@ app.use(koaBody())
 app.use(require('koa-static')(__dirname + '/public'));
 
 app.use(index.routes()).use(index.allowedMethods())
-app.use(list.routes()).use(list.allowedMethods())
-app.use(course.routes()).use(course.allowedMethods())
+app.use(orgdesc.routes()).use(orgdesc.allowedMethods())
 app.use(news.routes()).use(news.allowedMethods())
 app.use(newsDetail.routes()).use(newsDetail.allowedMethods())
-app.use(evaluation.routes()).use(evaluation.allowedMethods())
-app.use(evaluationDetail.routes()).use(evaluationDetail.allowedMethods())
+app.use(public.routes()).use(public.allowedMethods())
+
+
+app.use(literature.routes()).use(literature.allowedMethods())
+app.use(warn.routes()).use(warn.allowedMethods())
 
 module.exports = app

@@ -1,0 +1,116 @@
+/* top样式begin */
+.navbar{
+    z-index: 1;
+    background: transparent;
+    margin-bottom: 0;
+    border: none;
+}
+.navbar .container{
+    background: #337ab7;
+    color: #fff;
+    max-width: 1200px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: #306da0;
+}
+.navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+    background-color: #306da0;
+}
+#navbar .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #306da0;
+    border-color: #403fff;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: #e7e7e7;
+}
+.top-img-wrap{
+    background: #fff;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding: 20px 0;
+}
+.top-img-wrap img{
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+}
+/* top样式end */
+
+
+
+/* 页面快捷按钮begin */
+.gx-btn-list{
+
+}
+.gx-btn-list .gx-btn{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    cursor: pointer;
+}
+.gx-btn-list .gx-btn:last-of-type{
+    margin-bottom: 0;
+}
+.gx-btn-list .gx-btn:first-of-type{
+    background: #34E78C;
+}
+.gx-btn-list .gx-btn:nth-of-type(2){
+    background: #FD7F06;
+}
+.gx-btn-list .gx-btn:nth-of-type(3){
+    background: #08FCFC;
+}
+.gx-btn-list .gx-btn:nth-of-type(4){
+    background: #FB192B;
+}
+.gx-btn-list .gx-btn:nth-of-type(5){
+    background: #41FE40;
+}
+.gx-btn-list .gx-btn:nth-of-type(6){
+    background: #960097;
+}
+/* 页面快捷按钮end */
+
+
+/* 底部样式begin */
+.youqing-wrap{
+    line-height: 50px;
+    border-radius: 6px;
+    background: #337ab7;
+    padding: 0 20px;
+    margin: 20px 0;
+}
+.youqing-wrap a{
+    color: #fff;
+    margin-right: 20px;
+}
+.footer{
+    padding: 40px 17px;
+    background: #555;
+    color: #fff;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.footer p{
+    text-align: center;
+}
+.mg20{
+    margin-top: 20px;
+}
+/* 底部样式end */
+
+a:link {text-decoration: none; }
+a:visited {text-decoration: none; }
+a:hover {text-decoration: none !important; }
+a:active {text-decoration: none;}

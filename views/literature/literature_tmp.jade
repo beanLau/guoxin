@@ -1,0 +1,76 @@
+.container.page-content
+    .row
+        .col-xs-12
+            img(src="../../images/adverte_course.png").middle-pic
+    .row.mg20
+        .col-sm-3.col-sx-12.gx-btn-list
+            div
+                #main_left_title 政策文献
+                #main_left_menu
+                    ul
+                        if (!literatureType || literatureType == 0)
+                            li.nei_menu_on
+                                a(href="#",title="通用标准") 通用标准
+                        else
+                            li.nei_menu_off
+                                a(href="/literature",title="通用标准") 通用标准
+                        if literatureType == 1
+                            li.nei_menu_on
+                                a(href="#",title="技术文献") 技术文献
+                        else
+                            li.nei_menu_off
+                                a(href="/literature?type=1",title="技术文献") 技术文献
+                        if literatureType == 2
+                            li.nei_menu_on
+                                a(href="#",title="考核标准") 考核标准
+                        else
+                            li.nei_menu_off
+                                a(href="/literature?type=2",title="考核标准") 考核标准
+            div
+                include ../quickbtn.jade
+        .col-sm-9.col-xs-12
+            #nengrong_right_top
+                if literatureType == 0
+                    h5 通用标准
+                else if literatureType == 1
+                    h5 技术文献
+                else
+                    h5 考核标准
+                span 您的位置：
+                    a(href="/") 首页&nbsp;&gt;&nbsp;
+                    a(href="/literature") 政策文献&nbsp;&gt;&nbsp;
+                    if literatureType == 0
+                        a(href="#") 通用标准
+                    else if literatureType == 1
+                        a(href="#") 技术文献
+                    else
+                        a(href="#") 考核标准
+            #nengrong_list.content
+                #my_content_div
+                    div
+                        each item,index in literatureList
+                            .news_list_title_box
+                                h5
+                                    a(href="#") #{item.title}
+                                h4
+                                    a(href="#") #{item.title}
+                                span #{item.content}
+                                h6 发布时间：#{item.date} &nbsp; |&nbsp; 阅读：#{item.count} 次
+                        nav(aria-label="Page navigation")
+                            ul.pagination
+                                li.disabled
+                                    a(href="#",aria-label="Previous")
+                                        span(aria-hidden="true") &laquo;
+                                li.active
+                                    a(href="#") 1
+                                li
+                                    a(href="#") 2
+                                li
+                                    a(href="#") 3
+                                li
+                                    a(href="#") 4
+                                li
+                                    a(href="#") 5
+                                li
+                                    a(href="#",aria-label="Next")
+                                        span(aria-hidden="true") &raquo;

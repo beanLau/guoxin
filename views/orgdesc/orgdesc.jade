@@ -1,0 +1,10 @@
+extends ../layout.jade
+head
+  block headlink
+    link(rel='stylesheet',href='/views/news/news.css')
+
+body
+  block content
+    include org_tmp.jade
+  block headjs
+    script(src='/views/news/news.js')

@@ -1,128 +1,61 @@
-.swiper-container#swiper-container
-    .swiper-wrapper.page-swiper-wrapper
-        .swiper-slide
-            .swiper-first-wrap
-        .swiper-slide
-            img.swiper-secend-img(src="/images/01.png")
-            .swiper-secend-wrap
-                .swiper-title 品牌介绍
-                .title-tip 加入育方，手把手教你教子有方
-                .desc 育方教育是中大英才旗下一家专注于中国家庭教育的线上教育平台。致力于中国家庭教育普及和推广事业，肩负中国家庭教育的社会责任价值和教育使命。汇集优质的家庭教育师资教育资源，借助线上和互联网的优势与途径，打造系统化、全覆盖和专业化的中国家庭教育学习、成长和专业培训的专属线上平台
-        .swiper-slide
-            .team-desc
-                .team-title 品牌介绍
-                .team-tip.teachers-team-tip 加入育方，手把手教你教子有方
-                .swiper-container#swiper-container2
-                    .swiper-wrapper
-                        - var ary = [{pic:'/images/01teacher.png',name:'王超嵘',position:'高级家庭教育指导师',desc:'热爱心理学和家庭教育，拥有扎实的理论功底和丰富的家庭教育咨询和援助经验。',content:'通过NLP神经语言程序和教练技术帮助很多有家庭困惑的家长和家庭走出困境，建立起良好的家庭氛围。 授课风格儒雅智慧、淡定从容、风趣幽默，拥有一份独特的感染力，既有理论高度，又有通俗落地，深受学员欢迎和尊重'},{pic:'/images/02teacher.png',name:'樊洪瑞',position:'国家心理咨询师',desc:'多年来一直从事于心理教育、心理咨询与家庭教育，拥有丰富的实践经验。',content:'多年来一直从事于心理教育、心理咨询与家庭教育，拥有丰富的心理学理论、心理咨询和家庭教育的实践经验。擅长儿童青少年成长教育、婚姻家庭、亲子关系、情绪管理等方面，帮助众多家长和孩子重拾学习和生活的信心'},{pic:'/images/03teacher.png',name:'孟亦臻',position:'资深家庭教育专家',desc:'热爱家庭教育事业，家庭教育的传播者和推动者，十年的从业经验，有丰富的教育案例',content:'拥有深厚的理论知识和丰富的教育实践经验，先后学习过NLP、萨提亚、亲密关系等相关课程。并学以致用，专注于将心理学与家庭教育相结合。倡导家长自我成长，帮助很多母亲做美丽智慧妈妈，成就孩子幸福快乐人生！'},{pic:'/images/04teacher.png',name:'魏麗',position:'高级家庭教育指导师',desc:'牛津大学正念中心师资在训国内首批正念静观执行师，并致力于家庭教育的推广和发展事业',content:'累积个案与团体咨询1000+小时，4年正念静观经验。 一直专注于家庭教育、亲子关系、婚恋关系的研究与学习，并致力于家庭教育的推广和发展事业。 已帮助很多家庭重建良好夫妻关系及亲子关系，让很多家庭关系融洽和谐。'},{pic:'/images/05teacher.png',name:'李佳琪',position:'国家心理咨询师',desc:'心理学专业出身，多年来一直专注于孩子学习力研究，致力于中外家庭教育的对比性研究',content:'通过认知心理学，社会心理学理论，结合自身经验。致力于向家长和孩子们传递科学，高效，具体，全面的学习方法，学习习惯，激发孩子们学习兴趣和天性，让学习力成为一种可以复制的能力，让每一个孩子不再为学习而痛苦。'},{pic:'/images/06teacher.png',name:'王兴华',position:'育方教育高级亲子导师',desc:'儒雅智慧、淡定从容、风趣幽默，拥有独特的感染力，深受学员欢迎和尊重',content:'通过NLP神经语言程序和教练技术帮助很多有家庭困惑的家长和家庭走出困境，建立起良好的家庭氛围。 授课风格儒雅智慧、淡定从容、风趣幽默，拥有一份独特的感染力，既有理论高度，又有通俗落地，深受学员欢迎和尊重'}];
-                        each item in ary
-                            .swiper-slide
-                                .teacher-item
-                                    .teacher-front
-                                        img.teacher-pic(src= item.pic)
-                                        .teacher-name= item.name
-                                        .positional-title= item.position
-                                        .teacher-desc.teacher-desc-overflow= item.desc
-                                    .teacher-back
-                                        .teacher-back-wrap
-                                            .teacher-name= item.name
-                                            .positional-title= item.position
-                                            .teacher-desc= item.content
-                .team-swiper-btns
-                    .team-swiper-button.team-swiper-button-prev
-                    .team-swiper-button.team-swiper-button-next
-        .swiper-slide
-            .team-desc
-                .team-title 专业服务
-                .team-tip 加入育方，手把手教你教子有方
-                .service-wrap
-                    .item-parenting
-                        .service-info
-                            .point
-                            .service-title 亲子关系
-                            .service-title-en Parent-child Relationship
-                    .item-close
-                        .service-info
-                            .point
-                            .service-title.close-title 亲子关系
-                            .service-title-en Intimate Relationship
-                    .item-power
-                        .service-info
-                            .point
-                            .service-title.power-title 学习动力
-                            .service-title-en Learning Motivation
-                .service-wrap
-                    .item-emotion
-                        .service-info
-                            .point
-                            .service-title.emotion-title 情绪管理
-                            .service-title-en Emotion Management
-                    .item-study
-                        .service-info
-                            .point
-                            .service-title.study-title 亲密关系
-                            .service-title-en Parents Study
-                    .item-guide
-                        .service-info
-                            .point
-                            .service-title.guide-title 专职指导
-                            .service-title-en Professional Guidance
-        .swiper-slide
-            .team-desc.feature-bg
-                .team-title.feature-team-title 育方特色
-                .team-tip 加入育方，手把手教你教子有方
-                .feature-wrap
-                    .feature-item
-                        .feature-info
-                            .feature-icon.icon1
-                            .feature-title 成长导向
-                            .feature-desc 家长成长，孩子成长，家庭成长，在线支持和服务，您身边的家庭教育服务中心
-                    .feature-item
-                        .feature-info
-                            .feature-icon.icon2
-                            .feature-title 专职指导
-                            .feature-desc 跟踪成长。让每一个家庭，家长和孩子，拥有适合自己的专职家庭教育
-                    .feature-item
-                        .feature-info
-                            .feature-icon.icon3
-                            .feature-title 在线服务
-                            .feature-desc 在线支持和服务，您身边的家庭教育服务中心
-        .swiper-slide
-            .team-desc
-                .download-wrap
-                    .download-title 线上平台
-                    .download-tip 加入育方，手把手教你教子有方
-                    .download-desc 跟踪成长，让每一个家庭，家长和孩子，拥有适合自己的专职家庭教育
-                    .download-pic-wrap
-                        .download-pic-item
-                            img.download-pic(src="/images/download.png")
-                            .download-pic-title IOS平台下载
-                        .download-pic-item
-                            img.download-pic(src="/images/download.png")
-                            .download-pic-title Android下载
-                img.download-right-img(src="/images/05.png")
-        .swiper-slide.area-bg
-            .area-desc
-                .area-title 地区覆盖
-                .area-tip 加入育方，手把手教你教子有方
-                .area-list-wrap
-                    //- - var areas = ['北京市','上海市','重庆市','天津市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市','上海市']
-                    //- each area,index in areas
-                    //-     if index != 0 && (index+1)%6 == 0
-                    //-         a.area-item.right0(href="#")= area
-                    //-     else
-                    //-         a.area-item(href="#")= area
-    .swiper-pagination
-    footer
-        .footer-wrap
-            img.footer-log(src="/images/logo2.png")
-            span.footer-tip 预约一对一咨询指导
-            input.input-phone#phone(type="text",placeholder="请输入您的手机号码",autocomplete="off")
-            .code-wrap
-                input.input-code#code(type="text",placeholder="请输入验证码")
-                span.code-tool |
-                span.getcode#sendCode 获取验证码
-            span.join-btn#enrollBtn 立即报名
+.top-bg
+.container.page-content
+    .row.tianqi 2019/10/24 星期四 19:08 天气 晴
+    .row
+        img.col-sm-4.col-xs-12(style="height:384px;",src="../../images/03teacher.png")
+        .col-sm-4.col-xs-12
+            .gx-panel
+                .gx-panel-title 公告专栏
+                    a(href="/news").panel-more 更多
+                .gx-panel-body.height-342
+                    each item,index in noticeList
+                        a(href="#").gonggao-item #{item.title}
 
-                        
-
+        .col-sm-4.col-xs-12.gx-btn-list
+            include ../quickbtn.jade
+    .row
+        .col-xs-12
+            img(src="../../images/adverte_course.png").middle-pic
+    .row
+        .col-sm-4.col-xs-12
+            .gx-panel
+                .gx-panel-title 新闻中心
+                    a(href="/news").panel-more 更多
+                .gx-panel-body
+                    each item,index in newsList
+                        a(href="#").news-item #{item.title}
+        .col-sm-8.col-xs-12
+            .gx-panel
+                .gx-panel-title 技术文献
+                    a(href="#").panel-more 更多 
+                .gx-panel-body
+                    each item,index in literatureList
+                        a(href="#").news-item #{item.title}
+    .row.mg20
+        .col-sm-4.col-xs-12
+            .gx-panel
+                .gx-panel-title 培训认证
+                    a(href="#").panel-more 更多 
+                .gx-panel-body
+                    each item,index in renzhengList
+                        a(href="#").news-item #{item.title}
+        .col-sm-4.col-xs-12
+            .gx-panel
+                .gx-panel-title 合作单位
+                    a(href="#").panel-more 更多 
+                .gx-panel-body
+                    each item,index in danweiList
+                        .company-item
+                            p 名表真伪识别系统指定受理单位
+                            p 苏州新宇世家钟表有限公司技术服务中心
+                            p 地址：苏州观前邵磨针巷88号
+                            p 联系电话：0512-65229666
+        .col-sm-4.col-xs-12
+            .gx-panel
+                .gx-panel-title 质量监督
+                    a(href="#").panel-more 更多 
+                .gx-panel-body
+                    each item,index in zhiliangList
+                        a(href="#").news-item #{item.title}
+    
+            

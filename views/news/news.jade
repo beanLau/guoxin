@@ -1,58 +1,10 @@
-extends ../header.jade
-block headlink
+extends ../layout.jade
+head
+  block headlink
     link(rel='stylesheet',href='/views/news/news.css')
-block content
-    include ../top.jade
-    //- 广告图
-    .adverte
-        a(href="javascript:;")
-            img(src="/images/adverte_course.png")
-    //- news
-    -type = null;
-    .news
-        ul.nav-news
-            each item,index in newsType
-                if urlQuery.type === item.id || (!urlQuery.type && index === 0)
-                    li.newsNav-active
-                        a(href="/news?type=#{item.id}") #{item.name}
-                        -type = item.id
-                else
-                   li
-                        a(href="/news?type=#{item.id}") #{item.name}
-     .news-list-scope
-        if newsList&&newsList.rows
-            ul.news-list
-                    each item in newsList.rows
-                        li
-                            .news-title
-                                a(href="/newsDetail?id=#{item.id}") #{item.title}
-                            .news-timer
-                                span 发表时间：#{item.publishTime}
-                                span 阅读：#{item.readNum}
-        
-        a(href="/evaluation").news-adverte
-            img(src="/images/adverte_news.png")
-    //- page
-    .page
-        if newsList&&newsList.total>1
-            -pageUrl='/news?type='+type+'&page=';
-            -pageTotal=newsList.total;
-            -page=parseInt(urlQuery.page?urlQuery.page:1);
-            if !(page==undefined || page == 1)
-                a(href="#{pageUrl}#{page-1}").pre 上一页
-                if page >2
-                    a(href="#{pageUrl}#{1}") 1
-                    if pageTotal>3
-                        span ...
-                a(href="#{pageUrl}#{page-1}") #{page-1}
-            a(href="#{pageUrl}#{page}").page-active #{page}
-            if !(1==pageTotal || page == pageTotal)
-                a(href="#{pageUrl}#{(page+1)}") #{(page-0+1)}
-                if (page-0+1)<pageTotal
-                    if pageTotal>3
-                        span ...
-                    a(href="#{pageUrl}#{pageTotal}") #{pageTotal}
-                a(href="#{pageUrl}#{(page+1)}").next 下一页
-    include ../footer.jade
-block headjs
+
+body
+  block content
+    include news_tmp.jade
+  block headjs
     script(src='/views/news/news.js')

@@ -1,0 +1,65 @@
+.container.page-content
+    .row
+        .col-xs-12
+            img(src="../../images/adverte_course.png").middle-pic
+    .row.mg20
+        .col-sm-3.col-sx-12.gx-btn-list
+            div
+                #main_left_title 机构简介
+                #main_left_menu
+                    ul
+                        if (!orgType || orgType == 0)
+                            li.nei_menu_on
+                                a(href="#",title="关于检测中心") 关于检测中心
+                        else
+                            li.nei_menu_off
+                                a(href="/orgdesc",title="关于检测中心") 关于检测中心
+                        if  orgType == 1
+                            li.nei_menu_on
+                                a(href="#",title="组织机构") 组织机构
+                        else
+                            li.nei_menu_off
+                                a(href="/orgdesc?type=1",title="组织机构") 组织机构
+                        if  orgType == 2
+                            li.nei_menu_on
+                                a(href="#",title="资质证书") 资质证书
+                        else
+                            li.nei_menu_off
+                                a(href="/orgdesc?type=2",title="资质证书") 资质证书
+                        if  orgType == 3
+                            li.nei_menu_on
+                                a(href="#",title="历史回顾") 历史回顾
+                        else
+                            li.nei_menu_off
+                                a(href="/orgdesc?type=3",title="历史回顾") 历史回顾
+            div
+                include ../quickbtn.jade
+        .col-sm-9.col-xs-12
+            #nengrong_right_top
+                if (!orgType || orgType == 0)
+                    h5 关于检测中心
+                else if orgType == 1
+                    h5 组织机构
+                else if orgType == 2
+                    h5 资质证书
+                else
+                    h5 历史回顾
+                span 您的位置：
+                    a(href="/") 首页&nbsp;&gt;&nbsp;
+                    a(href="/orgdesc") 机构简介&nbsp;&gt;&nbsp;
+                    if (!orgType || orgType == 0)
+                        a(href="#") 关于检测中心
+                    else if orgType == 1
+                        a(href="#") 组织机构
+                    else if orgType == 2
+                        a(href="#") 资质证书
+                    else
+                        a(href="#") 历史回顾
+            if (!orgType || orgType == 0)
+                include about.jade
+            else if orgType == 1
+                include organization.jade
+            else if orgType == 2
+                include certificate.jade
+            else
+                include history.jade

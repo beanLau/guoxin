@@ -1,0 +1,95 @@
+.container.page-content
+    .row
+        .col-xs-12
+            img(src="../../images/adverte_course.png").middle-pic
+    .row.mg20
+        .col-sm-3.col-sx-12.gx-btn-list
+            div
+                #main_left_title 机构简介
+                #main_left_menu
+                    ul
+                        if (!publicType || publicType == 0)
+                            li.nei_menu_on
+                                a(href="#",title="二手表A级店铺公示") 二手表A级店铺公示
+                        else
+                            li.nei_menu_off
+                                a(href="/public",title="二手表A级店铺公示") 二手表A级店铺公示
+                        if  publicType == 1
+                            li.nei_menu_on
+                                a(href="#",title="电子商务诚信示范店公示") 电子商务诚信示范店公示
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=1",title="电子商务诚信示范店公示") 电子商务诚信示范店公示
+                        if  publicType == 2
+                            li.nei_menu_on
+                                a(href="#",title="高级鉴定师信息公示") 高级鉴定师信息公示
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=2",title="高级鉴定师信息公示") 高级鉴定师信息公示
+                        if  publicType == 3
+                            li.nei_menu_on
+                                a(href="#",title="钟表售后服务诚信站点") 钟表售后服务诚信站点
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=3",title="钟表售后服务诚信站点") 钟表售后服务诚信站点
+                        if  publicType == 4
+                            li.nei_menu_on
+                                a(href="#",title="皮具养护服务诚信站点") 皮具养护服务诚信站点
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=4",title="皮具养护服务诚信站点") 皮具养护服务诚信站点
+            div
+                include ../quickbtn.jade
+        .col-sm-9.col-xs-12
+            #nengrong_right_top
+                if (!publicType || publicType == 0)
+                    h5 二手表A级店铺公示
+                else if publicType == 1
+                    h5 电子商务诚信示范店公示
+                else if publicType == 2
+                    h5 高级鉴定师信息公示
+                else if publicType == 3
+                    h5 钟表售后服务诚信站点
+                else
+                    h5 皮具养护服务诚信站点
+                span 您的位置：
+                    a(href="/") 首页&nbsp;&gt;&nbsp;
+                    a(href="/public") 信息公开&nbsp;&gt;&nbsp;
+                    if (!publicType || publicType == 0)
+                        a(href="#") 二手表A级店铺公示
+                    else if publicType == 1
+                        a(href="#") 电子商务诚信示范店公示
+                    else if publicType == 2
+                        a(href="#") 高级鉴定师信息公示
+                    else if publicType == 3
+                        a(href="#") 钟表售后服务诚信站点
+                    else
+                        a(href="#") 皮具养护服务诚信站点
+            #nengrong_list.content
+                #my_content_div
+                    div
+                        ul.news_list_ul_1
+                            each item,index in publicList
+                                li
+                                    span
+                                        a(href="").a_li_list #{item.title}
+
+                        nav(aria-label="Page navigation")
+                            ul.pagination
+                                li.disabled
+                                    a(href="#",aria-label="Previous")
+                                        span(aria-hidden="true") &laquo;
+                                li.active
+                                    a(href="#") 1
+                                li
+                                    a(href="#") 2
+                                li
+                                    a(href="#") 3
+                                li
+                                    a(href="#") 4
+                                li
+                                    a(href="#") 5
+                                li
+                                    a(href="#",aria-label="Next")
+                                        span(aria-hidden="true") &raquo;
+            

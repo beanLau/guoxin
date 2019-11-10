@@ -1,45 +1,89 @@
-header
-    .header-wrap
-        .head-left.fl
-            img.logo(src="/images/logo.png")
-            h3.title 育方教育——家庭教育内容和解决方案的提供者
-        .head-right.fr
-            .nav
-                if pagePath == '/'
-                    a(href="/").nav-item.active-nav
-                        span.nav-item-title 首页
-                        span.nav-item-en  HOME
-                else
-                    a(href="/").nav-item
-                        span.nav-item-title 首页
-                        span.nav-item-en  HOME
-                if pagePath == '/course'
-                    a(href="/course").nav-item.active-nav
-                        span.nav-item-title 课程介绍
-                        span.nav-item-en  COURSE
-                else
-                    a(href="/course").nav-item
-                        span.nav-item-title 课程介绍
-                        span.nav-item-en  COURSE
-                if pagePath == '/news'|| pagePath =='/newsDetail'
-                    a(href="/news").nav-item.active-nav
-                        span.nav-item-title 育儿资讯
-                        span.nav-item-en  NEWS
-                else
-                    a(href="/news").nav-item
-                        span.nav-item-title 育儿资讯
-                        span.nav-item-en  NEWS
-                if pagePath == '/evaluation' || pagePath == '/evaluationDetail'
-                    a(href="/evaluation").nav-item.active-nav
-                        span.nav-item-title 家长测评
-                        span.nav-item-en  EVALUATION
-                else
-                    a(href="/evaluation").nav-item
-                        span.nav-item-title 家长测评
-                        span.nav-item-en  EVALUATION
-            .login-wrap
-                if yfpcdata&&yfpcdata.token
-                    span.welcome= yfpcdata.nickName
-                    span.loginout 退出
-                else
-                    span.signin  登录
+nav.navbar.navbar-default
+    .container
+        .top-img-wrap
+            img(src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2662373233,2184225911&fm=26&gp=0.jpg")
+        .navbar-header
+            button.navbar-toggle.collapsed(data-toggle="collapse",data-target="#navbar",aria-expanded="false",aria-controls="navbar")
+                span.sr-only Toggle
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+        #navbar.navbar-collapse.collapse
+            ul.nav.navbar-nav
+                li
+                    a(href="/") 网站首页
+                li.dropdown
+                    a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 机构简介
+                        span.caret
+                    ul.dropdown-menu
+                        li
+                            a(href="/orgdesc") 关于检测中心
+                        li
+                            a(href="/orgdesc?type=1") 组织机构
+                        li
+                            a(href="/orgdesc?type=2") 资质证书
+                        li
+                            a(href="/orgdesc?type=3") 历史回顾
+                li
+                    a(href="/news") 新闻公告
+                li.dropdown
+                    a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 信息公开
+                        span.caret
+                    ul.dropdown-menu
+                        li
+                            a(href="/public") 二手表A级店铺公示
+                        li
+                            a(href="/public?type=1") 电子商务诚信示范店公示
+                        li
+                            a(href="/public?type=2") 高级鉴定师信息公示
+                        li
+                            a(href="/public?type=3") 钟表售后服务诚信站点
+                        li
+                            a(href="/public?type=4") 皮具养护服务诚信站点
+                li.dropdown
+                    a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 报告查询
+                        span.caret
+                    ul.dropdown-menu
+                        li
+                            a(href="#") 钟表型式检验报告查询
+                        li
+                            a(href="#") 司法技术鉴定报告查询
+                        li
+                            a(href="#") 二手表检验证书查询
+                        li
+                            a(href="#") 眼镜型式检验报告查询
+                        li
+                            a(href="#") 皮具型式检验证书查询
+                        li
+                            a(href="#") 皮具真伪检验证书查询
+                li.dropdown
+                    a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 办事大厅
+                        span.caret
+                    ul.dropdown-menu
+                        li
+                            a(href="#") 委托检测
+                        li
+                            a(href="#") 钟表维修便民服务
+                        li
+                            a(href="#") 验光配镜便民服务
+                        li
+                            a(href="#") 职业技能鉴定申请
+                li.dropdown
+                    a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 政策文献
+                        span.caret
+                    ul.dropdown-menu
+                        li
+                            a(href="/literature") 通用标准
+                        li
+                            a(href="/literature?type=1") 技术文献
+                        li
+                            a(href="/literature?type=2") 考核标准
+                li
+                    a(href="#") 消费警示
+            ul.nav.navbar-nav.navbar-right
+                li
+                    a(href="#") 登录
+                li
+                    a(href="#") 欢迎！齐天大爷
+                li
+                    a(href="#") 退出

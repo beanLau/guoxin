@@ -1,0 +1,66 @@
+.container.page-content
+    .row
+        .col-xs-12
+            img(src="../../images/adverte_course.png").middle-pic
+    .row.mg20
+        .col-sm-3.col-sx-12.gx-btn-list
+            div
+                #main_left_title 新闻中心
+                #main_left_menu
+                    ul
+                        if (!newsType || newsType == 0)
+                            li.nei_menu_on
+                                a(href="#",title="行业信息") 行业信息
+                        else
+                            li.nei_menu_off
+                                a(href="/news",title="行业信息") 行业信息
+                        if  newsType
+                            li.nei_menu_on
+                                a(href="#",title="公告通知") 公告通知
+                        else
+                            li.nei_menu_off
+                                a(href="/news?type=1",title="公告通知") 公告通知
+            div
+                include ../quickbtn.jade
+        .col-sm-9.col-xs-12
+            #nengrong_right_top
+                if newsType
+                    h5 公告通知
+                else
+                    h5 行业信息
+                span 您的位置：
+                    a(href="/") 首页&nbsp;&gt;&nbsp;
+                    a(href="/news") 新闻中心&nbsp;&gt;&nbsp;
+                    if newsType
+                        a(href="#") 公告通知
+                    else
+                        a(href="#") 行业信息
+            #nengrong_list.content
+                #my_content_div
+                    div
+                        ul.news_list_ul_1
+                            each item,index in newsList
+                                li
+                                    span
+                                        a(href="#") [ 专题报道 ]
+                                        a(href="").a_li_list #{item.title}
+                                        img(src="http://www.hgstc.com/images/hot.gif", alt="")
+
+                        nav(aria-label="Page navigation")
+                            ul.pagination
+                                li.disabled
+                                    a(href="#",aria-label="Previous")
+                                        span(aria-hidden="true") &laquo;
+                                li.active
+                                    a(href="#") 1
+                                li
+                                    a(href="#") 2
+                                li
+                                    a(href="#") 3
+                                li
+                                    a(href="#") 4
+                                li
+                                    a(href="#") 5
+                                li
+                                    a(href="#",aria-label="Next")
+                                        span(aria-hidden="true") &raquo;

@@ -1,0 +1,10 @@
+extends ../layout.jade
+head
+  block headlink
+    link(rel='stylesheet',href='/views/literature/literature.css')
+
+body
+  block content
+    include literature_tmp.jade
+  block headjs
+    script(src='/views/literature/literature.js')
