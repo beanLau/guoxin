@@ -9,7 +9,7 @@
                     a(href="/news?type=1").panel-more 更多
                 .gx-panel-body.height-342
                     each item,index in noticeList
-                        a(href="#").gonggao-item #{item.title}
+                        a(href="/newsdetail?id=" + item.id).gonggao-item #{item.title}
 
         .col-sm-4.col-xs-12.gx-btn-list
             include ../quickbtn.jade
@@ -23,7 +23,7 @@
                     a(href="/news").panel-more 更多
                 .gx-panel-body
                     each item,index in newsList
-                        a(href="#").news-item #{item.title}
+                        a(href="/newsdetail?id=" + item.id).news-item #{item.title}
         .col-sm-8.col-xs-12
             .gx-panel
                 .gx-panel-title 技术文献
@@ -31,24 +31,5 @@
                 .gx-panel-body
                     each item,index in literatureList
                         a(href="#").news-item #{item.title}
-    .row.mg20
-        .col-sm-6.col-xs-12
-            .gx-panel
-                .gx-panel-title 培训认证
-                    a(href="#").panel-more 更多 
-                .gx-panel-body
-                    each item,index in renzhengList
-                        a(href="#").news-item #{item.title}
-        .col-sm-6.col-xs-12
-            .gx-panel
-                .gx-panel-title 合作单位
-                    a(href="#").panel-more 更多 
-                .gx-panel-body
-                    each item,index in danweiList
-                        .company-item
-                            p 名表真伪识别系统指定受理单位
-                            p 苏州新宇世家钟表有限公司技术服务中心
-                            p 地址：苏州观前邵磨针巷88号
-                            p 联系电话：0512-65229666
     
             

@@ -48,6 +48,7 @@ router.get('/literature', async (ctx) => {
         yfpcdata: yfpcdata,
         urlQuery,
         literatureType: urlQuery.type || 0,
+        pageInfo: pageInfo, 
         literatureList: literatureList
     })
 })

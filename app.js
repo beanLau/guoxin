@@ -8,7 +8,7 @@ const app = new Koa()
 const index = require('./routes/index')
 const orgdesc = require('./routes/orgdesc')
 const news = require('./routes/news')
-const newsDetail = require('./routes/news_detail')
+const newsDetail = require('./routes/newsdetail')
 const public = require('./routes/public')
 const report = require('./routes/report')
 

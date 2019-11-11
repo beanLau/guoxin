@@ -42,8 +42,8 @@
                             each item,index in newsList
                                 li
                                     span
-                                        a(href="#") #{item.source}
-                                        a(href="").a_li_list #{item.title}
+                                        a(href="/newsdetail?id=" + item.id) #{item.source}
+                                        a(href="/newsdetail?id=" + item.id).a_li_list #{item.title}
                                         img(src="http://www.hgstc.com/images/hot.gif", alt="")
                         nav(aria-label="Page navigation")
                             ul.pagination

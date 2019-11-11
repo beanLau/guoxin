@@ -51,26 +51,35 @@
                         each item,index in literatureList
                             .news_list_title_box
                                 h5
-                                    a(href="#") #{item.title}
+                                    a(href="/newsdetail?id=" + item.id) #{item.title}
                                 h4
-                                    a(href="#") #{item.title}
-                                span #{item.content}
-                                h6 发布时间：#{item.date} &nbsp; |&nbsp; 阅读：#{item.count} 次
+                                    a(href="/newsdetail?id=" + item.id) #{item.title}
+                                div #{item.content}
+                                h6 发布时间：#{item.createTime} &nbsp; |&nbsp; 阅读：#{item.readTimes} 次
                         nav(aria-label="Page navigation")
                             ul.pagination
-                                li.disabled
-                                    a(href="#",aria-label="Previous")
-                                        span(aria-hidden="true") &laquo;
-                                li.active
-                                    a(href="#") 1
-                                li
-                                    a(href="#") 2
-                                li
-                                    a(href="#") 3
-                                li
-                                    a(href="#") 4
-                                li
-                                    a(href="#") 5
-                                li
-                                    a(href="#",aria-label="Next")
-                                        span(aria-hidden="true") &raquo;
+                                if pageInfo.current == 1
+                                    li.disabled
+                                        a(href="#",aria-label="Previous")
+                                            span(aria-hidden="true") &laquo;
+                                else
+                                    li
+                                        a(href="/literature?type="+literatureType + "&page=" + (pageInfo.current - 1),aria-label="Previous")
+                                            span(aria-hidden="true") &laquo;
+                                - let n = 1;
+                                while n <= pageInfo.pages
+                                    if n == pageInfo.current
+                                        li.active
+                                            a(href="#") #{n++}
+                                    else
+                                        li
+                                            a(href="/literature?type="+literatureType + "&page=" + n) #{n++}
+                                
+                                if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
+                                    li.disabled
+                                        a(href="#",aria-label="Next")
+                                            span(aria-hidden="true") &raquo;
+                                else
+                                    li
+                                        a(href="/literature?type="+literatureType + "&page=" + (pageInfo.current + 1),aria-label="Next")
+                                            span(aria-hidden="true") &raquo;

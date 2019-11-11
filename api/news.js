@@ -15,7 +15,7 @@ let getNoticeList = function(ctx, data){
 // 行业信息
 let getHangyeList = function(ctx,data){
     return fetch({ 
-        method: 'POST',
+        method: 'get',
         url: 'menhu/mhNotice/hangyeList',
         headers:{
             "token": ctx.cookies.get('yfpctoken')
@@ -24,9 +24,20 @@ let getHangyeList = function(ctx,data){
     })
 }
 
+let getNewsDetail  = function(ctx,data){
+    return fetch({ 
+        method: 'get',
+        url: 'menhu/mhNotice/detailById?id=' + data.id,
+        headers:{
+            "token": ctx.cookies.get('yfpctoken')
+        },
+        body:data
+    })
+}
 
 module.exports = {
     getNoticeList,
-    getHangyeList
+    getHangyeList,
+    getNewsDetail
 }
 
