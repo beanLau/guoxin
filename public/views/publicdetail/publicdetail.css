@@ -256,3 +256,6 @@ a, a:link, a:visited {
 #bdshare a,#bdshare span{
     height: 24px !important;
 }
+.table-img{
+    width: 100px;
+}

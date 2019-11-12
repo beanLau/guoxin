@@ -1,41 +1,29 @@
 const fetch = require('./utils');
 
-// 机构简介
-let getOrgInfo = function(ctx, data){
+// 获取信息公开列表
+let getPublicList = function(ctx, data){
+    let opt = `?pageNo=${data.pageNo || 1}&pageSize=${data.pageSize || 10}&type=${data.type || 1}`
     return fetch({ 
         method: 'get',
-        url: 'menhu/mhOrgInfo/orgInfo',
+        url: 'menhu/mhOrgsite/list' + opt,
         headers:{
             "token": ctx.cookies.get('yfpctoken')
-        },
-        body:data
+        }
     })
 }
 
-// 资质列表
-let getZizhiList = function(ctx,data){
+// 获取信息公开详情
+let getPublicDetail = function(ctx,data){
     return fetch({ 
         method: 'get',
-        url: 'menhu/mhOrgInfo/list',
+        url: 'menhu/mhOrgsite/queryById?id=' + data.id,
         headers:{
             "token": ctx.cookies.get('yfpctoken')
-        },
-        body:data
-    })
-}
-
-let getZizhiDetail = function(ctx,data){
-    return fetch({ 
-        method: 'get',
-        url: 'menhu/mhOrgInfo/list',
-        headers:{
-            "token": ctx.cookies.get('yfpctoken')
-        },
-        body:data
+        }
     })
 }
 
 module.exports = {
-    getOrgInfo,
-    getZizhiList
+    getPublicList,
+    getPublicDetail
 }

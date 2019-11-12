@@ -8,91 +8,80 @@
                 #main_left_title 新闻中心
                 #main_left_menu
                     ul
-                        if newsDetail.type==1 || newsDetail.type == 2
-                            if newsDetail.type == 1
-                                li.nei_menu_on
-                                    a(href="#",title="行业信息") 行业信息
-                            else
-                                li.nei_menu_off
-                                    a(href="/news",title="行业信息") 行业信息
-                            if  newsDetail.type == 2
-                                li.nei_menu_on
-                                    a(href="#",title="公告通知") 公告通知
-                            else
-                                li.nei_menu_off
-                                    a(href="/news?type=1",title="公告通知") 公告通知
+                        if publicDetail.type == 1
+                            li.nei_menu_on
+                                a(href="#",title="二手表A级店铺公示") 二手表A级店铺公示
                         else
-                            if newsDetail.type == 3
-                                li.nei_menu_on
-                                    a(href="#",title="通用标准") 通用标准
-                            else
-                                li.nei_menu_off
-                                    a(href="/literature",title="通用标准") 通用标准
-                            if  newsDetail.type == 4
-                                li.nei_menu_on
-                                    a(href="#",title="技术文献") 技术文献
-                            else
-                                li.nei_menu_off
-                                    a(href="/literature?type=1",title="技术文献") 技术文献
-                            if  newsDetail.type == 5
-                                li.nei_menu_on
-                                    a(href="#",title="考核标准") 考核标准
-                            else
-                                li.nei_menu_off
-                                    a(href="/literature?type=2",title="考核标准") 考核标准
+                            li.nei_menu_off
+                                a(href="/public",title="二手表A级店铺公示") 二手表A级店铺公示
+                        if  publicDetail.type == 2
+                            li.nei_menu_on
+                                a(href="#",title="电子商务诚信示范店公示") 电子商务诚信示范店公示
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=2",title="电子商务诚信示范店公示") 电子商务诚信示范店公示
+                        if  publicDetail.type == 3
+                            li.nei_menu_on
+                                a(href="#",title="高级鉴定师信息公示") 高级鉴定师信息公示
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=3",title="高级鉴定师信息公示") 高级鉴定师信息公示
+                        if  publicDetail.type == 4
+                            li.nei_menu_on
+                                a(href="#",title="钟表售后服务诚信站点") 钟表售后服务诚信站点
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=4",title="钟表售后服务诚信站点") 钟表售后服务诚信站点
+                        if  publicDetail.type == 5
+                            li.nei_menu_on
+                                a(href="#",title="皮具养护服务诚信站点") 皮具养护服务诚信站点
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=5",title="皮具养护服务诚信站点") 皮具养护服务诚信站点
             div
                 include ../quickbtn.jade
         .col-sm-9.col-xs-12
             #nengrong_right_top
-                if newsDetail.type == 1 || newsDetail.type == 2
-                    if newsDetail.type == 2
-                        h5 公告通知
-                    else
-                        h5 行业信息
+                if publicDetail.type == 1
+                    h5 二手表A级店铺公示
+                else if publicDetail.type == 2
+                    h5 电子商务诚信示范店公示
+                else if publicDetail.type == 3
+                    h5 高级鉴定师信息公示
+                else if publicDetail.type == 4
+                    h5 钟表售后服务诚信站点
                 else
-                    if newsDetail.type == 3
-                        h5 通用标准
-                    else if newsDetail.type == 4
-                        h5 技术文献
-                    else
-                        h5 考核标准
+                    h5 皮具养护服务诚信站点
                 span 您的位置：
                     a(href="/") 首页&nbsp;&gt;&nbsp;
-                    if newsDetail.type == 1 || newsDetail.type == 2
-                        a(href="/news") 新闻中心&nbsp;&gt;&nbsp;
+                        a(href="/public") 信息公开&nbsp;&gt;&nbsp;
+                    if publicDetail.type == 1
+                        a(href="#") 二手表A级店铺公示
+                    else if publicDetail.type == 2
+                        a(href="#") 电子商务诚信示范店公示
+                    else if publicDetail.type == 3
+                        a(href="#") 高级鉴定师信息公示
+                    else if publicDetail.type == 4
+                        a(href="#") 钟表售后服务诚信站点
                     else
-                        a(href="/literature") 政策文献&nbsp;&gt;&nbsp;
-                    if newsDetail.type == 1 || newsDetail.type == 2
-                        if newsDetail.type == 2
-                            a(href="#") 公告通知
-                        else
-                            a(href="#") 行业信息
-                    else
-                        if newsDetail.type == 3
-                            a(href="#") 通用标准
-                        if newsDetail.type == 4
-                            a(href="#") 技术文献
-                        else
-                            a(href="#") 考核标准
+                        a(href="#") 皮具养护服务诚信站点
             #nengrong.content
-                #detal_title #{newsDetail.title}
-                #detal_sub_title 更新：#{newsDetail.updateTime}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;阅读：#{newsDetail.readTimes}次&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;关键词：
-                    a(href="#") #{newsDetail.keyWords}
-                #detal_sub_content #{newsDetail.content}
-                #detal_fenxiang
-                    div(style="float:right;")
-                        #bdshare.bdshare_t.bds_tools.get-codes-bdshare
-                            span.bds_more 分享到：
-                            a(href="#",title="分享到新浪微博").bds_tsina
-                            a(href="#",title="分享到腾讯微博").bds_tqq
-                            a(href="#",title="分享到人人网").bds_renren
-                            a(href="#",title="分享到QQ空间").bds_qzone
-                            a(href="#",title="分享到百度搜藏").bds_baidu
-                            a(href="#",title="分享到百度空间").bds_hi
-                            a(href="#",title="分享到豆瓣网").bds_douban
-                            a(href="#",title="分享到天涯社区").bds_ty
-                            a(href="#",title="分享到搜狐微博").bds_tsohu
-                            a(href="#",title="分享到网易微博").bds_t163
-                            a(href="#",title="累计分享0次").shareCount
-                        script#bdshare_js(type="text/javascript",data="type=tools&amp;uid=678697",src="http://bdimg.share.baidu.com/static/js/bds_s_v2.js?cdnversion=437079")
-                        script(type="text/javascript") document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+                #detal_sub_content
+                    table(width="100%",border="0",cellpadding="0",cellspacing="1").table.table-bordered
+                        tbody
+                            tr
+                                th 机构名称
+                                th 创建人
+                                th 创建时间
+                                th 修改人
+                                th 修改时间
+                                th 机构图片
+                            tr
+                                td #{publicDetail.name}
+                                td #{publicDetail.createBy}
+                                td #{publicDetail.createTime}
+                                td #{publicDetail.updateBy}
+                                td #{publicDetail.updateTime}
+                                td 
+                                    img(src=publicDetail.pic, alt="").table-img
+                            

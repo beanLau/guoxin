@@ -1,4 +1,5 @@
 const router = require('koa-router')();
+const publicapi = require('../api/public.js');
 
 router.get('/public', async (ctx) => {
     let yfpcdata = ctx.cookies.get('yfpcdata') || '{}'
@@ -11,26 +12,27 @@ router.get('/public', async (ctx) => {
     }
     let publicList = []
     let urlQuery = ctx.request.query;
-    // let resNewList = await indexapi.getNoticeList(ctx,{
-    //     pageNo: urlQuery.page || 1,
-    //     pageSize: 10
-    // });
-    // if(resNewList.code == 0){
-    //     try {
-    //         publicList = resNewList.result.records || []
-    //         pageInfo.current = resNewList.result.current
-    //         pageInfo.pages = resNewList.result.pages
-    //         pageInfo.total = resNewList.result.total
-    //     } catch (error) {
+    let resNewList = await publicapi.getPublicList(ctx,{
+        type: urlQuery.type || 1,
+        pageNo: urlQuery.page || 1,
+        pageSize: 10
+    });
+    if(resNewList.code == 0){
+        try {
+            publicList = resNewList.result.records || []
+            pageInfo.current = resNewList.result.current
+            pageInfo.pages = resNewList.result.pages
+            pageInfo.total = resNewList.result.total
+        } catch (error) {
             
-    //     }
-    // }
+        }
+    }
     await ctx.render('public/public', {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站-联系我们-联系方式',
         pagePath: ctx.request.path,
         yfpcdata: yfpcdata,
         urlQuery,
-        publicType: urlQuery.type || 0,
+        publicType: urlQuery.type || 1,
         pageInfo: pageInfo,
         publicList: publicList
     })
@@ -42,7 +44,7 @@ router.get('/publicdetail', async (ctx) => {
     yfpcdata = JSON.parse(yfpcdata)
     let publicdetail = {}
     let urlQuery = ctx.request.query;
-    resDetail = await newsApi.getpublicdetail(ctx,{
+    resDetail = await publicapi.getPublicDetail(ctx,{
         id: urlQuery.id
     });
     if(resDetail.code == 0){
@@ -57,7 +59,7 @@ router.get('/publicdetail', async (ctx) => {
         title: publicdetail.title,
         yfpcdata: yfpcdata,
         pagePath: ctx.request.path,
-        publicdetail: publicdetail
+        publicDetail: publicdetail
     })
 })
 
