@@ -12,6 +12,7 @@ const newsDetail = require('./routes/newsdetail')
 const public = require('./routes/public')
 const report = require('./routes/report')
 
+const work = require('./routes/work')
 const literature = require('./routes/literature')
 const warn = require('./routes/warn')
 
@@ -31,7 +32,7 @@ app.use(news.routes()).use(news.allowedMethods())
 app.use(newsDetail.routes()).use(newsDetail.allowedMethods())
 app.use(public.routes()).use(public.allowedMethods())
 app.use(report.routes()).use(report.allowedMethods())
-
+app.use(work.routes()).use(work.allowedMethods())
 app.use(literature.routes()).use(literature.allowedMethods())
 app.use(warn.routes()).use(warn.allowedMethods())
 

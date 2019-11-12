@@ -37,38 +37,42 @@
                         a(href="#") 行业信息
             #nengrong_list.content
                 #my_content_div
-                    div
-                        ul.news_list_ul_1
-                            each item,index in newsList
-                                li
-                                    span
-                                        a(href="/newsdetail?id=" + item.id) #{item.source}
-                                        a(href="/newsdetail?id=" + item.id).a_li_list #{item.title}
-                                        img(src="http://www.hgstc.com/images/hot.gif", alt="")
-                        nav(aria-label="Page navigation")
-                            ul.pagination
-                                if pageInfo.current == 1
-                                    li.disabled
-                                        a(href="#",aria-label="Previous")
-                                            span(aria-hidden="true") &laquo;
-                                else
+                    div 
+                        if !!newsList || newsList.length == 0
+                            .news_list_ul_1 暂无数据
+                        else
+                            ul.news_list_ul_1
+                                each item,index in newsList
                                     li
-                                        a(href="/news?type="+newsType + "&page=" + (pageInfo.current - 1),aria-label="Previous")
-                                            span(aria-hidden="true") &laquo;
-                                - let n = 1;
-                                while n <= pageInfo.pages
-                                    if n == pageInfo.current
-                                        li.active
-                                            a(href="#") #{n++}
+                                        span
+                                            a(href="/newsdetail?id=" + item.id) #{item.source}
+                                            a(href="/newsdetail?id=" + item.id).a_li_list #{item.title}
+                                            img(src="http://www.hgstc.com/images/hot.gif", alt="")
+                        if newsList && newsList.length > 0
+                            nav(aria-label="Page navigation")
+                                ul.pagination
+                                    if pageInfo.current == 1
+                                        li.disabled
+                                            a(href="#",aria-label="Previous")
+                                                span(aria-hidden="true") &laquo;
                                     else
                                         li
-                                            a(href="/news?type="+newsType + "&page=" + n) #{n++}
-                                
-                                if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
-                                    li.disabled
-                                        a(href="#",aria-label="Next")
-                                            span(aria-hidden="true") &raquo;
-                                else
-                                    li
-                                        a(href="/news?type="+newsType + "&page=" + (pageInfo.current + 1),aria-label="Next")
-                                            span(aria-hidden="true") &raquo;
+                                            a(href="/news?type="+newsType + "&page=" + (pageInfo.current - 1),aria-label="Previous")
+                                                span(aria-hidden="true") &laquo;
+                                    - let n = 1;
+                                    while n <= pageInfo.pages
+                                        if n == pageInfo.current
+                                            li.active
+                                                a(href="#") #{n++}
+                                        else
+                                            li
+                                                a(href="/news?type="+newsType + "&page=" + n) #{n++}
+                                    
+                                    if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
+                                        li.disabled
+                                            a(href="#",aria-label="Next")
+                                                span(aria-hidden="true") &raquo;
+                                    else
+                                        li
+                                            a(href="/news?type="+newsType + "&page=" + (pageInfo.current + 1),aria-label="Next")
+                                                span(aria-hidden="true") &raquo;

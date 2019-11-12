@@ -48,38 +48,42 @@
             #nengrong_list.content
                 #my_content_div
                     div
-                        each item,index in literatureList
-                            .news_list_title_box
-                                h5
-                                    a(href="/newsdetail?id=" + item.id) #{item.title}
-                                h4
-                                    a(href="/newsdetail?id=" + item.id) #{item.title}
-                                div #{item.content}
-                                h6 发布时间：#{item.createTime} &nbsp; |&nbsp; 阅读：#{item.readTimes} 次
-                        nav(aria-label="Page navigation")
-                            ul.pagination
-                                if pageInfo.current == 1
-                                    li.disabled
-                                        a(href="#",aria-label="Previous")
-                                            span(aria-hidden="true") &laquo;
-                                else
-                                    li
-                                        a(href="/literature?type="+literatureType + "&page=" + (pageInfo.current - 1),aria-label="Previous")
-                                            span(aria-hidden="true") &laquo;
-                                - let n = 1;
-                                while n <= pageInfo.pages
-                                    if n == pageInfo.current
-                                        li.active
-                                            a(href="#") #{n++}
+                        if !literatureList || literatureList.length == 0
+                            .news_list_title_box 暂无数据
+                        else
+                            each item,index in literatureList
+                                .news_list_title_box
+                                    h5
+                                        a(href="/newsdetail?id=" + item.id) #{item.title}
+                                    h4
+                                        a(href="/newsdetail?id=" + item.id) #{item.title}
+                                    div #{item.content}
+                                    h6 发布时间：#{item.createTime} &nbsp; |&nbsp; 阅读：#{item.readTimes} 次
+                        if literatureList && literatureList.length > 0
+                            nav(aria-label="Page navigation")
+                                ul.pagination
+                                    if pageInfo.current == 1
+                                        li.disabled
+                                            a(href="#",aria-label="Previous")
+                                                span(aria-hidden="true") &laquo;
                                     else
                                         li
-                                            a(href="/literature?type="+literatureType + "&page=" + n) #{n++}
-                                
-                                if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
-                                    li.disabled
-                                        a(href="#",aria-label="Next")
-                                            span(aria-hidden="true") &raquo;
-                                else
-                                    li
-                                        a(href="/literature?type="+literatureType + "&page=" + (pageInfo.current + 1),aria-label="Next")
-                                            span(aria-hidden="true") &raquo;
+                                            a(href="/literature?type="+literatureType + "&page=" + (pageInfo.current - 1),aria-label="Previous")
+                                                span(aria-hidden="true") &laquo;
+                                    - let n = 1;
+                                    while n <= pageInfo.pages
+                                        if n == pageInfo.current
+                                            li.active
+                                                a(href="#") #{n++}
+                                        else
+                                            li
+                                                a(href="/literature?type="+literatureType + "&page=" + n) #{n++}
+                                    
+                                    if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
+                                        li.disabled
+                                            a(href="#",aria-label="Next")
+                                                span(aria-hidden="true") &raquo;
+                                    else
+                                        li
+                                            a(href="/literature?type="+literatureType + "&page=" + (pageInfo.current + 1),aria-label="Next")
+                                                span(aria-hidden="true") &raquo;

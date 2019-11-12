@@ -68,28 +68,41 @@
             #nengrong_list.content
                 #my_content_div
                     div
-                        ul.news_list_ul_1
-                            each item,index in publicList
-                                li
-                                    span
-                                        a(href="").a_li_list #{item.title}
+                        if publicList.length == 0
+                            .news_list_ul_1 暂无数据
+                        else
+                            ul.news_list_ul_1
+                                each item,index in publicList
+                                    li
+                                        span
+                                            a(href="").a_li_list #{item.title}
 
-                        nav(aria-label="Page navigation")
-                            ul.pagination
-                                li.disabled
-                                    a(href="#",aria-label="Previous")
-                                        span(aria-hidden="true") &laquo;
-                                li.active
-                                    a(href="#") 1
-                                li
-                                    a(href="#") 2
-                                li
-                                    a(href="#") 3
-                                li
-                                    a(href="#") 4
-                                li
-                                    a(href="#") 5
-                                li
-                                    a(href="#",aria-label="Next")
-                                        span(aria-hidden="true") &raquo;
+                        if publicList && publicList.length > 0
+                            nav(aria-label="Page navigation")
+                                ul.pagination
+                                    if pageInfo.current == 1
+                                        li.disabled
+                                            a(href="#",aria-label="Previous")
+                                                span(aria-hidden="true") &laquo;
+                                    else
+                                        li
+                                            a(href="/news?type="+newsType + "&page=" + (pageInfo.current - 1),aria-label="Previous")
+                                                span(aria-hidden="true") &laquo;
+                                    - let n = 1;
+                                    while n <= pageInfo.pages
+                                        if n == pageInfo.current
+                                            li.active
+                                                a(href="#") #{n++}
+                                        else
+                                            li
+                                                a(href="/news?type="+newsType + "&page=" + n) #{n++}
+                                    
+                                    if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
+                                        li.disabled
+                                            a(href="#",aria-label="Next")
+                                                span(aria-hidden="true") &raquo;
+                                    else
+                                        li
+                                            a(href="/news?type="+newsType + "&page=" + (pageInfo.current + 1),aria-label="Next")
+                                                span(aria-hidden="true") &raquo;
             

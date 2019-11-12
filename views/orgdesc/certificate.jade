@@ -1,10 +1,41 @@
-#nengrong.content
-    .content
-        .news_img_2
-            img(src="http://www.hgstc.com/UploadFiles/20126300346292.jpg",border="0", alt="")
-        p 中国商业联合会钟表眼镜商品质量监督检测中心（原国内贸易部钟表眼镜商品质量监督检验测试中心），前身是北京市钟表眼镜公司检验科，最早成立于1979年8月，在计划经济时代担负全国进口钟表质量监督检测工作。1993年，经国内贸易部授权，国家质量监督检验检疫总局（原国家技术监督局）批准,成为国内唯一钟表眼镜质检机构，面向全国开展钟表眼镜商品质量监督检测工作。2000年，国家工商行政管理局、国家国内贸易局、国家质量技术监督局、国家出入境检验检疫局、国家轻工业局联合授予“消费争议商品检测中心”。
-        p 中心成立以来，在各级领导的关怀下，圆满完成了国内贸易部下达的质量监督抽查任务；“ST”质量监测服务试点工作；作为钟表和眼镜全国标准化技术委员会成员，参与并承担国家标准的修订和验证，检验技术方法的研究开发工作；完成国家科学技术成果奖相关申报项目的鉴定和审定工作。中心现有工作人员8人，其中高级职称四人，中级职称二人，专职检验人员四人，平均从事检验工作年限30年，各种仪器设备86台件，分设钟表检验实验室、眼镜检验实验室和综合办公室。
-        p 近年来，检测中心深入贯彻落实科学发展观，以科学、严谨、求真务实为根本宗旨，本着公正第三方原则，依法向社会出具精确的检验数据，多次配合国家和地方工商局、海关、商检、消协等机构进行了全国性、地域性的质量监督抽查工作，凭借专业技能优势，及时发现并协助解决了大量的质量和技术问题，对提高流通领域的钟表眼镜商品质量和保护消费者权益起到了积极的促进作用。
-        p 中心承担国内外钟表眼镜制造商、经销商、零售商的商品质量委托检验，为各企事业单位提供技术、信息咨询服务，同时受理消费者关于钟表眼镜商品的质量咨询和投诉，通过技术鉴定，解决了大量的投诉和质量纠纷。每年3.15和爱眼日，积极履行社会责任，开通免费咨询热线和专家现场服务，为广大消费者答疑解难。
-        p 中心是发改委物价认证机构常年合作的特殊商品鉴定单位，配合全国司法执法机关完成涉案物品的司法鉴定工作。其中包括胡长清、成克杰等重特大腐败案件。
-        p 为积极推进行业技术人才的培养、评价、流动，中心大力支持了包括第一、二届全国钟表维修技能大赛在内的多次大型行业活动，参与历届大赛考试题目和实际操作内容的设置，承担分数评判工作，为参赛企业提供技术指导，组织专家为员工提供职业技能培训。
+#nengrong_list.content
+                #my_content_div
+                    div 
+                        if zizhiList.length == 0
+                            .news_list_ul_1 暂无数据
+                        else
+                            ul.news_list_ul_1
+                                each item,index in zizhiList
+                                    li
+                                        span
+                                            a(href="#").a_li_list 
+                                                .zizhi-title #{item.title}
+                                                img(src=item.picUrl, alt="").zizhi-pic
+                    
+                        nav(aria-label="Page navigation")
+                            ul.pagination
+                                if pageInfo.current == 1
+                                    li.disabled
+                                        a(href="#",aria-label="Previous")
+                                            span(aria-hidden="true") &laquo;
+                                else
+                                    li
+                                        a(href="/news?type="+newsType + "&page=" + (pageInfo.current - 1),aria-label="Previous")
+                                            span(aria-hidden="true") &laquo;
+                                - let n = 1;
+                                while n <= pageInfo.pages
+                                    if n == pageInfo.current
+                                        li.active
+                                            a(href="#") #{n++}
+                                    else
+                                        li
+                                            a(href="/news?type="+newsType + "&page=" + n) #{n++}
+                                
+                                if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
+                                    li.disabled
+                                        a(href="#",aria-label="Next")
+                                            span(aria-hidden="true") &raquo;
+                                else
+                                    li
+                                        a(href="/news?type="+newsType + "&page=" + (pageInfo.current + 1),aria-label="Next")
+                                            span(aria-hidden="true") &raquo;

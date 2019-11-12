@@ -1,0 +1,10 @@
+extends ../layout.jade
+head
+  block headlink
+    link(rel='stylesheet',href='/views/qualification/qualification.css')
+
+body
+  block content
+    include qualification_tmp.jade
+  block headjs
+    script(src='/views/qualification/qualification.js')

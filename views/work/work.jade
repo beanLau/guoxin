@@ -1,0 +1,11 @@
+extends ../layout.jade
+head
+  block headlink
+    link(rel='stylesheet',href='/views/work/work.css')
+
+body
+  block content
+    include work_tmp.jade
+  block headjs
+    script(src='/plugins/My97DatePicker/WdatePicker.js')
+    script(src='/views/work/work.js')
