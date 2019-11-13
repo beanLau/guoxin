@@ -11,7 +11,7 @@ router.get('/work', async (ctx) => {
         pagePath: ctx.request.path,
         yfpcdata: yfpcdata,
         urlQuery,
-        workType: urlQuery.type || 0,
+        workType: urlQuery.type || 1,
         workList: [{id:1,title:"国内贸易发展“十二五”规划"}]
     })
 })

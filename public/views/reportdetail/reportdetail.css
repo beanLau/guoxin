@@ -117,11 +117,6 @@
 #main_left_menu ul li.nei_menu_on a {
     color: #CC3300;
 }
-a, a:link, a:visited {
-    font-size: 12px;
-    color: #666;
-    text-decoration: none;
-}
 #main_left_menu ul li.nei_menu_off a {
     color: #1F5996;
 }
@@ -203,6 +198,9 @@ a, a:link, a:visited {
     display: block;
     float: left;
 }
+.news_list_ul_1 li img {
+    margin-left: 10px;
+}
 .news_list_ul_1 li font {
     display: block;
     float: right;
@@ -218,4 +216,55 @@ a, a:link, a:visited {
 .news_list_ul_1 li a.a_li_list {
     font-size: 14px;
     color: #333;
+    margin-left: 10px;
+}
+#detal_title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #C00;
+    margin-bottom: 12px;
+    text-align: center;
+}
+#detal_sub_title {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-bottom: 1px #DDD dashed;
+}
+#detal_sub_content {
+    font-size: 12px;
+    color: #666;
+    line-height: 200%;
+}
+.content p {
+    line-height: 180%;
+    font-size: 12px;
+    text-indent: 2em;
+    padding: 0px;
+    margin: 0px;
+    padding-bottom: 12px;
+}
+#detal_fenxiang {
+    border-top: 1px #DDD dashed;
+    padding-top: 12px;
+    text-align: right;
+    margin-top: 20px;
+}
+
+#bdshare a,#bdshare span{
+    height: 24px !important;
+}
+.table-img{
+    width: 100px;
+}
+th,td{
+    text-align: center;
+}
+th{
+    background-color: #eee;
+}
+.table-label{
+    background-color: #eee;
 }

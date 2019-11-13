@@ -242,3 +242,6 @@ a, a:link, a:visited {
 label{
     width: 70px;
 }
+.search-btn, .search-btn:link, .search-btn:visited {
+    color: #fff;
+}

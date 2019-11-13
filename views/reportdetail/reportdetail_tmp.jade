@@ -1,0 +1,123 @@
+.container.page-content
+    .row
+        .col-xs-12
+            img(src="../../images/adverte_course.jpg").middle-pic
+    .row.mg20
+        .col-sm-3.col-sx-12.gx-btn-list
+            div
+                #main_left_title 报告查询
+                #main_left_menu
+                    ul
+                        if reportDetail.type == 1
+                            li.nei_menu_on
+                                a(href="#",title="钟表型式检验报告查询") 钟表型式检验报告查询
+                        else
+                            li.nei_menu_off
+                                a(href="/public",title="钟表型式检验报告查询") 钟表型式检验报告查询
+                        if  reportDetail.type == 2
+                            li.nei_menu_on
+                                a(href="#",title="司法技术鉴定报告查询") 司法技术鉴定报告查询
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=2",title="司法技术鉴定报告查询") 司法技术鉴定报告查询
+                        if  reportDetail.type == 3
+                            li.nei_menu_on
+                                a(href="#",title="二手表检验证书查询") 二手表检验证书查询
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=3",title="二手表检验证书查询") 二手表检验证书查询
+                        if  reportDetail.type == 4
+                            li.nei_menu_on
+                                a(href="#",title="眼镜型式检验报告查询") 眼镜型式检验报告查询
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=4",title="眼镜型式检验报告查询") 眼镜型式检验报告查询
+                        if  reportDetail.type == 5
+                            li.nei_menu_on
+                                a(href="#",title="皮具型式检验证书查询") 皮具型式检验证书查询
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=5",title="皮具型式检验证书查询") 皮具型式检验证书查询
+                        if  reportDetail.type == 6
+                            li.nei_menu_on
+                                a(href="#",title="皮具真伪检验证书查询") 皮具真伪检验证书查询
+                        else
+                            li.nei_menu_off
+                                a(href="/public?type=6",title="皮具真伪检验证书查询") 皮具真伪检验证书查询
+            div
+                include ../quickbtn.jade
+        .col-sm-9.col-xs-12
+            #nengrong_right_top
+                if reportDetail.type == 1
+                    h5 钟表型式检验报告查询
+                else if reportDetail.type == 2
+                    h5 司法技术鉴定报告查询
+                else if reportDetail.type == 3
+                    h5 二手表检验证书查询
+                else if reportDetail.type == 4
+                    h5 眼镜型式检验报告查询
+                else if reportDetail.type == 5
+                    h5 皮具型式检验证书查询
+                else
+                    h5 皮具真伪检验证书查询
+                span 您的位置：
+                    a(href="/") 首页&nbsp;&gt;&nbsp;
+                        a(href="/report") 报告查询&nbsp;&gt;&nbsp;
+                    if reportDetail.type == 1
+                        a(href="#") 钟表型式检验报告查询
+                    else if reportDetail.type == 2
+                        a(href="#") 司法技术鉴定报告查询
+                    else if reportDetail.type == 3
+                        a(href="#") 二手表检验证书查询
+                    else if reportDetail.type == 4
+                        a(href="#") 眼镜型式检验报告查询
+                    else if reportDetail.type == 5
+                        a(href="#") 皮具型式检验证书查询
+                    else
+                        a(href="#") 皮具真伪检验证书查询
+            #nengrong.content
+                #detal_sub_content
+                    table(width="100%",border="0",cellpadding="0",cellspacing="1").table.table-bordered.table-reportdetail
+                        tr
+                            td.table-label 送 检 人
+                            td(colspan=2) SDOFIUY23ASFD
+                            td.table-label 存档号码
+                            td(colspan=2) SDOFIUY23ASFD
+                        tr
+                            td.table-label 到样日期
+                            td(colspan=2) SDOFIUY23ASFD
+                            td.table-label 样品数量
+                            td(colspan=2) SDOFIUY23ASFD
+                        tr
+                            td.table-label 产品名称
+                            td(colspan=2) SDOFIUY23ASFD
+                            td.table-label 鉴定地点
+                            td(colspan=2) SDOFIUY23ASFD
+                        tr
+                            td.table-label 英文标识
+                            td(colspan=2) SDOFIUY23ASFD
+                            td.table-label 样品等级
+                            td(colspan=2) SDOFIUY23ASFD
+                        tr
+                            td.table-label 检验项目
+                            td(colspan=5) SDOFIUY23ASFD
+                        tr
+                            td.table-label 鉴定依据
+                            td(colspan=5) SDOFIUY23ASFD
+                        tr(style="height:300px;")
+                            td(style="vertical-align:middle;").table-label 鉴定结论
+                            td(colspan=5,style="vertical-align:middle;") SDOFIUY23ASFD
+                        tr
+                            td.table-label 批准：
+                            td SDOFIUY23ASFD
+                            td.table-label 审核：
+                            td SDOFIUY23ASFD
+                            td.table-label 编制：
+                            td SDOFIUY23ASFD
+                    table(width="100%",border="0",cellpadding="0",cellspacing="1")
+                        tr
+                            td 密级：
+                            td 类别：
+                            td 存档年限：
+
+                    

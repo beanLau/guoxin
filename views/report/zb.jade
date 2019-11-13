@@ -1,28 +1,63 @@
 #nengrong_list.content
     #my_content_div
-        form.form-inline#searchForm(action="/report?type=" + reportType,method="post")
+        form.form-inline#searchForm(action="/report?type=" + reportType,method="get")
             .row
                 .form-group.col-lg-4
                     label(for="sampleId") 样品编号：
-                    input(type="text",name="sampleId",id="sampleId",placeholder="请输入样品编号").form-control.input-sm.gx-input
+                    input(type="text",name="sampleId",id="sampleId",placeholder="请输入样品编号",value=formData.sampleId).form-control.input-sm.gx-input
                 .form-group.col-lg-4
                     label(for="reportCode") 报告号：
-                    input(type="text",name="reportCode",id="reportCode",placeholder="请输入报告号").form-control.input-sm.gx-input
+                    input(type="text",name="reportCode",id="reportCode",placeholder="请输入报告号",value=formData.reportCode).form-control.input-sm.gx-input
                 .form-group.col-lg-4
                     button(type="submit").btn.btn-primary.btn-sm.search-btn 查 询
-                    button(type="reset").btn.btn-primary.btn-sm.search-btn 重 置
+                    a(href="/report?type=" + reportType).btn.btn-primary.btn-sm.search-btn 重 置
                 
         .table-content
             table(width="100%",border="0",cellpadding="0",cellspacing="1").table.table-bordered
                 tbody
                     tr
-                        th 序列号
-                        th 报告类别
-                        th 产品类别
-                        th 产品名称
-                        th 检测项目
-                        th 到样时间
-                        th 签发日期
+                        th 报告编号
+                        th 样品编号
+                        th 创建时间
+                        th 创建人
                         th 操作
-                    tr 
-                        td(colspan="8").no-data 暂无数据
+                    if reportList.length == 0
+                        tr
+                            td(colspan="8").no-data 暂无数据
+                    else
+                        each item in reportList 
+                            tr
+                                td #{item.reportCode}
+                                td #{item.sampleId}
+                                td #{item.createTime}
+                                td #{item.createBy}
+                                td
+                                    a(href="/reportDetail?id=" + item.sampleId) 详情
+        if reportList && reportList.length > 0
+            nav(aria-label="Page navigation")
+                ul.pagination
+                    if pageInfo.current == 1
+                        li.disabled
+                            a(href="#",aria-label="Previous")
+                                span(aria-hidden="true") &laquo;
+                    else
+                        li
+                            a(href="/report?type="+reportType + "&page=" + (pageInfo.current - 1) + "&sampleId=" + formData.sampleId + "&reportCode=" + formData.reportCode,aria-label="Previous")
+                                span(aria-hidden="true") &laquo;
+                    - let n = 1;
+                    while n <= pageInfo.pages
+                        if n == pageInfo.current
+                            li.active
+                                a(href="#") #{n++}
+                        else
+                            li
+                                a(href="/report?type="+reportType + "&page=" + n + "&sampleId=" + formData.sampleId + "&reportCode=" + formData.reportCode) #{n++}
+                    
+                    if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
+                        li.disabled
+                            a(href="#",aria-label="Next")
+                                span(aria-hidden="true") &raquo;
+                    else
+                        li
+                            a(href="/report?type="+reportType + "&page=" + (pageInfo.current + 1) + "&sampleId=" + formData.sampleId + "&reportCode=" + formData.reportCode,aria-label="Next")
+                                span(aria-hidden="true") &raquo;

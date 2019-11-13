@@ -1,0 +1,10 @@
+extends ../layout.jade
+head
+  block headlink
+    link(rel='stylesheet',href='/views/reportdetail/reportdetail.css')
+
+body
+  block content
+    include reportdetail_tmp.jade
+  block headjs
+    script(src='/views/reportdetail/reportdetail.js')

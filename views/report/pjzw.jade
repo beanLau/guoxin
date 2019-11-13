@@ -1,67 +1,63 @@
 #nengrong_list.content
     #my_content_div
-        form.form-inline
+        form.form-inline#searchForm(action="/report?type=" + reportType,method="get")
             .row
                 .form-group.col-lg-4
-                    label(for="keywords") 证书编号：
-                    input(type="text",id="keywords",placeholder="请输入证书编号").form-control.input-sm.gx-input
+                    label(for="sampleId") 样品编号：
+                    input(type="text",name="sampleId",id="sampleId",placeholder="请输入样品编号",value=formData.sampleId).form-control.input-sm.gx-input
                 .form-group.col-lg-4
-                    label(for="keywords") 机构名称：
-                    input(type="text",id="keywords",placeholder="请输入机构名称").form-control.input-sm.gx-input
+                    label(for="reportCode") 报告号：
+                    input(type="text",name="reportCode",id="reportCode",placeholder="请输入报告号",value=formData.reportCode).form-control.input-sm.gx-input
                 .form-group.col-lg-4
-                    label(for="begindate") 发证日期：
-                    input(type="text",onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd'})").Wdate#begindate
-                    span 至
-                    input(type="text",onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd'})").Wdate#enddate
-            .row
-                .form-group.col-lg-4
-                    label(for="keywords") 发证机关：
-                    select.form-control.input-sm.gx-input
-                        option(value="") 选择搜索范围
-                        option(value="bg_codenum") 报告序列号
-                        option(value="cp_name") 产品名称
-                        option(value="cp_danwei") 送检单位
-                .form-group.col-lg-4
-                    label(for="keywords") 证书状态：
-                    select.form-control.input-sm.gx-input
-                        option(value="") 选择搜索范围
-                        option(value="bg_codenum") 报告序列号
-                        option(value="cp_name") 产品名称
-                        option(value="cp_danwei") 送检单位
-                .form-group.col-lg-4
-                    label(for="begindate") 有效日期：
-                    input(type="text",onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd'})").Wdate#begindate
-                    span 至
-                    input(type="text",onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd'})").Wdate#enddate
-            .row
-                .form-group.col-lg-4
-                    label(for="keywords") 地址：
-                    input(type="text",id="keywords",placeholder="请输入证书编号").form-control.input-sm.gx-input
-                .form-group.col-lg-4
-                    label(for="keywords") 专业领域：
-                    input(type="text",id="keywords",placeholder="请输入机构名称").form-control.input-sm.gx-input
-                .form-group.col-lg-4
-                    label(for="keywords",style="width:100px;") 国家质检中心：
-                    .radio-inline
-                        input(type="radio",name="inlineRadioOptions",value=1)
-                        span 是
-                    .radio-inline
-                        input(type="radio",name="inlineRadioOptions",value=0)
-                        span 否
-            .row(style="text-align:center;")
-                button(type="submit").btn.btn-primary.btn-sm.search-btn 查 询
-                button(type="reset").btn.btn-primary.btn-sm.search-btn 重 置
+                    button(type="submit").btn.btn-primary.btn-sm.search-btn 查 询
+                    a(href="/report?type=" + reportType).btn.btn-primary.btn-sm.search-btn 重 置
+                
         .table-content
             table(width="100%",border="0",cellpadding="0",cellspacing="1").table.table-bordered
                 tbody
                     tr
-                        th 序列号
-                        th 报告类别
-                        th 产品类别
-                        th 产品名称
-                        th 检测项目
-                        th 到样时间
-                        th 签发日期
+                        th 报告编号
+                        th 样品编号
+                        th 创建时间
+                        th 创建人
                         th 操作
-                    tr 
-                        td(colspan="8").no-data 暂无数据
+                    if reportList.length == 0
+                        tr
+                            td(colspan="8").no-data 暂无数据
+                    else
+                        each item in reportList 
+                            tr
+                                td #{item.reportCode}
+                                td #{item.sampleId}
+                                td #{item.createTime}
+                                td #{item.createBy}
+                                td
+                                    a(href="/reportDetail?id=" + item.sampleId) 详情
+        if reportList && reportList.length > 0
+            nav(aria-label="Page navigation")
+                ul.pagination
+                    if pageInfo.current == 1
+                        li.disabled
+                            a(href="#",aria-label="Previous")
+                                span(aria-hidden="true") &laquo;
+                    else
+                        li
+                            a(href="/report?type="+reportType + "&page=" + (pageInfo.current - 1) + "&sampleId=" + formData.sampleId + "&reportCode=" + formData.reportCode,aria-label="Previous")
+                                span(aria-hidden="true") &laquo;
+                    - let n = 1;
+                    while n <= pageInfo.pages
+                        if n == pageInfo.current
+                            li.active
+                                a(href="#") #{n++}
+                        else
+                            li
+                                a(href="/report?type="+reportType + "&page=" + n + "&sampleId=" + formData.sampleId + "&reportCode=" + formData.reportCode) #{n++}
+                    
+                    if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
+                        li.disabled
+                            a(href="#",aria-label="Next")
+                                span(aria-hidden="true") &raquo;
+                    else
+                        li
+                            a(href="/report?type="+reportType + "&page=" + (pageInfo.current + 1) + "&sampleId=" + formData.sampleId + "&reportCode=" + formData.reportCode,aria-label="Next")
+                                span(aria-hidden="true") &raquo;

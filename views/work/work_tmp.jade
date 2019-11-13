@@ -8,73 +8,53 @@
                 #main_left_title 报告查询
                 #main_left_menu
                     ul
-                        if (!reportType || reportType == 0)
+                        if workType == 1
                             li.nei_menu_on
-                                a(href="#",title="钟表型式检验报告查询") 钟表型式检验报告查询
+                                a(href="#",title="委托检测") 委托检测
                         else
                             li.nei_menu_off
-                                a(href="/report",title="钟表型式检验报告查询") 钟表型式检验报告查询
-                        if  reportType == 1
+                                a(href="/report",title="委托检测") 委托检测
+                        if  workType == 2
                             li.nei_menu_on
-                                a(href="#",title="司法技术鉴定报告查询") 司法技术鉴定报告查询
+                                a(href="#",title="钟表维修便民服务") 钟表维修便民服务
                         else
                             li.nei_menu_off
-                                a(href="/report?type=1",title="司法技术鉴定报告查询") 司法技术鉴定报告查询
-                        if  reportType == 2
+                                a(href="/report?type=2",title="钟表维修便民服务") 钟表维修便民服务
+                        if  workType == 3
                             li.nei_menu_on
-                                a(href="#",title="二手表检验证书查询") 二手表检验证书查询
+                                a(href="#",title="验光配镜便民服务") 验光配镜便民服务
                         else
                             li.nei_menu_off
-                                a(href="/report?type=2",title="二手表检验证书查询") 二手表检验证书查询
-                        if  reportType == 3
+                                a(href="/report?type=3",title="验光配镜便民服务") 验光配镜便民服务
+                        if  workType == 4
                             li.nei_menu_on
-                                a(href="#",title="眼镜型式检验报告查询") 眼镜型式检验报告查询
+                                a(href="#",title="职业技能鉴定申请") 职业技能鉴定申请
                         else
                             li.nei_menu_off
-                                a(href="/report?type=3",title="眼镜型式检验报告查询") 眼镜型式检验报告查询
-                        if  reportType == 4
-                            li.nei_menu_on
-                                a(href="#",title="皮具型式检验证书查询") 皮具型式检验证书查询
-                        else
-                            li.nei_menu_off
-                                a(href="/report?type=4",title="皮具型式检验证书查询") 皮具型式检验证书查询
-                        if  reportType == 5
-                            li.nei_menu_on
-                                a(href="#",title="皮具真伪检验证书查询") 皮具真伪检验证书查询
-                        else
-                            li.nei_menu_off
-                                a(href="/report?type=5",title="皮具真伪检验证书查询") 皮具真伪检验证书查询
+                                a(href="/report?type=4",title="职业技能鉴定申请") 职业技能鉴定申请
             div
                 include ../quickbtn.jade
         .col-sm-9.col-xs-12
             #nengrong_right_top
-                if reportType == 0
-                    h5 钟表型式检验报告查询
-                else if reportType == 1
-                    h5 司法技术鉴定报告查询
-                else if reportType == 2
-                    h5 二手表检验证书查询
-                else if reportType == 3
-                    h5 眼镜型式检验报告查询
-                else if reportType == 4
-                    h5 皮具型式检验证书查询
+                if workType == 1
+                    h5 委托检测
+                else if workType == 2
+                    h5 钟表维修便民服务
+                else if workType == 3
+                    h5 验光配镜便民服务
                 else
-                    h5 皮具真伪检验证书查询
+                    h5 职业技能鉴定申请
                 span 您的位置：
                     a(href="/") 首页&nbsp;&gt;&nbsp;
-                    a(href="/report") 报告查询&nbsp;&gt;&nbsp;
-                    if reportType == 0
-                        a(href="#") 钟表型式检验报告查询
-                    else if reportType == 1
-                        a(href="#") 司法技术鉴定报告查询
-                    else if reportType == 2
-                        a(href="#") 二手表检验证书查询
-                    else if reportType == 3
-                        a(href="#") 眼镜型式检验报告查询
-                    else if reportType == 4
-                        a(href="#") 皮具型式检验证书查询
+                    a(href="/work") 办事大厅&nbsp;&gt;&nbsp;
+                    if workType == 1
+                        a(href="#") 委托检测
+                    else if workType == 2
+                        a(href="#") 钟表维修便民服务
+                    else if workType == 3
+                        a(href="#") 验光配镜便民服务
                     else
-                        a(href="#") 皮具真伪检验证书查询
-            if reportType == 0
+                        a(href="#") 职业技能鉴定申请
+            if workType == 0
                 include weituo.jade
             
