@@ -4,7 +4,6 @@ router.get('/report', async (ctx) => {
     let yfpcdata = ctx.cookies.get('yfpcdata') || '{}'
     yfpcdata = decodeURIComponent(yfpcdata)
     yfpcdata = JSON.parse(yfpcdata)
-    let formData = ctx.request.body
     let formData = ctx.request.query;
     await ctx.render('report/report', {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站-联系我们-联系方式',
