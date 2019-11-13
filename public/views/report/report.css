@@ -219,11 +219,11 @@ a, a:link, a:visited {
     font-size: 14px;
     color: #333;
 }
-.keywords{
-    width: 100px !important;
+.gx-input{
+    width: 200px !important;
 }
 .Wdate{
-    width: 130px;
+    width: 86px;
     height: 26px !important;    
 }
 .search-btn{
@@ -236,4 +236,9 @@ a, a:link, a:visited {
 .table{
     margin-bottom: 0;
 }
-
+#my_content_div .row{
+    margin-bottom: 10px;
+}
+label{
+    width: 70px;
+}

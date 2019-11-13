@@ -259,3 +259,9 @@ a, a:link, a:visited {
 .table-img{
     width: 100px;
 }
+th,td{
+    text-align: center;
+}
+th{
+    background-color: #eee;
+}
