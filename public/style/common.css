@@ -49,6 +49,9 @@ a, a:link, a:visited {
     color: #666;
     text-decoration: none;
 }
+.caret{
+    display: none !important;
+}
 /* top样式end */
 
 
