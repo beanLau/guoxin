@@ -16,7 +16,7 @@ router.get('/report', async (ctx) => {
     resReport = await reportapi.getReportList(ctx,{
         type: formData.type || 1,
         reportCode: formData.reportCode  || "",
-        sampleId: formData.sampleId  || "",
+        sampleCode: formData.sampleCode  || "",
         pageNo: formData.page || 1,
         pageSize: 10
     });

@@ -268,3 +268,6 @@ th{
 .table-label{
     background-color: #eee;
 }
+.table-reportdetail td{
+    width: 144px;
+}

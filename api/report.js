@@ -4,7 +4,7 @@ const fetch = require('./utils');
 let getReportList = function(ctx, data){
     return fetch({ 
         method: 'get',
-        url: 'menhu/mhReport/list',
+        url: `menhu/mhReport/list?type=${data.type}&reportCode=${data.reportCode || ""}&sampleCode=${data.sampleCode || ""}&pageNo=${data.pageNo}&pageSize=${data.pageSize}`,
         headers:{
             "token": ctx.cookies.get('yfpctoken')
         },
