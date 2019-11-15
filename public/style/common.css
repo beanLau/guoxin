@@ -8,7 +8,7 @@
 .navbar .container{
     background: #337ab7;
     color: #fff;
-    max-width: 1200px;
+    max-width: 1100px;
 }
 .navbar-default {
     background-color: transparent !important;
@@ -68,18 +68,20 @@ a, a:link, a:visited {
 }
 .gx-btn-list .gx-btn{
     display: block;
-    height: 50px;
-    line-height: 50px;
+    color: #1F5996;
+    height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    overflow: hidden;
+    background: url(http://www.hgstc.com/images/design/nei_21.jpg);
+    background-size: cover;
     text-align: center;
-    color: #fff;
-    border-radius: 6px;
-    margin-bottom: 16px;
-    cursor: pointer;
 }
 .gx-btn-list .gx-btn:last-of-type{
     margin-bottom: 0;
 }
-.gx-btn-list .gx-btn:first-of-type{
+/* .gx-btn-list .gx-btn:first-of-type{
     background: #34E78C;
 }
 .gx-btn-list .gx-btn:nth-of-type(2){
@@ -96,7 +98,7 @@ a, a:link, a:visited {
 }
 .gx-btn-list .gx-btn:nth-of-type(6){
     background: #960097;
-}
+} */
 /* 页面快捷按钮end */
 
 
@@ -106,7 +108,7 @@ a, a:link, a:visited {
     border-radius: 6px;
     background: #337ab7;
     padding: 0 20px;
-    margin: 20px 0;
+    margin: 15px 0;
 }
 .youqing-wrap a{
     color: #fff;
@@ -137,4 +139,17 @@ a:active {text-decoration: none;}
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
     color: #fff !important;
+}
+body{
+    background-color: #eee !important;
+}
+
+.container{
+    background-color: #fff;
+}
+.page-content{
+    padding: 20px !important;
+}
+.container {
+    max-width: 1100px;
 }

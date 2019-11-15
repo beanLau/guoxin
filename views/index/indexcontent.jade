@@ -1,9 +1,9 @@
 .top-bg
-.container.page-content
+.container.page-content(style="")
     .row.tianqi 2019/10/24 星期四 19:08 天气 晴
     .row
-        img.col-sm-4.col-xs-12(style="height:384px;",src="../../images/index.jpg")
-        .col-sm-4.col-xs-12
+        img.col-sm-3.col-xs-12(style="height:340px;",src="../../images/index.jpg")
+        .col-sm-6.col-xs-12
             .gx-panel
                 .gx-panel-title 公告专栏
                     a(href="/news?type=1").panel-more 更多
@@ -11,8 +11,14 @@
                     each item,index in noticeList
                         a(href="/newsdetail?id=" + item.id).gonggao-item #{item.title}
 
-        .col-sm-4.col-xs-12.gx-btn-list
-            include ../quickbtn.jade
+        .col-sm-3.col-xs-12.gx-btn-list
+            <div id="main_left_title">快速查询</div>
+            a(href="/report").gx-btn 钟表型式检验报告查询
+            a(href="/report?type=1").gx-btn 司法技术鉴定报告查询
+            a(href="/report?type=2").gx-btn 二手表检验证书查询
+            a(href="/report?type=3").gx-btn 眼镜型式检验报告查询
+            a(href="/report?type=4").gx-btn 皮具型式检验证书查询
+            a(href="/report?type=5").gx-btn 皮具真伪检验证书查询
     .row
         .col-xs-12
             img(src="../../images/adverte_course.jpg").middle-pic

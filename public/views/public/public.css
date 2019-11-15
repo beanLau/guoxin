@@ -33,39 +33,6 @@
 .gx-panel-body{
     padding: 20px 10px;
 }
-.gx-btn-list{
-
-}
-.gx-btn-list .gx-btn{
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    color: #fff;
-    border-radius: 6px;
-    margin-bottom: 16px;
-    cursor: pointer;
-}
-.gx-btn-list .gx-btn:last-of-type{
-    margin-bottom: 0;
-}
-.gx-btn-list .gx-btn:first-of-type{
-    background: #34E78C;
-}
-.gx-btn-list .gx-btn:nth-of-type(2){
-    background: #FD7F06;
-}
-.gx-btn-list .gx-btn:nth-of-type(3){
-    background: #08FCFC;
-}
-.gx-btn-list .gx-btn:nth-of-type(4){
-    background: #FB192B;
-}
-.gx-btn-list .gx-btn:nth-of-type(5){
-    background: #41FE40;
-}
-.gx-btn-list .gx-btn:nth-of-type(6){
-    background: #960097;
-}
 .middle-pic{
     width: 100%;
     border-radius: 10px;
@@ -117,11 +84,6 @@
 #main_left_menu ul li.nei_menu_on a {
     color: #CC3300;
 }
-a, a:link, a:visited {
-    font-size: 12px;
-    color: #666;
-    text-decoration: none;
-}
 #main_left_menu ul li.nei_menu_off a {
     color: #1F5996;
 }
@@ -153,11 +115,6 @@ a, a:link, a:visited {
 }
 #nengrong_right_top span a {
     color: #999;
-}
-a, a:link, a:visited {
-    font-size: 12px;
-    color: #666;
-    text-decoration: none;
 }
 #nengrong {
     padding-top: 26px;
@@ -208,11 +165,6 @@ a, a:link, a:visited {
     float: right;
     font-size: 12px;
     color: #999;
-}
-a, a:link, a:visited {
-    font-size: 12px;
-    color: #666;
-    text-decoration: none;
 }
 
 .news_list_ul_1 li a.a_li_list {
