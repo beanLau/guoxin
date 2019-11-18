@@ -3,6 +3,7 @@ const indexapi = require('../api/index.js');
 
 router.get('/news', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
+    let username = ctx.cookies.get('username') || ''
     let urlQuery = ctx.request.query
     let newsList = [];
     let resNewList;
@@ -38,6 +39,7 @@ router.get('/news', async (ctx) => {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站-联系我们-联系方式',
         pagePath: ctx.request.path,
         gxtoken: gxtoken,
+        username: username,
         urlQuery,
         newsType: urlQuery.type || 0,
         pageInfo: pageInfo,

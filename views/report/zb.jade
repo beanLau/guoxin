@@ -6,8 +6,8 @@
                     label(for="sampleCode") 样品编号：
                     input(type="text",name="sampleCode",id="sampleCode",placeholder="请输入样品编号",value=formData.sampleCode).form-control.input-sm.gx-input
                 .form-group.col-lg-4
-                    label(for="reportCode") 报告号：
-                    input(type="text",name="reportCode",id="reportCode",placeholder="请输入报告号",value=formData.reportCode).form-control.input-sm.gx-input
+                    label(for="sampleCode") 报告号：
+                    input(type="text",name="sampleCode",id="sampleCode",placeholder="请输入报告号",value=formData.sampleCode).form-control.input-sm.gx-input
                 .form-group.col-lg-4
                     button(type="submit").btn.btn-primary.btn-sm.search-btn 查 询
                     a(href="/report?type=" + reportType).btn.btn-primary.btn-sm.search-btn 重 置
@@ -16,7 +16,6 @@
             table(width="100%",border="0",cellpadding="0",cellspacing="1").table.table-bordered
                 tbody
                     tr
-                        th 报告编号
                         th 样品编号
                         th 创建时间
                         th 创建人
@@ -27,7 +26,6 @@
                     else
                         each item in reportList 
                             tr
-                                td #{item.reportCode}
                                 td #{item.sampleCode}
                                 td #{item.createTime}
                                 td #{item.createBy}
@@ -42,7 +40,7 @@
                                 span(aria-hidden="true") &laquo;
                     else
                         li
-                            a(href="/report?type="+reportType + "&page=" + (pageInfo.current - 1) + "&sampleCode=" + formData.sampleCode + "&reportCode=" + formData.reportCode,aria-label="Previous")
+                            a(href="/report?type="+reportType + "&page=" + (pageInfo.current - 1) + "&sampleCode=" + formData.sampleCode + "&sampleCode=" + formData.sampleCode,aria-label="Previous")
                                 span(aria-hidden="true") &laquo;
                     - let n = 1;
                     while n <= pageInfo.pages
@@ -51,7 +49,7 @@
                                 a(href="#") #{n++}
                         else
                             li
-                                a(href="/report?type="+reportType + "&page=" + n + "&sampleCode=" + formData.sampleCode + "&reportCode=" + formData.reportCode) #{n++}
+                                a(href="/report?type="+reportType + "&page=" + n + "&sampleCode=" + formData.sampleCode + "&sampleCode=" + formData.sampleCode) #{n++}
                     
                     if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
                         li.disabled
@@ -59,5 +57,5 @@
                                 span(aria-hidden="true") &raquo;
                     else
                         li
-                            a(href="/report?type="+reportType + "&page=" + (pageInfo.current + 1) + "&sampleCode=" + formData.sampleCode + "&reportCode=" + formData.reportCode,aria-label="Next")
+                            a(href="/report?type="+reportType + "&page=" + (pageInfo.current + 1) + "&sampleCode=" + formData.sampleCode + "&sampleCode=" + formData.sampleCode,aria-label="Next")
                                 span(aria-hidden="true") &raquo;

@@ -1,191 +1,191 @@
 #detal_sub_content
     p(style="text-align:center;font-weight:bold;") 名表鉴定评估报告单
-    .row
-        .top-left 系统识别号：
-        .top-right 鉴定评估日期：       年         月        日
-    table(width="100%",border="0",cellpadding="0",cellspacing="1").table.table-bordered.table-reportdetail.detail
+    .row(style="padding:10px 20px;")
+        .top-left(style="float:left;") 系统识别号：
+        .top-right(style="float:right;") 鉴定评估日期：       年         月        日
+    table(width="100%",border="0",cellpadding="0",cellspacing="1").table.table-bordered.table-reportdetail.detail.detail
         tr
             td.table-label(colspan=3) 与制造商公示的技术信息和工艺特征比对结果
-            td(colspan=5) !{reportDetail.linkMan || ""}
+            td(colspan=5) !{reportDetail.detail.linkMan || ""}
         tr
             td.table-label 品牌名称
-            td !{reportDetail.arriveTime || ""}
+            td !{reportDetail.detail.brandName || ""}
             td.table-label 款式型号
-            td(colspan=2) !{reportDetail.sampleNum || ""}
+            td(colspan=2) !{reportDetail.detail.sampleNum || ""}
             td.table-label 已使用年限
-            td(colspan=2) !{reportDetail.sampleNum || ""}
+            td(colspan=2) !{reportDetail.detail.sampleNum || ""}
         tr
             td.table-label 外形尺寸
-            td !{reportDetail.arriveTime || ""}
+            td !{reportDetail.detail.arriveTime || ""}
             td.table-label 腕周（mm)
-            td(colspan=2) !{reportDetail.sampleNum || ""}
+            td(colspan=2) !{reportDetail.detail.sampleNum || ""}
             td.table-label 质量（g)
-            td(colspan=2) !{reportDetail.sampleNum || ""}
+            td(colspan=2) !{reportDetail.detail.sampleNum || ""}
         tr
             td.table-label 使用可靠性
-            td !{reportDetail.arriveTime || ""}
+            td !{reportDetail.detail.arriveTime || ""}
             td.table-label 走时
-            td 每天快/慢 _____秒!{reportDetail.sampleNum || ""}
+            td 每天快/慢 _____秒!{reportDetail.detail.sampleNum || ""}
             td.table-label 上条机构和拨针系稳定
-            td !{reportDetail.sampleNum || ""}
+            td !{reportDetail.detail.sampleNum || ""}
             td.table-label 外观连接件开裂或脱落
-            td !{reportDetail.sampleNum || ""}
+            td !{reportDetail.detail.sampleNum || ""}
         tr
             td.table-label(colspan=2) 检验鉴定保养记录
-            td(colspan=2) !{reportDetail.brandName || ""}
+            td(colspan=2) !{reportDetail.detail.brandName || ""}
             td.table-label(colspan=2) 建议下次保养时间
-            td(colspan=2) !{reportDetail.checkOrg || ""}
+            td(colspan=2) !{reportDetail.detail.checkOrg || ""}
         tr
             td(colspan=4)
             td.table-label(colspan=2) 外观成新度
-            td(colspan=2) !{reportDetail.sampleLev || ""}
+            td(colspan=2) !{reportDetail.detail.sampleLev || ""}
         tr
             td.table-label 表镜
-            td !{reportDetail.checkItem || ""}
+            td !{reportDetail.detail.checkItem || ""}
             td.table-label 表壳
-            td !{reportDetail.checkItem || ""}
+            td !{reportDetail.detail.bkeCode || ""}
         tr
             td.table-label 前圈
-            td !{reportDetail.checkItem || ""}
+            td !{reportDetail.detail.checkItem || ""}
             td.table-label 旋转前圈
-            td !{reportDetail.checkItem || ""}
+            td !{reportDetail.detail.checkItem || ""}
         tr
             td.table-label 后盖
-            td !{reportDetail.checkItem || ""}
+            td !{reportDetail.detail.checkItem || ""}
             td.table-label 透底后盖
-            td !{reportDetail.checkItem || ""}
+            td !{reportDetail.detail.checkItem || ""}
         tr
             td.table-label 表扣
-            td !{reportDetail.checkItem || ""}
+            td !{reportDetail.detail.checkItem || ""}
             td.table-label 表带使用程度
-            td !{reportDetail.checkItem || ""}
+            td !{reportDetail.detail.checkItem || ""}
         tr
             td.table-label 按钮
-            td !{reportDetail.checkItem || ""}
+            td !{reportDetail.detail.checkItem || ""}
             td.table-label 表针
-            td !{reportDetail.checkItem || ""}
+            td !{reportDetail.detail.checkItem || ""}
         tr
             td(colspan=8) 手表材质鉴定
         tr
             td.table-label(rowspan=3) 表壳
             td.table-label 是否原装 
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
             td.table-label(rowspan=3) 表扣
             td.table-label 是否原装 
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 表壳号
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
             td.table-label 表扣号 
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 表壳材质
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
             td.table-label 表扣材质 
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
         tr
             td.table-label(rowspan=5) 表带
             td.table-label 是否原装 
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
             td.table-label(rowspan=5) 外观宝石镶嵌
             td.table-label 可见表壳外观镶嵌 
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 表带号
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
             td.table-label 可见表扣外观镶嵌 
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 表带材质
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
             td.table-label 可见表带外观镶嵌 
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 弹簧
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
             td.table-label 可见表带外观镶嵌 
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 穿钉
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
             td.table-label 可见表带外观镶嵌 
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 表盘
             td.table-label 表盘材质
-            td(colspan=2) !{reportDetail.useYear || ""}
+            td(colspan=2) !{reportDetail.detail.useYear || ""}
             td.table-label 光谱检查
-            td(colspan=3) !{reportDetail.useYear || ""}
+            td(colspan=3) !{reportDetail.detail.useYear || ""}
         tr
             td(colspan=8) 机芯鉴定
         tr
             td.table-label 机芯类型
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 机芯型号
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.jxStyle || ""}
             td.table-label 机芯序号
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.jxOrder || ""}
             td.table-label 原装 
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 产地
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 可见修复痕迹
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 上次保养日期
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 是否接近出厂状态 
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 机芯宝石数
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 磨损程度
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 摆幅
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 振频 
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 机芯打磨
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 贵金属自动陀
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 3/4夹板
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 夹板雕刻 
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 镂空机芯
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 机芯印记
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 硅游丝
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 蓝钢游丝 
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 无卡度游丝
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 双擒纵系统
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 同轴系统
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 鹅颈微调 
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 摆轮微调砝码
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 贵金属夹板
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 黄金套筒
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 快慢针（调节器） 
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 机芯零件倒角
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 塑料固机圈
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 金属固机圈
             td
             td
@@ -193,70 +193,70 @@
         tr
             td.table-label(rowspan=5) 机芯功能
             td.table-label 日历
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 年历
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 响闹
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td(rowspan=5) 其他功能：
         tr  
             td.table-label 星期
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 万年历
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 打簧问表
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr  
             td.table-label 周历
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 星辰
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 飞返指针
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr  
             td.table-label 月份
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 世界时
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 动力储存
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr  
             td.table-label 月相
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 陀飞轮
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 附加时段计时机构（码表）
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr
             td(colspan=8) 性能鉴定
         tr
             td.table-label 瞬时日差（s/D)
-            td(colspan=3) !{reportDetail.useYear || ""}
+            td(colspan=3) !{reportDetail.detail.useYear || ""}
             td.table-label 防磁罩
-            td(colspan=3) !{reportDetail.useYear || ""}
+            td(colspan=3) !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 防水测试
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 后盖密封圈老化
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 非防水表
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 潜水表 
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr
             td(colspan=8) 包装物及附件
         tr
             td.table-label 表盒
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 说明书
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 保修卡
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td.table-label 功能附件 
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
         tr
             td.table-label 原始购买发票
-            td !{reportDetail.useYear || ""}
+            td !{reportDetail.detail.useYear || ""}
             td
             td
             td
@@ -265,13 +265,17 @@
             td
         tr
             td(colspan=8) 标准高清照片
+        tr(style="height:200px;")
+            td(rowspan=5,colspan=2)
+            td(rowspan=5,colspan=2)
+            td(rowspan=5,colspan=2)
+            td(rowspan=5,colspan=2)
         tr
-            td(rowspan=5,colspan=2)
-            td(rowspan=5,colspan=2)
-            td(rowspan=5,colspan=2)
-            td(rowspan=5,colspan=2)
+        tr
+        tr
+        tr
         tr
             td(rowspan=5,colspan=2) 主检鉴定师：
             td(rowspan=5,colspan=2) 复核鉴定师：
-            td(rowspan=5,colspan=2) 检验地点：通信地址：电    话：
+            td(rowspan=5,colspan=2) 检验地点：#{reportDetail.detail.checkOrg || ""}通信地址：电    话：
             td(rowspan=5,colspan=2) 国检签章：

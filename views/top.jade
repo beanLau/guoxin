@@ -83,9 +83,9 @@ nav.navbar.navbar-default
             ul.nav.navbar-nav.navbar-right
                 if gxtoken
                     li
-                        a(href="#") 欢迎！齐天大爷
+                        a(href="#") 欢迎！ #{username}
                     li
-                        a(href="#") 退出
+                        span#loginout 退出
                 else
                     li
                         a(href="/login") 登录

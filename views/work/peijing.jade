@@ -6,8 +6,8 @@
             .form-panel-body
                 div
                     .form-group
-                        label(for="keywords").require-label 姓名:
-                        input(type="text",placeholder="请输入姓名").form-control.input-sm.keywords#keywords
+                        label(for="name").require-label 姓名:
+                        input(type="text",placeholder="请输入姓名").form-control.input-sm.name#name
                 div
                     .form-group
                         label(for="")
@@ -35,15 +35,12 @@
                         input(type="text", name="address")#address.form-control.input-sm.keywords
                 div
                     .form-group
-                        label(for="lefteye").require-label 左眼度数:
-                        input(type="text", name="lefteye")#lefteye.form-control.input-sm.keywords
+                        label(for="leftNum").require-label 左眼度数:
+                        input(type="text", name="leftNum")#leftNum.form-control.input-sm.keywords
                 div
                     .form-group
-                        label(for="righteye").require-label 右眼度数:
-                        input(type="text", name="righteye")#righteye.form-control.input-sm.keywords
+                        label(for="rightNum").require-label 右眼度数:
+                        input(type="text", name="rightNum")#rightNum.form-control.input-sm.keywords
                 .input-tip
-                    span 请在这里填入验证码:
-                    input(type="text",style="width:80px;")
-                    img(src="http://47.105.110.118:8080/jeecg-boot/menhu/login/captcha?v=" + Date.now(), alt="",style="margin-left:10px;").code-img
                     button(type="submit").btn.btn-primary.btn-sm 立即提交
                 .input-tip 请您放心，我们会为您的信息保密！

@@ -3,6 +3,7 @@ const newsApi = require('../api/news.js');
 
 router.get('/newsDetail', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
+    let username = ctx.cookies.get('username') || ''
     let newsDetail = {}
     let urlQuery = ctx.request.query;
     resNewDetail = await newsApi.getNewsDetail(ctx,{
@@ -19,6 +20,7 @@ router.get('/newsDetail', async (ctx) => {
     await ctx.render('newsdetail/newsdetail', {
         title: newsDetail.title,
         gxtoken: gxtoken,
+        username: username,
         pagePath: ctx.request.path,
         newsDetail: newsDetail
     })
