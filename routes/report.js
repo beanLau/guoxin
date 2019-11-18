@@ -2,9 +2,7 @@ const router = require('koa-router')();
 const reportapi = require('../api/report.js');
 
 router.get('/report', async (ctx) => {
-    let yfpcdata = ctx.cookies.get('yfpcdata') || '{}'
-    yfpcdata = decodeURIComponent(yfpcdata)
-    yfpcdata = JSON.parse(yfpcdata)
+    let gxtoken = ctx.cookies.get('gxtoken') || ''
     let formData = ctx.request.query;
     let reportList = [];
     let resReport;
@@ -33,7 +31,7 @@ router.get('/report', async (ctx) => {
     await ctx.render('report/report', {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站-联系我们-联系方式',
         pagePath: ctx.request.path,
-        yfpcdata: yfpcdata,
+        gxtoken: gxtoken,
         formData: formData,
         reportType: formData.type || 1,
         reportList: reportList,
@@ -41,9 +39,7 @@ router.get('/report', async (ctx) => {
     })
 })
 router.get('/reportDetail', async (ctx) => {
-    let yfpcdata = ctx.cookies.get('yfpcdata') || '{}'
-    yfpcdata = decodeURIComponent(yfpcdata)
-    yfpcdata = JSON.parse(yfpcdata)
+    let gxtoken = ctx.cookies.get('gxtoken') || ''
     let queryData = ctx.request.query;
     let reportDetail = {};
     let resReport;
@@ -61,7 +57,7 @@ router.get('/reportDetail', async (ctx) => {
     await ctx.render('reportdetail/reportdetail', {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站-联系我们-联系方式',
         pagePath: ctx.request.path,
-        yfpcdata: yfpcdata,
+        gxtoken: gxtoken,
         reportType: reportDetail.type || 1,
         reportDetail: reportDetail
     })

@@ -6,8 +6,20 @@
             .form-panel-body
                 div
                     .form-group
-                        label(for="keywords").require-label 姓名：
-                        input(type="text",placeholder="请输入姓名").form-control.input-sm.keywords#keywords
+                        label(for="").require-label 检测类型：
+                        select.form-control#prdType
+                            option(value=1) 钟表型式检验
+                            option(value=2) 眼镜型式检验
+                            option(value=3) 皮具型式检验
+                            option(value=4) 司法技术鉴定
+                            option(value=5) 全国涉案物证价格评估鉴证
+                            option(value=6) 个人委托真假鉴定
+            .form-panel-title 联系人信息
+            .form-panel-body
+                div
+                    .form-group
+                        label(for="name").require-label 姓名:
+                        input(type="text",placeholder="请输入姓名").form-control.input-sm.keywords#name
                 div
                     .form-group
                         label(for="")
@@ -17,59 +29,65 @@
                         label.radio-inline
                             input(type="radio",name="sex",value=2)
                             span 女士
+                div.companyName-wrap
+                    .form-group
+                        label(for="companyName").require-label 公司名称:
+                        input(type="text",placeholder="请输入送检单位名称").form-control.input-sm.keywords#companyName
+                div.area-wrap
+                    .form-group
+                        label(for="area").require-label 所属地区:
+                        input(type="text",placeholder="请输入所属地区").form-control.input-sm.keywords#area
                 div
                     .form-group
-                        label(for="compony") 公司：
-                        input(type="text", name="compony")#compony.form-control.input-sm.keywords 
+                        label(for="telphone").require-label 联系电话:
+                        input(type="text", name="telphone")#telphone.form-control.input-sm.keywords
                 div
                     .form-group
-                        label(for="phone") 联系手机：
+                        label(for="phone").require-label 手机号:
                         input(type="text", name="phone")#phone.form-control.input-sm.keywords
                 div
                     .form-group
-                        label(for="email") Email：
+                        label(for="email").require-label Email:
                         input(type="text", name="email")#email.form-control.input-sm.keywords
+                div
+                    .form-group
+                        label(for="address").require-label 联系地址:
+                        input(type="text", name="address")#address.form-control.input-sm.keywords
             .form-panel-title 送检产品信息
             .form-panel-body
                 div
                     .form-group
-                        label(for="").require-label 产品分类
-                        label.radio-inline
-                            input(type="radio",name="prdType",value=1,checked)
-                            span 钟表型式检验
-                        label.radio-inline
-                            input(type="radio",name="prdType",value=2)
-                            span 眼镜型式检验
-                        label.radio-inline
-                            input(type="radio",name="prdType",value=3)
-                            span 皮具型式检验
-                        label.radio-inline
-                            input(type="radio",name="prdType",value=4)
-                            span 司法技术鉴定
-                        label.radio-inline
-                            input(type="radio",name="prdType",value=5)
-                            span 全国涉案物证价格评估鉴证
-                        label.radio-inline
-                            input(type="radio",name="prdType",value=6)
-                            span 个人委托真假鉴定
-                div
-                    .form-group
                         label(for="prdName").require-label 产品名称：
                         input(type="text")#prdName.form-control.input-sm.keywords
+                div.sendCompanyName-wrap
+                    .form-group
+                        label(for="sendCompanyName").require-label 送检单位/人名称:
+                        input(type="text",placeholder="请输入送检单位名称").form-control.input-sm.keywords#sendCompanyName
+                div.prdCount-wrap
+                    .form-group
+                        label(for="prdCount").require-label 送检数量：
+                        input(type="text")#prdCount.form-control.input-sm.keywords
+                div.sendTime-wrap
+                    .form-group
+                        label(for="sendTime").require-label 预计送检时间：
+                        input(type="text",onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:ss'})")#sendTime.Wdate.form-control.input-sm.keywords
+                div.buyTime-wrap
+                    .form-group
+                        label(for="buyTime").require-label 购买时间： 
+                        input(type="text",onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:ss'})")#buyTime.Wdate.form-control.input-sm.keywords
+                div.buyType-wrap
+                    .form-group
+                        label(for="buyType").require-label 购买渠道：
+                        input(type="text")#buyType.form-control.input-sm.keywords
                 div
                     .form-group
-                        label(for="sendCompany").require-label 送检单位：
-                        input(type="text")#sendCompany.form-control.input-sm.keywords
-                div
-                    .form-group
-                        label(for="mark").require-label 送检单位：
+                        label(for="mark").require-label 备注：
                         textarea(rows=3)#mark.form-control
-                    .input-tip 还可以输入字数：400
                 .input-tip
                     span 请在这里填入验证码：
                     input(type="text",style="width:80px;")
-                    span.validate-code
-                    button(type="submit").btn.btn-primary.btn-sm 立即提交
+                    img(src="http://47.105.110.118:8080/jeecg-boot/menhu/login/captcha?v=" + Date.now(), alt="",style="margin-left:10px;").code-img
+                    span.btn.btn-primary.btn-sm 立即提交
                 .input-tip 请您放心，我们会为您的信息保密！
                 
             

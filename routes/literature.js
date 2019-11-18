@@ -2,9 +2,7 @@ const router = require('koa-router')();
 const literatureapi = require('../api/literature.js');
 
 router.get('/literature', async (ctx) => {
-    let yfpcdata = ctx.cookies.get('yfpcdata') || '{}'
-    yfpcdata = decodeURIComponent(yfpcdata)
-    yfpcdata = JSON.parse(yfpcdata)
+    let gxtoken = ctx.cookies.get('gxtoken') || ''
     
     let urlQuery = ctx.request.query
     let literatureList = [];
@@ -45,7 +43,7 @@ router.get('/literature', async (ctx) => {
     await ctx.render('literature/literature', {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站',
         pagePath: ctx.request.path,
-        yfpcdata: yfpcdata,
+        gxtoken: gxtoken,
         urlQuery,
         literatureType: urlQuery.type || 0,
         pageInfo: pageInfo, 

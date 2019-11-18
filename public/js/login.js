@@ -155,7 +155,7 @@ $(function () {
                         return
                     }
                     layer.msg('报名成功！');
-                    $.cookie("yfpcdata", JSON.stringify(res.data));
+                    $.cookie("gxtoken", JSON.stringify(res.data));
                     setTimeout(() => {
                         location.reload()
                     }, 1000);
@@ -190,7 +190,7 @@ $(function () {
                         return
                     }
                     layer.msg('登录成功！');
-                    $.cookie("yfpcdata", JSON.stringify(res.data));
+                    $.cookie("gxtoken", JSON.stringify(res.data));
                     setTimeout(() => {
                         location.reload()
                     }, 1000);
@@ -245,7 +245,7 @@ $(function () {
                         return
                     } else {
                         layer.msg(res.data);
-                        $.cookie("yfpcdata", 0, { expires: -1 });
+                        $.cookie("gxtoken", 0, { expires: -1 });
                         setTimeout(function () {
                             location.reload()
                         }, 1000)

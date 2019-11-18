@@ -5,6 +5,7 @@ const views = require('koa-views')
 const router = new Router()
 const app = new Koa()
 
+const login = require('./routes/login')
 const index = require('./routes/index')
 const orgdesc = require('./routes/orgdesc')
 const news = require('./routes/news')
@@ -26,6 +27,7 @@ app.use(koaBody())
 
 app.use(require('koa-static')(__dirname + '/public'));
 
+app.use(login.routes()).use(login.allowedMethods())
 app.use(index.routes()).use(index.allowedMethods())
 app.use(orgdesc.routes()).use(orgdesc.allowedMethods())
 app.use(news.routes()).use(news.allowedMethods())

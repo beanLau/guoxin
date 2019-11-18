@@ -9,7 +9,7 @@ $(function(){
     })
 
     $('.isLogin').on('click',function(){
-        var cookie =  $.cookie('yfpcdata');
+        var cookie =  $.cookie('gxtoken');
         if(cookie){
             isCookieExpire(this,cookie);
         }else{

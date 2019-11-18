@@ -13,25 +13,25 @@
                                 a(href="#",title="委托检测") 委托检测
                         else
                             li.nei_menu_off
-                                a(href="/report",title="委托检测") 委托检测
+                                a(href="/work",title="委托检测") 委托检测
                         if  workType == 2
                             li.nei_menu_on
                                 a(href="#",title="钟表维修便民服务") 钟表维修便民服务
                         else
                             li.nei_menu_off
-                                a(href="/report?type=2",title="钟表维修便民服务") 钟表维修便民服务
+                                a(href="/work?type=2",title="钟表维修便民服务") 钟表维修便民服务
                         if  workType == 3
                             li.nei_menu_on
                                 a(href="#",title="验光配镜便民服务") 验光配镜便民服务
                         else
                             li.nei_menu_off
-                                a(href="/report?type=3",title="验光配镜便民服务") 验光配镜便民服务
+                                a(href="/work?type=3",title="验光配镜便民服务") 验光配镜便民服务
                         if  workType == 4
                             li.nei_menu_on
                                 a(href="#",title="职业技能鉴定申请") 职业技能鉴定申请
                         else
                             li.nei_menu_off
-                                a(href="/report?type=4",title="职业技能鉴定申请") 职业技能鉴定申请
+                                a(href="/work?type=4",title="职业技能鉴定申请") 职业技能鉴定申请
             div
                 include ../quickbtn.jade
         .col-sm-9.col-xs-12
@@ -57,4 +57,10 @@
                         a(href="#") 职业技能鉴定申请
             if workType == 1
                 include weituo.jade
+            else if workType == 2
+                include weixiu.jade
+            else if workType == 3
+                include peijing.jade
+            else
+                include shenqing.jade
             

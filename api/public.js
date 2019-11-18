@@ -7,7 +7,7 @@ let getPublicList = function(ctx, data){
         method: 'get',
         url: 'menhu/mhOrgsite/list' + opt,
         headers:{
-            "token": ctx.cookies.get('yfpctoken')
+            "token": ctx.cookies.get('gxtoken')
         }
     })
 }
@@ -18,7 +18,7 @@ let getPublicDetail = function(ctx,data){
         method: 'get',
         url: 'menhu/mhOrgsite/queryById?id=' + data.id,
         headers:{
-            "token": ctx.cookies.get('yfpctoken')
+            "token": ctx.cookies.get('gxtoken')
         }
     })
 }

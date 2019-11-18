@@ -2,9 +2,7 @@ const router = require('koa-router')();
 const indexapi = require('../api/index.js');
 
 router.get('/warn', async (ctx) => {
-    let yfpcdata = ctx.cookies.get('yfpcdata') || '{}'
-    yfpcdata = decodeURIComponent(yfpcdata)
-    yfpcdata = JSON.parse(yfpcdata)
+    let gxtoken = ctx.cookies.get('gxtoken') || ''
     let urlQuery = ctx.request.query
     let warnList = [];
     let resNewList;
@@ -39,7 +37,7 @@ router.get('/warn', async (ctx) => {
     await ctx.render('warn/warn', {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站-联系我们-联系方式',
         pagePath: ctx.request.path,
-        yfpcdata: yfpcdata,
+        gxtoken: gxtoken,
         urlQuery,
         warnType: urlQuery.type || 0,
         pageInfo: pageInfo,

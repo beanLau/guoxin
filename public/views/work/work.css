@@ -219,7 +219,8 @@ input[type="text"]{
     width: 300px;
 }
 .input-tip{
-    padding-left: 100px;
+    padding-left: 40px;
+    margin-top: 10px;
 }
 .form-inline .form-control {
     display: inline-block;
@@ -229,4 +230,14 @@ input[type="text"]{
 .validate-code{
     margin: 0 10px;
     color: #CC3300;
+}
+.form-control {
+    height: 24px;
+    padding: 0px 12px;
+}
+.form-group{
+    margin-bottom: 6px;
+}
+.sendCompanyName-wrap,.area-wrap,.prdCount-wrap,.sendTime-wrap,.buyTime-wrap,.buyType-wrap{
+    display: none;
 }

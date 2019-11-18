@@ -6,7 +6,7 @@ let getNoticeList = function(ctx, data){
         method: 'get',
         url: 'menhu/mhNotice/noticeList',
         headers:{
-            "token": ctx.cookies.get('yfpctoken')
+            "token": ctx.cookies.get('gxtoken')
         },
         body:data
     })
@@ -18,7 +18,7 @@ let getHangyeList = function(ctx,data){
         method: 'get',
         url: 'menhu/mhNotice/hangyeList',
         headers:{
-            "token": ctx.cookies.get('yfpctoken')
+            "token": ctx.cookies.get('gxtoken')
         },
         body:data
     })
@@ -29,7 +29,7 @@ let getNewsDetail  = function(ctx,data){
         method: 'get',
         url: 'menhu/mhNotice/detailById?id=' + data.id,
         headers:{
-            "token": ctx.cookies.get('yfpctoken')
+            "token": ctx.cookies.get('gxtoken')
         },
         body:data
     })

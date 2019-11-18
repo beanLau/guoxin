@@ -1,0 +1,49 @@
+#nengrong_list.content
+    p 请准确填写委托检测的预约信息，我们会尽快与您联系。
+    #my_content_div
+        form.form-inline
+            .form-panel-title 名表高及鉴定师鉴定能力申请
+            .form-panel-body
+                div
+                    .form-group
+                        label(for="keywords").require-label 姓名:
+                        input(type="text",placeholder="请输入姓名").form-control.input-sm.keywords#keywords
+                div
+                    .form-group
+                        label(for="age").require-label 年龄:
+                        input(type="text",placeholder="请输入姓名").form-control.input-sm.age#age
+                div
+                    .form-group
+                        label(for="age").require-label 所属地区:
+                        input(type="text",placeholder="请输入姓名").form-control.input-sm.age#age
+                div
+                    .form-group
+                        label(for="") 是否在职:
+                        label.radio-inline
+                            input(type="radio",name="sex",value=1,checked)
+                            span 是
+                        label.radio-inline
+                            input(type="radio",name="sex",value=2)
+                            span 否
+                div
+                    .form-group
+                        label(for="telphone").require-label 公司名称:
+                        input(type="text", name="telphone")#telphone.form-control.input-sm.keywords
+                div
+                    .form-group
+                        label(for="phone").require-label 职位名称:
+                        input(type="text", name="phone")#phone.form-control.input-sm.keywords
+                div
+                    .form-group
+                        label(for="email").require-label 工作经历:
+                        input(type="text", name="email")#email.form-control.input-sm.keywords
+                div
+                    .form-group
+                        label(for="address").require-label 联系曾获奖项地址:
+                        input(type="text", name="address")#address.form-control.input-sm.keywords
+                .input-tip
+                    span 请在这里填入验证码:
+                    input(type="text",style="width:80px;")
+                    img(src="http://47.105.110.118:8080/jeecg-boot/menhu/login/captcha?v=" + Date.now(), alt="",style="margin-left:10px;").code-img
+                    button(type="submit").btn.btn-primary.btn-sm 立即提交
+                .input-tip 请您放心，我们会为您的信息保密！

@@ -6,7 +6,7 @@ let getOrgInfo = function(ctx, data){
         method: 'get',
         url: 'menhu/mhOrgInfo/orgInfo',
         headers:{
-            "token": ctx.cookies.get('yfpctoken')
+            "token": ctx.cookies.get('gxtoken')
         },
         body:data
     })
@@ -18,7 +18,7 @@ let getZizhiList = function(ctx,data){
         method: 'get',
         url: 'menhu/mhOrgInfo/list',
         headers:{
-            "token": ctx.cookies.get('yfpctoken')
+            "token": ctx.cookies.get('gxtoken')
         },
         body:data
     })
@@ -29,7 +29,7 @@ let getZizhiDetail = function(ctx,data){
         method: 'get',
         url: 'menhu/mhOrgInfo/list',
         headers:{
-            "token": ctx.cookies.get('yfpctoken')
+            "token": ctx.cookies.get('gxtoken')
         },
         body:data
     })

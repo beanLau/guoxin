@@ -13,8 +13,8 @@ const fetch = function (options,ctx) {
     }
     options.body = options.body || {}
     
-    // if(typeof ctx.cookies.get('yfpcdata') == 'object' && ctx.cookies.get('yfpcdata').token){
-    //     token = ctx.cookies.get('yfpcdata').token
+    // if(typeof ctx.cookies.get('gxtoken') == 'object' && ctx.cookies.get('gxtoken').token){
+    //     token = ctx.cookies.get('gxtoken').token
     // }
     return new Promise((resolve, reject) => {
         let def = {

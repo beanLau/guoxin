@@ -6,7 +6,7 @@ let getReportList = function(ctx, data){
         method: 'get',
         url: `menhu/mhReport/list?type=${data.type}&reportCode=${data.reportCode || ""}&sampleCode=${data.sampleCode || ""}&pageNo=${data.pageNo}&pageSize=${data.pageSize}`,
         headers:{
-            "token": ctx.cookies.get('yfpctoken')
+            "token": ctx.cookies.get('gxtoken')
         },
         body:data
     })
@@ -17,7 +17,7 @@ let getReportDetail  = function(ctx,data){
         method: 'get',
         url: 'menhu/mhReport/getBySampleCode?code=' + data.id,
         headers:{
-            "token": ctx.cookies.get('yfpctoken')
+            "token": ctx.cookies.get('gxtoken')
         },
         body:data
     })
