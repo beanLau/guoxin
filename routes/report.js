@@ -43,10 +43,14 @@ router.get('/reportDetail', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
     let username = unescape(ctx.cookies.get('username')) || ''
     let queryData = ctx.request.query;
-    let reportDetail = {};
+    let reportDetail = {
+        mhReport:{
+            type: 1
+        }
+    };
     let resReport;
     resReport = await reportapi.getReportDetail(ctx,{
-        id: queryData.id || 1
+        id: encodeURI(queryData.id || 1)
     });
     if(resReport.code == 0){
         try {

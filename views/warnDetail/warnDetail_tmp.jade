@@ -1,0 +1,27 @@
+.container.page-content
+    .row
+        .col-xs-12
+            img(src="../../images/adverte_course.jpg").middle-pic
+    .row.mg20
+        .col-sm-3.col-sx-12.gx-btn-list
+            div
+                include ../quickbtn.jade
+        .col-sm-9.col-xs-12
+            #nengrong_right_top
+                if warnType
+                    h5 公告通知
+                else
+                    h5 行业信息
+                span 您的位置：
+                    a(href="/") 首页&nbsp;&gt;&nbsp;
+                    a(href="/warn") 消费警示
+            #nengrong_list.content
+                #my_content_div
+                    .warn-title
+                        #{warnDetail.title}
+                    .warn-content
+                        #{warnDetail.content}
+                    .flex-row
+                        span 投诉人: #{warnDetail.linkMan}
+                        span 投诉公司: #{warnDetail.company}
+                        span 投诉时间: #{warnDetail.createBy}

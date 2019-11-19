@@ -228,3 +228,6 @@ th{
 .table-reportdetail td{
     width: 144px;
 }
+td img{
+    max-width: 144px;
+}

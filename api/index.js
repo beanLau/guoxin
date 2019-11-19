@@ -36,10 +36,23 @@ let getTecDocList = function(ctx,data){
     })
 }
 
+// 技术文献
+let getCompanyList = function(ctx,data){
+    return fetch({ 
+        method: 'get',
+        url: 'menhu/mhHezuoOrg/list',
+        headers:{
+            "token": ctx.cookies.get('gxtoken')
+        },
+        body:data
+    })
+}
+
 
 module.exports = {
     getNoticeList,
     getHangyeList,
-    getTecDocList
+    getTecDocList,
+    getCompanyList
 }
 

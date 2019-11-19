@@ -1,11 +1,8 @@
-.container(style="margin-top:-20px;")
-    .youqing-wrap
-        a(href="#") 中国商业联合会
-        a(href="#") 中国商业联合会
-        a(href="#") 中国商业联合会
-        a(href="#") 中国商业联合会
-        a(href="#") 中国商业联合会
-        a(href="#") 中国商业联合会
+if companyList && companyList.length > 0
+    .container(style="margin-top:-20px;")
+        .youqing-wrap
+            each item in companyList
+                a(href="#") #{item.orgName}
 .container.footer-wrap
     .footer
         p 版权所有：国家雄飞争议商品检测中心/中国商业联合会钟表眼镜商品质量监督检测中心 京ICP备01293884号-1

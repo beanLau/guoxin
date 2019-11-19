@@ -62,21 +62,21 @@
                     a(href="/") 首页&nbsp;&gt;&nbsp;
                         a(href="/report") 报告查询&nbsp;&gt;&nbsp;
                     if reportType == 3
-                        a(href="#") 钟表型式检验报告查询
+                        a(href="/report?type=3") 钟表型式检验报告查询
                     else if reportType == 1
-                        a(href="#") 司法技术鉴定报告查询
+                        a(href="/report?type=1") 司法技术鉴定报告查询
                     else if reportType == 2
-                        a(href="#") 二手表检验证书查询
+                        a(href="/report?type=2") 二手表检验证书查询
                     else if reportType == 4
-                        a(href="#") 眼镜型式检验报告查询
+                        a(href="/report?type=4") 眼镜型式检验报告查询
                     else if reportType == 5
-                        a(href="#") 皮具型式检验证书查询
+                        a(href="/report?type=5") 皮具型式检验证书查询
                     else
-                        a(href="#") 皮具真伪检验证书查询
+                        a(href="/report?type=6") 皮具真伪检验证书查询
             #nengrong.content
                 if reportType == 1
                     include sifa.jade
-                else if reportType == 2 || reportType == 3
+                else if reportType == 2
                     include base.jade
                 else
                     div 暂不支持

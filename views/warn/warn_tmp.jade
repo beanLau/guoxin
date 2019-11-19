@@ -5,50 +5,28 @@
     .row.mg20
         .col-sm-3.col-sx-12.gx-btn-list
             div
-                #main_left_title 新闻中心
-                #main_left_menu
-                    ul
-                        if (!newsType || newsType == 0)
-                            li.nei_menu_on
-                                a(href="#",title="行业信息") 行业信息
-                        else
-                            li.nei_menu_off
-                                a(href="/news",title="行业信息") 行业信息
-                        if  newsType == 1
-                            li.nei_menu_on
-                                a(href="#",title="公告通知") 公告通知
-                        else
-                            li.nei_menu_off
-                                a(href="/news?type=1",title="公告通知") 公告通知
-            div
                 include ../quickbtn.jade
         .col-sm-9.col-xs-12
             #nengrong_right_top
-                if newsType
+                if warnType
                     h5 公告通知
                 else
                     h5 行业信息
                 span 您的位置：
                     a(href="/") 首页&nbsp;&gt;&nbsp;
-                    a(href="/news") 新闻中心&nbsp;&gt;&nbsp;
-                    if newsType
-                        a(href="#") 公告通知
-                    else
-                        a(href="#") 行业信息
+                    a(href="/warn") 消费警示
             #nengrong_list.content
                 #my_content_div
                     div 
-                        if !newsList || newsList.length == 0
-                            .news_list_ul_1 暂无数据
+                        if warnList.length == 0
+                            .warn_list_ul_1 暂无数据
                         else
-                            ul.news_list_ul_1
-                                each item,index in newsList
+                            ul.warn_list_ul_1
+                                each item,index in warnList
                                     li
                                         span
-                                            a(href="/newsdetail?id=" + item.id) #{item.source}
-                                            a(href="/newsdetail?id=" + item.id).a_li_list #{item.title}
-                                            img(src="http://www.hgstc.com/images/hot.gif", alt="")
-                        if newsList && newsList.length > 0
+                                            a(href="/warndetail?id=" + item.id).a_li_list #{item.title}
+                        if warnList && warnList.length > 0
                             nav(aria-label="Page navigation")
                                 ul.pagination
                                     if pageInfo.current == 1
@@ -57,7 +35,7 @@
                                                 span(aria-hidden="true") &laquo;
                                     else
                                         li
-                                            a(href="/news?type="+newsType + "&page=" + (pageInfo.current - 1),aria-label="Previous")
+                                            a(href="/warn?type="+warnType + "&page=" + (pageInfo.current - 1),aria-label="Previous")
                                                 span(aria-hidden="true") &laquo;
                                     - let n = 1;
                                     while n <= pageInfo.pages
@@ -66,7 +44,7 @@
                                                 a(href="#") #{n++}
                                         else
                                             li
-                                                a(href="/news?type="+newsType + "&page=" + n) #{n++}
+                                                a(href="/warn?type="+warnType + "&page=" + n) #{n++}
                                     
                                     if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
                                         li.disabled
@@ -74,5 +52,5 @@
                                                 span(aria-hidden="true") &raquo;
                                     else
                                         li
-                                            a(href="/news?type="+newsType + "&page=" + (pageInfo.current + 1),aria-label="Next")
+                                            a(href="/warn?type="+warnType + "&page=" + (pageInfo.current + 1),aria-label="Next")
                                                 span(aria-hidden="true") &raquo;
