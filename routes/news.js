@@ -3,7 +3,7 @@ const indexapi = require('../api/index.js');
 
 router.get('/news', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
-    let username = ctx.cookies.get('username') || ''
+    let username = unescape(ctx.cookies.get('username')) || ''
     let urlQuery = ctx.request.query
     let newsList = [];
     let resNewList;

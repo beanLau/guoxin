@@ -3,7 +3,7 @@ const publicapi = require('../api/public.js');
 
 router.get('/public', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
-    let username = ctx.cookies.get('username') || ''
+    let username = unescape(ctx.cookies.get('username')) || ''
     let pageInfo = {
         current: 1,
         pages: 1,
@@ -40,7 +40,7 @@ router.get('/public', async (ctx) => {
 
 router.get('/publicdetail', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
-    let username = ctx.cookies.get('username') || ''
+    let username = unescape(ctx.cookies.get('username')) || ''
     let publicdetail = {}
     let urlQuery = ctx.request.query;
     resDetail = await publicapi.getPublicDetail(ctx,{

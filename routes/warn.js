@@ -3,7 +3,7 @@ const indexapi = require('../api/index.js');
 
 router.get('/warn', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
-    let username = ctx.cookies.get('username') || ''
+    let username = unescape(ctx.cookies.get('username')) || ''
     let urlQuery = ctx.request.query
     let warnList = [];
     let resNewList;

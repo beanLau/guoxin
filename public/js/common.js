@@ -13,7 +13,9 @@ $(function () {
                 if (res.code == 200) {
                     delCookie("gxtoken")
                     delCookie("username")
-                    window.reload();
+                    location.reload();
+                }else{
+                    alert(res.message)
                 }
             }, error: function () {
                 alert("网络异常，请稍后再试！")

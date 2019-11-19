@@ -70,11 +70,11 @@
                 div.sendTime-wrap
                     .form-group
                         label(for="sendTime").require-label 预计送检时间：
-                        input(type="text",onClick="WdatePicker({el：this,dateFmt：'yyyy-MM-dd HH：mm：ss'})")#sendTime.Wdate.form-control.input-sm.keywords
+                        input(type="date")#sendTime.Wdate.form-control.input-sm.keywords
                 div.buyTime-wrap
                     .form-group
                         label(for="buyTime").require-label 购买时间： 
-                        input(type="text",onClick="WdatePicker({el：this,dateFmt：'yyyy-MM-dd HH：mm：ss'})")#buyTime.Wdate.form-control.input-sm.keywords
+                        input(type="date")#buyTime.Wdate.form-control.input-sm.keywords
                 div.buyType-wrap
                     .form-group
                         label(for="buyType").require-label 购买渠道：

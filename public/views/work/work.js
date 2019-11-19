@@ -125,7 +125,9 @@ $(function () {
         $.ajax({url:"http://47.105.110.118:8080/jeecg-boot/menhu/mhTrustOnline/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
             if(res.code == 200){
                 alert(res.message)
-                window.reload()
+                location.reload()
+            }else{
+                alert(res.message)
             }
         },error:function(){
             alert("网络异常，请稍后再试！")
@@ -197,7 +199,9 @@ $(function () {
         $.ajax({url:"http://47.105.110.118:8080/jeecg-boot/menhu/mhBsRepair/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
             if(res.code == 200){
                 alert(res.message)
-                window.reload()
+                location.reload()
+            }else{
+                alert(res.message)
             }
         },error:function(){
             alert("网络异常，请稍后再试！")
@@ -252,7 +256,9 @@ $(function () {
         $.ajax({url:"http://47.105.110.118:8080/jeecg-boot/menhu/mhBsGlasses/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
             if(res.code == 200){
                 alert(res.message)
-                window.reload()
+                location.reload()
+            }else{
+                alert(res.message)
             }
         },error:function(){
             alert("网络异常，请稍后再试！")
@@ -307,7 +313,9 @@ $(function () {
         $.ajax({url:"http://47.105.110.118:8080/jeecg-boot/menhu/mhBsAbility/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
             if(res.code == 200){
                 alert(res.message)
-                window.reload()
+                location.reload()
+            }else{
+                alert(res.message)
             }
         },error:function(){
             alert("网络异常，请稍后再试！")

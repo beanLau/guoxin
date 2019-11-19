@@ -3,7 +3,7 @@ const orgapi = require('../api/org.js');
 
 router.get('/orgdesc', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
-    let username = ctx.cookies.get('username') || ''
+    let username = unescape(ctx.cookies.get('username')) || ''
     let pageContent = {
         aboutGJ: {
             info: ""

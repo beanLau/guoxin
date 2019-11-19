@@ -3,7 +3,7 @@ const reportapi = require('../api/report.js');
 
 router.get('/report', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
-    let username = ctx.cookies.get('username') || ''
+    let username = unescape(ctx.cookies.get('username')) || ''
     let formData = ctx.request.query;
     let reportList = [];
     let resReport;
@@ -41,7 +41,7 @@ router.get('/report', async (ctx) => {
 })
 router.get('/reportDetail', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
-    let username = ctx.cookies.get('username') || ''
+    let username = unescape(ctx.cookies.get('username')) || ''
     let queryData = ctx.request.query;
     let reportDetail = {};
     let resReport;

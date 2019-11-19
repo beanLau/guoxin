@@ -33,7 +33,7 @@ $(function () {
         $.ajax({
             url: "http://47.105.110.118:8080/jeecg-boot/menhu/login/login", data: JSON.stringify(reqData), type: "POST", contentType: "application/json;charset=UTF-8", success: function (res) {
                 if (res.code == 200) {
-                    setCookie("gxtoken",res.token)
+                    setCookie("gxtoken",res.result.token)
                     setCookie("username",res.result.user.userName)
                     window.location.href = "/"
                 }

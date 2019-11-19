@@ -3,7 +3,7 @@ const literatureapi = require('../api/literature.js');
 
 router.get('/literature', async (ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
-    let username = ctx.cookies.get('username') || ''
+    let username = unescape(ctx.cookies.get('username')) || ''
     
     let urlQuery = ctx.request.query
     let literatureList = [];
