@@ -1,15 +1,59 @@
 .top-bg
 .container.page-content(style="")
     .row
-        img.col-sm-3.col-xs-12(style="height:340px;",src="../../images/index.jpg")
-        .col-sm-6.col-xs-12
+        .col-sm-5.col-xs-12
+            .swiper-container
+                .swiper-wrapper
+                    .swiper-slide
+                        .item
+                            img(src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574264679468&di=3c3f6c36bdfafa3862ff64efcd746c03&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201612%2F07%2F20161207202714_mix2E.jpeg", alt="")
+                            .carousel-caption 哈哈哈哈1
+                    .swiper-slide
+                        .item
+                            img(src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574264679468&di=3c3f6c36bdfafa3862ff64efcd746c03&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201612%2F07%2F20161207202714_mix2E.jpeg", alt="")
+                            .carousel-caption 哈哈哈哈2
+                    .swiper-slide
+                        .item
+                            img(src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574264679468&di=3c3f6c36bdfafa3862ff64efcd746c03&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201612%2F07%2F20161207202714_mix2E.jpeg", alt="")
+                            .carousel-caption 哈哈哈哈3
+                    .swiper-slide
+                        .item
+                            img(src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574264679468&di=3c3f6c36bdfafa3862ff64efcd746c03&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201612%2F07%2F20161207202714_mix2E.jpeg", alt="")
+                            .carousel-caption 哈哈哈哈4
+                .swiper-pagination
+                
+        .col-sm-7.col-xs-12
             .gx-panel
-                .gx-panel-title 公告专栏
-                    a(href="/news?type=1").panel-more 更多
-                .gx-panel-body.height-342
+                .tab-item.tab-active 新闻中心
+                .tab-item.tab 公告专栏
+                .gx-panel-body.height-342(style="padding-bottom:0;position:relative;")
+                    each item,index in newsList
+                        a(href="/newsdetail?id=" + item.id).news-item #{item.title}
+                    a(href="/news?type=1").tab-more 更多
+                .gx-panel-body.height-342(style="display:none;padding-bottom:0;position:relative;")
                     each item,index in noticeList
-                        a(href="/newsdetail?id=" + item.id).gonggao-item #{item.title}
-
+                        a(href="/newsdetail?id=" + item.id).news-item #{item.title}
+                    a(href="/news").tab-more 更多
+    .row(style="margin-top: 20px;")
+        .col-sm-9.col-xs-12
+            .gx-panel
+                .gx-panel-title 政策文献
+                div
+                    .tab-item2.tab-active(stye="width: 140px;") 通用标准
+                    .tab-item2.tab(stye="width: 140px;") 技术文献
+                    .tab-item2.tab(stye="width: 140px;") 考核标准
+                .gx-panel-body(style="padding-bottom:0;position:relative;height:254px;")
+                    each item,index in ruleList
+                        a(href="newsdetail?id=" + item.id).news-item #{item.title}
+                    a(href="/literature").tab-more 更多
+                .gx-panel-body(style="display:none;padding-bottom:0;position:relative;height:254px;")
+                    each item,index in literatureList
+                        a(href="newsdetail?id=" + item.id).news-item #{item.title}
+                    a(href="/literature?type=1").tab-more 更多
+                .gx-panel-body(style="display:none;padding-bottom:0;position:relative;height:254px;")
+                    each item,index in khbzList
+                        a(href="newsdetail?id=" + item.id).news-item #{item.title}
+                    a(href="/literature?type=2").tab-more 更多
         .col-sm-3.col-xs-12.gx-btn-list
             <div id="main_left_title">快速查询</div>
             a(href="/report?type=3").gx-btn 钟表型式检验报告查询
@@ -18,23 +62,16 @@
             a(href="/report?type=4").gx-btn 眼镜型式检验报告查询
             a(href="/report?type=5").gx-btn 皮具型式检验证书查询
             a(href="/report?type=6").gx-btn 皮具真伪检验证书查询
-    .row
-        .col-xs-12
-            img(src="../../images/adverte_course.jpg").middle-pic
-    .row
-        .col-sm-4.col-xs-12
+    .row(style="margin-top: 20px;")
+        .col-sm-12.col-xs-12
             .gx-panel
-                .gx-panel-title 新闻中心
-                    a(href="/news").panel-more 更多
-                .gx-panel-body
-                    each item,index in newsList
-                        a(href="/newsdetail?id=" + item.id).news-item #{item.title}
-        .col-sm-8.col-xs-12
-            .gx-panel
-                .gx-panel-title 技术文献
-                    a(href="/literature?type=1").panel-more 更多 
-                .gx-panel-body
-                    each item,index in literatureList
-                        a(href="#").news-item #{item.title}
+                .gx-panel-title 信息公开
+                    .title-search
+                        input(type="text",placeholder="请输入机构名称")#searchInput
+                        img(src="../../images/search.png", alt="").search-btn
+                .gx-panel-body(style="padding-bottom:0;position:relative;height:254px;").public-list
+                    each item,index in publicList
+                        a(href="publicdetail?id=" + item.id).news-item #{item.name}
+                    a(href="/literature").tab-more 更多
     
             

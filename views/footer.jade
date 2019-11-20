@@ -1,10 +1,11 @@
 if companyList && companyList.length > 0
     .container(style="margin-top:-20px;")
         .youqing-wrap
+            a(href="#").youqing-name 友情连接
             each item in companyList
-                a(href="#") #{item.orgName}
+                a(href= item.url || '#' ) #{item.orgName}
 .container.footer-wrap
     .footer
-        p 版权所有：国家雄飞争议商品检测中心/中国商业联合会钟表眼镜商品质量监督检测中心 京ICP备01293884号-1
-        p 地址： 北京东城区建国门南大街1号楼207室 邮编：100005
-        p 电话：400-014-8066 010-64492242 传真：010-65593443 电子邮箱：info@hgstc.com
+        p 版权所有：国家消费争议商品检测中心 / 中国商业联合会钟表眼镜商品质量监督检测中心    京ICP备01293884号-1
+        p 地址：北京市东城区建国门南大街5号1号楼103室    邮编: 100005
+        p 电话：010-65593443 010-65592242    电子信箱： info@hgstc.com 

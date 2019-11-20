@@ -1,27 +1,87 @@
 .carousel {
-    height: 500px;
-    margin-bottom: 60px;
-    margin-top: -210px;
+}
+.carousel-indicators {
+    bottom: 0;
+    width: auto;
+    display: inline;
+    right: 14px;
+    left: auto;
+}
+.carousel-indicators .active {
+    width: 20px;
+    height: 10px;
+    margin: 0;
+    margin-left: 10px;
+    background-color: #E60606;
+}
+.carousel-indicators li {
+    border-radius: 0;
+    width: 20px;
+    height: 10px;
+    margin:  0;
+    margin-left: 10px;
 }
 .carousel-caption {
-    z-index: 10;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    height: 42px;
+    background: rgba(0,0,0,.4);
+    text-align: left;
+    line-height: 42px;
+    padding: 0 0 0 20px;
 }
-.carousel .item {
-    height: 500px;
-    background-color: #777;
+.item {
+    cursor: pointer;
 }
 .carousel-caption {
-    z-index: 10;
 }
 .carousel-inner{
-    position: absolute;
+    
 }
-.carousel-inner > .item > img {
+.swiper-pagination{
+    text-align: right;
+}
+.swiper-pagination-bullet {
+    width: 20px;
+    height: 10px;
+    border-radius: 0 !important;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #E60606;
+}
+.item > img {
+    width: 100%;
+    height: 342px;
+}
+.tab-item,.tab-item2{
+    width: 22%;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-bottom: -1px;
+}
+.tab-active{
+    border-bottom: 2px solid #337ab7;
+    color: #337ab7;
+}
+.tab-more{
     position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 500px;
+    bottom: 0;
+    width: 100%;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+    padding-right: 20px;
+    margin-left: -10px;
+    border-top: 1px solid #337ab7;
+    background: #fff;
 }
 .page-content{
     margin-top: -80px;
@@ -49,17 +109,17 @@
     line-height: 40px;
     padding-left: 20px;
     position: relative;
-    color: #fff;
-    background: #337ab7;
+    color: #337ab7;
+    border-bottom: 1px solid #337ab7;
 }
 .gx-panel-title::after{
     position: absolute;
     content: "";
     left: 10px;
-    top: 0;
-    background: #fff;
+    top: 10px;
+    background: #337ab7;
     width: 4px;
-    height: 40px;
+    height: 18px;
 }
 .panel-more{
     position: absolute;
@@ -75,8 +135,9 @@
 .panel-more:hover { color: #fff; text-decoration: none; }
 .panel-more:active { color: #fff; }
 .gx-panel-body{
-    padding: 20px 10px;
+    padding: 10px;
     min-height: 120px;
+    overflow: hidden;
 }
 .height-342{
     height: 300px;
@@ -174,4 +235,24 @@
     background: url(http://www.hgstc.com/images/design/nei_21.jpg);
     background-size: cover;
     text-align: center;
+}
+.title-search{
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 26px;
+}
+.title-search input {
+    height: 26px;
+    font-size: 12px;
+    padding-left: 10px;
+    color: #333;
+}
+.search-btn{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 3px;
+    top: 9px;
+    cursor: pointer;
 }

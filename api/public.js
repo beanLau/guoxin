@@ -2,7 +2,10 @@ const fetch = require('./utils');
 
 // 获取信息公开列表
 let getPublicList = function(ctx, data){
-    let opt = `?pageNo=${data.pageNo || 1}&pageSize=${data.pageSize || 10}&type=${data.type || 1}`
+    let opt = `?pageNo=${data.pageNo || 1}&pageSize=${data.pageSize || 10}`
+    if(data.type){
+        opt += `&type=${data.type}`
+    }
     return fetch({ 
         method: 'get',
         url: 'menhu/mhOrgsite/list' + opt,

@@ -36,7 +36,31 @@ let getTecDocList = function(ctx,data){
     })
 }
 
-// 技术文献
+// 通用标准
+let getRuleList = function(ctx,data){
+    return fetch({ 
+        method: 'get',
+        url: 'menhu/mhNotice/ruleList',
+        headers:{
+            "token": ctx.cookies.get('gxtoken')
+        },
+        body:data
+    })
+}
+
+// 考核标准
+let getKhbzList = function(ctx,data){
+    return fetch({ 
+        method: 'get',
+        url: 'menhu/mhNotice/khbzList',
+        headers:{
+            "token": ctx.cookies.get('gxtoken')
+        },
+        body:data
+    })
+}
+
+// 合作单位
 let getCompanyList = function(ctx,data){
     return fetch({ 
         method: 'get',
@@ -53,6 +77,8 @@ module.exports = {
     getNoticeList,
     getHangyeList,
     getTecDocList,
-    getCompanyList
+    getCompanyList,
+    getRuleList,
+    getKhbzList
 }
 

@@ -36,6 +36,8 @@ $(function () {
                     setCookie("gxtoken",res.result.token)
                     setCookie("username",res.result.user.userName)
                     window.location.href = "/"
+                }else{
+                    alert(res.message)
                 }
             }, error: function () {
                 alert("网络异常，请稍后再试！")

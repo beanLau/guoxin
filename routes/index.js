@@ -1,5 +1,6 @@
 const router = require('koa-router')();
 const indexapi = require('../api/index');
+const publicapi = require('../api/public.js');
 
 router.get('/', async(ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
@@ -7,18 +8,30 @@ router.get('/', async(ctx) => {
     let noticeList = []
     let hangyeList = []
     let tecDocList = []
+    let ruleList = []
+    let khbzList = []
     let companyList = []
+    let publicList = []
     let renderData = {}
     let res = await Promise.all([indexapi.getNoticeList(ctx, {
         pageNo: 1,
-        pageSize: 12
+        pageSize: 8
     }), indexapi.getHangyeList(ctx, {
         pageNo: 1,
-        pageSize: 12
+        pageSize: 8
     }), indexapi.getTecDocList(ctx, {
         pageNo: 1,
-        pageSize: 12
+        pageSize: 8
     }),indexapi.getCompanyList(ctx, {
+        pageNo: 1,
+        pageSize: 8
+    }),indexapi.getRuleList(ctx, {
+        pageNo: 1,
+        pageSize: 8
+    }),indexapi.getKhbzList(ctx, {
+        pageNo: 1,
+        pageSize: 8
+    }),publicapi.getPublicList(ctx, {
         pageNo: 1,
         pageSize: 8
     })])
@@ -54,6 +67,33 @@ router.get('/', async(ctx) => {
 
         }
     }
+    
+    let resRuleList = res[4]
+    if (resRuleList.code == 0) {
+        try {
+            ruleList = resRuleList.result.records || []
+        } catch (error) {
+
+        }
+    }
+
+    let reskhbzList = res[5]
+    if (reskhbzList.code == 0) {
+        try {
+            khbzList = reskhbzList.result.records || []
+        } catch (error) {
+
+        }
+    }
+
+    let resPublicList = res[6]
+    if (resPublicList.code == 0) {
+        try {
+            publicList = resPublicList.result.records || []
+        } catch (error) {
+
+        }
+    }
     renderData = {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站',
         pagePath: ctx.request.path,
@@ -62,6 +102,9 @@ router.get('/', async(ctx) => {
         noticeList: noticeList,
         newsList: hangyeList,
         literatureList: tecDocList,
+        ruleList: ruleList,
+        khbzList: khbzList,
+        publicList: publicList,
         renzhengList: [{ id: 1, title: "培训认证培训认证培训认证培训认证一" }],
         danweiList: [{ id: 1, title: "合作单位合作单位合作单位合作单位合作单位一" }],
         zhiliangList: [{ id: 1, title: "质量监督质量监督质量监督质量监督质量监督质量监督质量监督一" }],
