@@ -9,7 +9,7 @@ $(function () {
     })
     $("#loginout").click(function(){
         $.ajax({
-            url: "http://47.105.110.118:8080/jeecg-boot/menhu/login/logout",headers:{'X_ACCESS_TOKEN': getCookie("gxtoken")}, type: "POST", contentType: "application/json;charset=UTF-8", success: function (res) {
+            url: "http://39.105.127.212:8080/jeecg-boot/menhu/login/logout",headers:{'X_ACCESS_TOKEN': getCookie("gxtoken")}, type: "POST", contentType: "application/json;charset=UTF-8", success: function (res) {
                 if (res.code == 200) {
                     delCookie("gxtoken")
                     delCookie("username")

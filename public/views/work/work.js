@@ -7,7 +7,7 @@ $(function () {
         return null;
     }
     $(".code-img").click(function(){
-        $(".code-img").attr("src",'http://47.105.110.118:8080/jeecg-boot/menhu/login/captcha?v=' + Date.now())
+        $(".code-img").attr("src",'http://39.105.127.212:8080/jeecg-boot/menhu/login/captcha?v=' + Date.now())
     })
     $("#prdType").change(function(){
         var value = $("#prdType").val()
@@ -122,7 +122,7 @@ $(function () {
         reqData.sampleType = $("#prdType").val()
         reqData.sex = sex
         reqData.weituoOrg = sendCompanyName
-        $.ajax({url:"http://47.105.110.118:8080/jeecg-boot/menhu/mhTrustOnline/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
+        $.ajax({url:"http://39.105.127.212:8080/jeecg-boot/menhu/mhTrustOnline/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
             if(res.code == 200){
                 alert(res.message)
                 location.reload()
@@ -196,7 +196,7 @@ $(function () {
         reqData.brokeInfo = desc
         reqData.sampleType = 1
         reqData.remark = remark
-        $.ajax({url:"http://47.105.110.118:8080/jeecg-boot/menhu/mhBsRepair/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
+        $.ajax({url:"http://39.105.127.212:8080/jeecg-boot/menhu/mhBsRepair/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
             if(res.code == 200){
                 alert(res.message)
                 location.reload()
@@ -253,7 +253,7 @@ $(function () {
         reqData.address = address
         reqData.leftEye = leftNum
         reqData.rightEye = rightNum
-        $.ajax({url:"http://47.105.110.118:8080/jeecg-boot/menhu/mhBsGlasses/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
+        $.ajax({url:"http://39.105.127.212:8080/jeecg-boot/menhu/mhBsGlasses/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
             if(res.code == 200){
                 alert(res.message)
                 location.reload()
@@ -310,7 +310,7 @@ $(function () {
         reqData.orgName = companyName
         reqData.workExp = express
         reqData.prizes = address
-        $.ajax({url:"http://47.105.110.118:8080/jeecg-boot/menhu/mhBsAbility/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
+        $.ajax({url:"http://39.105.127.212:8080/jeecg-boot/menhu/mhBsAbility/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
             if(res.code == 200){
                 alert(res.message)
                 location.reload()

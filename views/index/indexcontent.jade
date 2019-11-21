@@ -4,22 +4,11 @@
         .col-sm-5.col-xs-12
             .swiper-container
                 .swiper-wrapper
-                    .swiper-slide
-                        .item
-                            img(src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574264679468&di=3c3f6c36bdfafa3862ff64efcd746c03&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201612%2F07%2F20161207202714_mix2E.jpeg", alt="")
-                            .carousel-caption 哈哈哈哈1
-                    .swiper-slide
-                        .item
-                            img(src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574264679468&di=3c3f6c36bdfafa3862ff64efcd746c03&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201612%2F07%2F20161207202714_mix2E.jpeg", alt="")
-                            .carousel-caption 哈哈哈哈2
-                    .swiper-slide
-                        .item
-                            img(src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574264679468&di=3c3f6c36bdfafa3862ff64efcd746c03&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201612%2F07%2F20161207202714_mix2E.jpeg", alt="")
-                            .carousel-caption 哈哈哈哈3
-                    .swiper-slide
-                        .item
-                            img(src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574264679468&di=3c3f6c36bdfafa3862ff64efcd746c03&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201612%2F07%2F20161207202714_mix2E.jpeg", alt="")
-                            .carousel-caption 哈哈哈哈4
+                    each item in bannerList
+                        .swiper-slide
+                            a(href="/newsdetail?id="+item.id).item
+                                img(src="http://39.105.127.212:8080/jeecg-boot/" + item.imgUrl, alt="")
+                                .carousel-caption #{item.bannerName || ""}
                 .swiper-pagination
                 
         .col-sm-7.col-xs-12

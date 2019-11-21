@@ -1,7 +1,7 @@
 
 $(function () {
     $(".code-img").click(function () {
-        $(".code-img").attr("src", 'http://47.105.110.118:8080/jeecg-boot/menhu/login/captcha?v=' + Date.now())
+        $(".code-img").attr("src", 'http://39.105.127.212:8080/jeecg-boot/menhu/login/captcha?v=' + Date.now())
     })
     $("#loginbtn").click(function () {
         let userName = $("#userName").val();
@@ -31,7 +31,7 @@ $(function () {
             captcha: code
         }
         $.ajax({
-            url: "http://47.105.110.118:8080/jeecg-boot/menhu/login/login", data: JSON.stringify(reqData), type: "POST", contentType: "application/json;charset=UTF-8", success: function (res) {
+            url: "http://39.105.127.212:8080/jeecg-boot/menhu/login/login", data: JSON.stringify(reqData), type: "POST", contentType: "application/json;charset=UTF-8", success: function (res) {
                 if (res.code == 200) {
                     setCookie("gxtoken",res.result.token)
                     setCookie("username",res.result.user.userName)

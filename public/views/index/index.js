@@ -35,7 +35,7 @@
             pageSize: 8
         }
         $.ajax({
-            url: "http://47.105.110.118:8080/jeecg-boot/menhu/mhOrgsite/list", data: reqData, type: "get", contentType: "application/json;charset=UTF-8", success: function (res) {
+            url: "http://39.105.127.212:8080/jeecg-boot/menhu/mhOrgsite/list", data: reqData, type: "get", contentType: "application/json;charset=UTF-8", success: function (res) {
                 if (res.code == 0) {
                     var dataList = res.result.records || []
                     var str = ""

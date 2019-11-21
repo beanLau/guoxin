@@ -10,6 +10,7 @@ router.get('/', async(ctx) => {
     let tecDocList = []
     let ruleList = []
     let khbzList = []
+    let bannerList = []
     let companyList = []
     let publicList = []
     let renderData = {}
@@ -32,6 +33,9 @@ router.get('/', async(ctx) => {
         pageNo: 1,
         pageSize: 8
     }),publicapi.getPublicList(ctx, {
+        pageNo: 1,
+        pageSize: 8
+    }),indexapi.getBannerList(ctx, {
         pageNo: 1,
         pageSize: 8
     })])
@@ -94,6 +98,15 @@ router.get('/', async(ctx) => {
 
         }
     }
+
+    let resBannerList = res[6]
+    if (resBannerList.code == 0) {
+        try {
+            bannerList = resBannerList.result.records || []
+        } catch (error) {
+
+        }
+    }
     renderData = {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站',
         pagePath: ctx.request.path,
@@ -108,7 +121,8 @@ router.get('/', async(ctx) => {
         renzhengList: [{ id: 1, title: "培训认证培训认证培训认证培训认证一" }],
         danweiList: [{ id: 1, title: "合作单位合作单位合作单位合作单位合作单位一" }],
         zhiliangList: [{ id: 1, title: "质量监督质量监督质量监督质量监督质量监督质量监督质量监督一" }],
-        companyList: companyList
+        companyList: companyList,
+        bannerList: bannerList
     }
     await ctx.render('index/index', renderData)
 })

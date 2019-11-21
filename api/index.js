@@ -72,6 +72,18 @@ let getCompanyList = function(ctx,data){
     })
 }
 
+// 轮播
+let getBannerList = function(ctx,data){
+    return fetch({ 
+        method: 'get',
+        url: 'menhu/mhBanner/list',
+        headers:{
+            "token": ctx.cookies.get('gxtoken')
+        },
+        body:data
+    })
+}
+
 
 module.exports = {
     getNoticeList,
@@ -79,6 +91,7 @@ module.exports = {
     getTecDocList,
     getCompanyList,
     getRuleList,
-    getKhbzList
+    getKhbzList,
+    getBannerList
 }
 
