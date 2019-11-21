@@ -1,5 +1,5 @@
-.carousel {
-}
+.carousel {}
+
 .carousel-indicators {
     bottom: 0;
     width: auto;
@@ -7,6 +7,7 @@
     right: 14px;
     left: auto;
 }
+
 .carousel-indicators .active {
     width: 20px;
     height: 10px;
@@ -14,49 +15,57 @@
     margin-left: 10px;
     background-color: #E60606;
 }
+
 .carousel-indicators li {
     border-radius: 0;
     width: 20px;
     height: 10px;
-    margin:  0;
+    margin: 0;
     margin-left: 10px;
 }
+
 .carousel-caption {
     position: absolute;
     width: 100%;
     left: 0;
     bottom: 0;
     height: 42px;
-    background: rgba(0,0,0,.4);
+    background: rgba(0, 0, 0, .4);
     text-align: left;
     line-height: 42px;
     padding: 0 0 0 20px;
 }
+
 .item {
     cursor: pointer;
 }
-.carousel-caption {
-}
-.carousel-inner{
-    
-}
-.swiper-pagination{
+
+.carousel-caption {}
+
+.carousel-inner {}
+
+.swiper-pagination {
     text-align: right;
 }
+
 .swiper-pagination-bullet {
     width: 20px;
     height: 10px;
     border-radius: 0 !important;
 }
+
 .swiper-pagination-bullet-active {
     opacity: 1;
     background: #E60606;
 }
-.item > img {
+
+.item>img {
     width: 100%;
     height: 342px;
 }
-.tab-item,.tab-item2{
+
+.tab-item,
+.tab-item2 {
     width: 22%;
     display: inline-block;
     height: 40px;
@@ -66,11 +75,13 @@
     cursor: pointer;
     margin-bottom: -1px;
 }
-.tab-active{
-    border-bottom: 2px solid #337ab7;
-    color: #337ab7;
+
+.tab-active {
+    color: #fff;
+    background: #337ab7;
 }
-.tab-more{
+
+.tab-more {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -83,13 +94,15 @@
     border-top: 1px solid #337ab7;
     background: #fff;
 }
-.page-content{
+
+.page-content {
     margin-top: -80px;
     padding: 20px;
     z-index: 1;
     background: #fff;
 }
-.top-bg{
+
+.top-bg {
     background-image: url(../../images/top.jpg);
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -97,31 +110,36 @@
     height: 500px;
     margin-top: -224px;
 }
-.tianqi{
+
+.tianqi {
     padding-left: 20px;
     margin-bottom: 10px;
 }
-.gx-panel{
+
+.gx-panel {
     border: 1px solid #337ab7;
 }
-.gx-panel-title{
+
+.gx-panel-title {
     height: 40px;
     line-height: 40px;
     padding-left: 20px;
     position: relative;
-    color: #337ab7;
-    border-bottom: 1px solid #337ab7;
+    color: #fff;
+    background: #337ab7;
 }
-.gx-panel-title::after{
+
+.gx-panel-title::after {
     position: absolute;
     content: "";
     left: 10px;
-    top: 10px;
-    background: #337ab7;
+    top: 7px;
+    background: #fff;
     width: 4px;
-    height: 18px;
+    height: 24px;
 }
-.panel-more{
+
+.panel-more {
     position: absolute;
     right: 10px;
     top: 0;
@@ -130,19 +148,39 @@
     color: #fff;
     cursor: pointer;
 }
-.panel-more:link { color: #fff; text-decoration: none; }
-.panel-more:visited { color: #fff; text-decoration: line-through; }
-.panel-more:hover { color: #fff; text-decoration: none; }
-.panel-more:active { color: #fff; }
-.gx-panel-body{
+
+.panel-more:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.panel-more:visited {
+    color: #fff;
+    text-decoration: line-through;
+}
+
+.panel-more:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+.panel-more:active {
+    color: #fff;
+}
+
+.gx-panel-body {
     padding: 10px;
     min-height: 120px;
     overflow: hidden;
+    border-top: 1px solid #337ab7;
 }
-.height-342{
+
+.height-342 {
     height: 300px;
 }
-.gonggao-item,.news-item{
+
+.gonggao-item,
+.news-item {
     display: block;
     color: #333;
     height: 16px;
@@ -153,10 +191,11 @@
     box-sizing: content-box;
     padding-left: 26px;
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
-.gonggao-item::after{
+
+.gonggao-item::after {
     content: "";
     position: absolute;
     left: 10px;
@@ -168,16 +207,17 @@
     background: #fff;
     top: 1px;
 }
-.gonggao-item::before{
+
+.gonggao-item::before {
     content: "";
     position: absolute;
     left: 15px;
     height: 25px;
     width: 1px;
     background: #403fff;
-    
 }
-.news-item::before{
+
+.news-item::before {
     content: "";
     position: absolute;
     left: 10px;
@@ -188,23 +228,74 @@
     z-index: 1;
     top: 6px;
 }
-.gonggao-item:last-of-type::before{
+
+.gonggao-item:last-of-type::before {
     height: 10px;
-    
 }
-.gonggao-item:last-of-type{
+
+.gonggao-item:last-of-type {
     padding-bottom: 0;
 }
-.middle-pic{
+
+.middle-pic {
     width: 100%;
     margin: 20px 0;
     border-radius: 10px;
 }
-.company-item p{
+
+.company-item p {
     font-size: 10px;
     line-height: 10px;
 }
-.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9 {
     position: relative;
     min-height: 1px;
     padding-right: 6px;
@@ -224,6 +315,7 @@
     text-align: center;
     line-height: 43px;
 }
+
 .gx-btn-list .gx-btn {
     display: block;
     color: #1F5996;
@@ -236,19 +328,22 @@
     background-size: cover;
     text-align: center;
 }
-.title-search{
+
+.title-search {
     position: absolute;
     right: 20px;
     top: 0;
     height: 26px;
 }
+
 .title-search input {
     height: 26px;
     font-size: 12px;
     padding-left: 10px;
     color: #333;
 }
-.search-btn{
+
+.search-btn {
     width: 24px;
     height: 24px;
     position: absolute;
