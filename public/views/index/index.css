@@ -80,7 +80,11 @@
     color: #fff;
     background: #337ab7;
 }
-
+.wenjian-wrap .tab-active{
+    color: #337ab7;
+    background: #fff;
+    border-bottom: 3px solid #337ab7;
+}
 .tab-more {
     position: absolute;
     bottom: 0;
@@ -338,6 +342,7 @@
 
 .title-search input {
     height: 26px;
+    line-height: 26px;
     font-size: 12px;
     padding-left: 10px;
     color: #333;
