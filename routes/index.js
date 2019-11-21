@@ -99,7 +99,7 @@ router.get('/', async(ctx) => {
         }
     }
 
-    let resBannerList = res[6]
+    let resBannerList = res[7]
     if (resBannerList.code == 0) {
         try {
             bannerList = resBannerList.result.records || []
