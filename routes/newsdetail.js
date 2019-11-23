@@ -18,7 +18,7 @@ router.get('/newsDetail', async (ctx) => {
     }
     //type：1行业信息  2通知公告 3通用标准 4技术文献 5考核标准
     await ctx.render('newsdetail/newsdetail', {
-        title: newsDetail.title,
+        title: newsDetail.title || "",
         gxtoken: gxtoken,
         username: username,
         pagePath: ctx.request.path,

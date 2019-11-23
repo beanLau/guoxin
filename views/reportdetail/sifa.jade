@@ -1,4 +1,7 @@
-#detal_sub_content
+if !reportDetail
+    div(style="margin:40px auto;color:#999;font-size:26px;text-align:center;") 暂无数据
+else
+    #detal_sub_content
     p(style="text-align:center;font-weight:bold;") 名表鉴定评估报告单
     .row(style="padding:10px 20px;")
         .top-left(style="float:left;") 系统识别号：#{reportDetail.detail.shibieCode}
