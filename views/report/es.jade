@@ -3,11 +3,9 @@
         form.form-inline#searchForm(action="/report?type=" + reportType,method="get")
             .row
                 .form-group.col-lg-4
-                    label(for="sampleCode") 样品编号：
-                    input(type="text",name="sampleCode",id="sampleCode",placeholder="请输入样品编号",value=formData.sampleCode).form-control.input-sm.gx-input
-                .form-group.col-lg-4
-                    label(for="sampleCode") 报告号：
-                    input(type="text",name="sampleCode",id="sampleCode",placeholder="请输入报告号",value=formData.sampleCode).form-control.input-sm.gx-input
+                    label(for="samplecode") 样品编号：
+                    input(type="text",name="samplecode",id="samplecode",placeholder="请输入样品编号",value=formData.samplecode).form-control.input-sm.gx-input
+                    input(type="hidden",name="type",value=2)
                 .form-group.col-lg-4
                     button(type="submit").btn.btn-primary.btn-sm.search-btn 查 询
                     a(href="/report?type=" + reportType).btn.btn-primary.btn-sm.search-btn 重 置

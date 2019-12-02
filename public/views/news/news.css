@@ -155,13 +155,19 @@
     border-bottom: 1px #DDD dashed;
     line-height: 43px;
     font-size: 12px;
+    clear: both;
 }
 .news_list_ul_1 li span {
     display: block;
     float: left;
 }
+.news_list_ul_1 li .news-time{
+    float: right;
+}
 .news_list_ul_1 li img {
     margin-left: 10px;
+    display: inline-block;
+    margin-top: -38px;
 }
 .news_list_ul_1 li font {
     display: block;
@@ -174,6 +180,11 @@
     font-size: 14px;
     color: #333;
     margin-left: 10px;
+    max-width: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
 }
 
 

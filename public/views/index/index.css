@@ -199,7 +199,18 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
+.news-item-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;    
+    max-width: 454px;
+    display: inline-block;
+}
+.news-item-time{
+    width: 120px;
+    float: right;
+    color: #666;
+}
 .gonggao-item::after {
     content: "";
     position: absolute;

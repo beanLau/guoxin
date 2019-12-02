@@ -48,6 +48,7 @@
                                             a(href="/newsdetail?id=" + item.id) #{item.source}
                                             a(href="/newsdetail?id=" + item.id).a_li_list #{item.title}
                                             img(src="http://www.hgstc.com/images/hot.gif", alt="")
+                                        span.news-time #{item.createTime}
                         if newsList && newsList.length > 0
                             nav(aria-label="Page navigation")
                                 ul.pagination

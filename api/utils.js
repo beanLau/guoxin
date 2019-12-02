@@ -1,4 +1,4 @@
-const request = require('request')
+const axios = require('axios')
 
 // const apiUrl = "http://192.168.1.5/education-pc/"
 const apiUrl = "http://39.105.127.212:8080/jeecg-boot/"
@@ -19,20 +19,22 @@ const fetch = function (options,ctx) {
     return new Promise((resolve, reject) => {
         let def = {
             method: options.method || 'POST',
-            headers: Object.assign({
-                'User-Agent': ctx.headers&&ctx.headers["user-agent"] || 'node',
-                "content-type": "application/json",
-                "source": "pc",
-                "version": "2.0",
-                "token": token
-            }, options.headers),
-            json: true,
-            uri: url,
-            body:options.body
+            headers: {
+                "content-type": "application/json;charset=utf-8"
+            },
+            url: url,
+            data: options.body
         }
-        request(def, function (error, response, body) {
-            resolve(body)
-        });
+
+        axios(def).then(res=>{
+            resolve(res.data)
+        }).catch((e)=>{
+            reject({
+                code: 0,
+                data:{},
+                msg: ""
+            })
+        })
     })
 }
 

@@ -17,12 +17,14 @@
                 .tab-item.tab 公告专栏
                 .gx-panel-body.height-342(style="padding-bottom:0;position:relative;")
                     each item,index in newsList
-                        a(href="/newsdetail?id=" + item.id).news-item #{item.title}
-                    a(href="/news?type=1").tab-more 更多
+                        a(href="/newsdetail?id=" + item.id).news-item 
+                            span.news-item-title #{item.title}
+                            span.news-item-time #{item.createTime}
+                    a(href="/news").tab-more 更多
                 .gx-panel-body.height-342(style="display:none;padding-bottom:0;position:relative;")
                     each item,index in noticeList
                         a(href="/newsdetail?id=" + item.id).news-item #{item.title}
-                    a(href="/news").tab-more 更多
+                    a(href="/news?type=1").tab-more 更多
     .row(style="margin-top: 20px;")
         .col-sm-9.col-xs-12
             .gx-panel
@@ -61,6 +63,6 @@
                 .gx-panel-body(style="padding-bottom:0;position:relative;height:254px;").public-list
                     each item,index in publicList
                         a(href="publicdetail?id=" + item.id).news-item #{item.name}
-                    a(href="/literature").tab-more 更多
+                    a(href="/public").tab-more 更多
     
             
