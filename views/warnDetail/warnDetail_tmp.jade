@@ -17,11 +17,5 @@
                     a(href="/warn") 消费警示
             #nengrong_list.content
                 #my_content_div
-                    .warn-title
-                        #{warnDetail.title}
-                    .warn-content
-                        #{warnDetail.content}
-                    .flex-row
-                        span 投诉人: #{warnDetail.linkMan}
-                        span 投诉公司: #{warnDetail.company}
-                        span 投诉时间: #{warnDetail.createBy}
+                    .warn-title #{warnDetail.title}
+                    .warn-content !{warnDetail.content}

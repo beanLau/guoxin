@@ -34,11 +34,82 @@ $(function () {
             submitWeixiu();
         }else if(getQueryString("type") == 3){
             submitPeijing();
+        }else if(getQueryString("type") == 5){
+            submitZhenjia();
         }else {
             submitShenqing();
         }
         
     })
+    function submitZhenjia(){
+        var name = $("#name").val()
+        var sex = $("input[name='sex']:checked").val()
+        var area = $("#area").val()
+        var telphone = $("#telphone").val()
+        var phone = $("#phone").val()
+        var email = $("#email").val()
+        var address = $("#address").val()
+        var prdName = $("#prdName").val()
+        var buyTime = $("#buyTime").val()
+        var buyType = $("#buyType").val()
+        var prdCount = $("#prdCount").val()
+        var sendTime = $("#sendTime").val()
+        var remark = $("#remark").val()
+        if(!name){
+            alert("请输入姓名")
+            return
+        }
+        if(!telphone){
+            alert("请输入联系电话")
+            return
+        }
+        if(!phone){
+            alert("请输入手机号")
+            return
+        }
+        if(!email){
+            alert("请输入邮箱")
+            return
+        }
+        if(!address){
+            alert("请输入地址")
+            return
+        }
+        if(!area){
+            alert("请输入所属地区")
+            return
+        }
+        if(!buyTime){
+            alert("请选择购买时间")
+            return
+        }
+        if(!buyType){
+            alert("请输入购买渠道")
+            return
+        }
+        var reqData = {}
+        reqData.linkMan = name
+        reqData.linkSex = sex
+        reqData.phone = telphone
+        reqData.tel = phone
+        reqData.email = email
+        reqData.address = address
+        reqData.sampleName = prdName
+        reqData.sampleType = $("input[name='prdType']:checked").val()
+        reqData.buyDate = buyTime
+        reqData.buyWay = buyType
+        reqData.remark = remark
+        $.ajax({url:"http://39.105.127.212:8080/jeecg-boot/menhu/mhBsGeRen/add",data:JSON.stringify(reqData),type:"POST",contentType:"application/json;charset=UTF-8",success:function(res){
+            if(res.code == 200){
+                alert(res.message)
+                location.reload()
+            }else{
+                alert(res.message)
+            }
+        },error:function(){
+            alert("网络异常，请稍后再试！")
+        }});
+    }
     function submitWeituo(){
         var value = $("#prdType").val()
         var name = $("#name").val()
