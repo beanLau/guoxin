@@ -43,7 +43,7 @@
     width: 100%;
     height: 38px;
     margin-bottom: 11px;
-    background: url(http://www.hgstc.com/images/design/nei_14.jpg) no-repeat;
+    background: url(/images/nei_14.jpg) no-repeat;
     background-size: cover;
     font-family: "微软雅黑", Arial;
     font-size: 16px;
@@ -66,7 +66,7 @@
     font-weight: bold;
     margin-bottom: 8px;
     overflow: hidden;
-    background: url(http://www.hgstc.com/images/design/nei_21.jpg);
+    background: url(/images/nei_21.jpg);
     background-size: cover;
     text-align: center;
 }
@@ -76,7 +76,7 @@
     font-weight: bold;
     margin-bottom: 8px;
     overflow: hidden;
-    background: url(http://www.hgstc.com/images/design/nei_21.jpg);
+    background: url(/images/nei_21.jpg);
     background-size: cover;
     text-align: center;
 }

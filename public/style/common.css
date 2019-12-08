@@ -74,7 +74,7 @@ a, a:link, a:visited {
     font-weight: bold;
     margin-bottom: 8px;
     overflow: hidden;
-    background: url(http://www.hgstc.com/images/design/nei_21.jpg);
+    background: url(/images/nei_21.jpg);
     background-size: cover;
     text-align: center;
 }
