@@ -20,12 +20,6 @@
                         else
                             li.nei_menu_off
                                 a(href="/warn?type=2",title="消费争议") 消费争议
-                        if warnType == 3
-                            li.nei_menu_on
-                                a(href="#",title="在线投诉") 在线投诉
-                        else
-                            li.nei_menu_off
-                                a(href="/warn?type=3",title="在线投诉") 在线投诉
             div
                 include ../quickbtn.jade
         .col-sm-9.col-xs-12
@@ -34,8 +28,6 @@
                     h5 失信黑名单
                 else if warnType == 2
                     h5 消费争议
-                else
-                    h5 在线投诉
                 span 您的位置：
                     a(href="/") 首页&nbsp;&gt;&nbsp;
                     a(href="/warn") 消费警示&nbsp;&gt;&nbsp;
@@ -43,8 +35,6 @@
                         a(href="#") 失信黑名单
                     else if warnType == 2
                         a(href="#") 消费争议
-                    else
-                        a(href="#") 在线投诉
             #nengrong_list.content
                 #my_content_div
                     if warnType == 1
