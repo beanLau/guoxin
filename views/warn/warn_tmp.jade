@@ -5,16 +5,46 @@
     .row.mg20
         .col-sm-3.col-sx-12.gx-btn-list
             div
+                #main_left_title 消费警示
+                #main_left_menu
+                    ul
+                        if (!warnType || warnType == 1)
+                            li.nei_menu_on
+                                a(href="#",title="失信黑名单") 失信黑名单
+                        else
+                            li.nei_menu_off
+                                a(href="/warn",title="失信黑名单") 失信黑名单
+                        if warnType == 2
+                            li.nei_menu_on
+                                a(href="#",title="消费争议") 消费争议
+                        else
+                            li.nei_menu_off
+                                a(href="/warn?type=2",title="消费争议") 消费争议
+                        if warnType == 3
+                            li.nei_menu_on
+                                a(href="#",title="在线投诉") 在线投诉
+                        else
+                            li.nei_menu_off
+                                a(href="/warn?type=3",title="在线投诉") 在线投诉
+            div
                 include ../quickbtn.jade
         .col-sm-9.col-xs-12
             #nengrong_right_top
-                if warnType
-                    h5 公告通知
+                if warnType == 1
+                    h5 失信黑名单
+                else if warnType == 2
+                    h5 消费争议
                 else
-                    h5 行业信息
+                    h5 在线投诉
                 span 您的位置：
                     a(href="/") 首页&nbsp;&gt;&nbsp;
-                    a(href="/warn") 消费警示
+                    a(href="/warn") 消费警示&nbsp;&gt;&nbsp;
+                    if warnType == 1
+                        a(href="#") 失信黑名单
+                    else if warnType == 2
+                        a(href="#") 消费争议
+                    else
+                        a(href="#") 在线投诉
             #nengrong_list.content
                 #my_content_div
                     div 
@@ -25,7 +55,12 @@
                                 each item,index in warnList
                                     li
                                         span
-                                            a(href="/warndetail?id=" + item.id).a_li_list #{item.title}
+                                            if warnType == 1
+                                                a(href="/warndetail?type=1&id=" + item.id).a_li_list #{item.shopName}
+                                            else if warnType == 2 
+                                                a(href="/warndetail?type=2&id=" + item.id).a_li_list #{item.title}
+                                            else
+                                                a(href="/warndetail?type=3&id=" + item.id).a_li_list #{item.title}
                         if warnList && warnList.length > 0
                             nav(aria-label="Page navigation")
                                 ul.pagination

@@ -5,17 +5,51 @@
     .row.mg20
         .col-sm-3.col-sx-12.gx-btn-list
             div
+                #main_left_title 消费警示
+                #main_left_menu
+                    ul
+                        if (!warnType || warnType == 1)
+                            li.nei_menu_on
+                                a(href="#",title="失信黑名单") 失信黑名单
+                        else
+                            li.nei_menu_off
+                                a(href="/warn",title="失信黑名单") 失信黑名单
+                        if warnType == 2
+                            li.nei_menu_on
+                                a(href="#",title="消费争议") 消费争议
+                        else
+                            li.nei_menu_off
+                                a(href="/warn?type=2",title="消费争议") 消费争议
+                        if warnType == 3
+                            li.nei_menu_on
+                                a(href="#",title="在线投诉") 在线投诉
+                        else
+                            li.nei_menu_off
+                                a(href="/warn?type=3",title="在线投诉") 在线投诉
+            div
                 include ../quickbtn.jade
         .col-sm-9.col-xs-12
             #nengrong_right_top
-                if warnType
-                    h5 公告通知
+                if warnType == 1
+                    h5 失信黑名单
+                else if warnType == 2
+                    h5 消费争议
                 else
-                    h5 行业信息
+                    h5 在线投诉
                 span 您的位置：
                     a(href="/") 首页&nbsp;&gt;&nbsp;
-                    a(href="/warn") 消费警示
+                    a(href="/warn") 消费警示&nbsp;&gt;&nbsp;
+                    if warnType == 1
+                        a(href="#") 失信黑名单
+                    else if warnType == 2
+                        a(href="#") 消费争议
+                    else
+                        a(href="#") 在线投诉
             #nengrong_list.content
                 #my_content_div
-                    .warn-title #{warnDetail.title}
-                    .warn-content !{warnDetail.content}
+                    if warnType == 1
+                        .warn-title #{warnDetail.shopName}
+                        .warn-content !{warnDetail.des}
+                    else
+                        .warn-title #{warnDetail.title}
+                        .warn-content !{warnDetail.content}

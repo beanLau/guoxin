@@ -16,7 +16,7 @@ let getOrgInfo = function(ctx, data){
 let getZizhiList = function(ctx,data){
     return fetch({ 
         method: 'get',
-        url: 'menhu/mhOrgInfo/list',
+        url: `menhu/mhOrgInfo/list?pageNo=${data.pageNo}&pageSize=${data.pageSize}`,
         headers:{
             "token": ctx.cookies.get('gxtoken')
         },

@@ -4,7 +4,7 @@ const fetch = require('./utils');
 let getNoticeList = function(ctx, data){
     return fetch({ 
         method: 'get',
-        url: 'menhu/mhNotice/noticeList',
+        url: `menhu/mhNotice/noticeList?pageNo=${data.pageNo}&pageSize=${data.pageSize}`,
         headers:{
             "token": ctx.cookies.get('gxtoken')
         },
@@ -16,7 +16,7 @@ let getNoticeList = function(ctx, data){
 let getHangyeList = function(ctx,data){
     return fetch({ 
         method: 'get',
-        url: 'menhu/mhNotice/hangyeList',
+        url: `menhu/mhNotice/hangyeList?pageNo=${data.pageNo}&pageSize=${data.pageSize}`,
         headers:{
             "token": ctx.cookies.get('gxtoken')
         },

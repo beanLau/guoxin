@@ -4,7 +4,7 @@ const fetch = require('./utils');
 let getTecDocList = function(ctx, data){
     return fetch({ 
         method: 'get',
-        url: 'menhu/mhNotice/tecDocList',
+        url: `menhu/mhNotice/tecDocList?pageNo=${data.pageNo}&pageSize=${data.pageSize}`,
         headers:{
             "token": ctx.cookies.get('gxtoken')
         },
@@ -16,7 +16,7 @@ let getTecDocList = function(ctx, data){
 let getRuleList = function(ctx,data){
     return fetch({ 
         method: 'get',
-        url: 'menhu/mhNotice/ruleList',
+        url: `menhu/mhNotice/ruleList?pageNo=${data.pageNo}&pageSize=${data.pageSize}`,
         headers:{
             "token": ctx.cookies.get('gxtoken')
         },
@@ -28,7 +28,7 @@ let getRuleList = function(ctx,data){
 let getKhbzList = function(ctx,data){
     return fetch({ 
         method: 'POST',
-        url: 'menhu/mhNotice/khbzList',
+        url: `menhu/mhNotice/khbzList?pageNo=${data.pageNo}&pageSize=${data.pageSize}`,
         headers:{
             "token": ctx.cookies.get('gxtoken')
         },

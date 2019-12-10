@@ -80,8 +80,16 @@ nav.navbar.navbar-default
                             a(href="/literature?type=1") 技术文献
                         li
                             a(href="/literature?type=2") 考核标准
-                li
-                    a(href="/warn") 消费警示
+                li.dropdown
+                    a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 消费警示
+                        span.caret
+                    ul.dropdown-menu
+                        li
+                            a(href="/warn") 失信黑名单
+                        li
+                            a(href="/warn?type=2") 消费争议
+                        li
+                            a(href="/warn?type=3") 在线投诉
             ul.nav.navbar-nav.navbar-right
                 if gxtoken
                     li
