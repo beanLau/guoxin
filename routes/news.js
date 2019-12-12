@@ -13,7 +13,14 @@ router.get('/news', async (ctx) => {
         total: 0
     }
     //获取公告
-    if(!urlQuery.type || urlQuery.type == 0){ //获取行业信息，新闻
+    if(urlQuery.title){
+        resNewList = await indexapi.getAllNewList(ctx,{
+            pageNo: urlQuery.page || 1,
+            pageSize: 10,
+            title: encodeURI(urlQuery.title)
+        });
+        urlQuery.type = 9
+    }else if(!urlQuery.type || urlQuery.type == 0){ //获取行业信息，新闻
         resNewList = await indexapi.getHangyeList(ctx,{
             pageNo: urlQuery.page || 1,
             pageSize: 10

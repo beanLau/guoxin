@@ -22,4 +22,10 @@ $(function () {
             }
         });
     })
+    $(".top-search-btn").click(function(){
+        var title =  $("#topSearchInput").val()
+        if(title){
+            window.location.href = "/news?title="+ encodeURI(title)
+        }
+    })
 })

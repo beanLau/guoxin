@@ -5,7 +5,7 @@
         pagination: {
             el: '.swiper-pagination',
             clickable: true
-        },
+        }
     });
     $(".tab-item").click(function(){
         if($(this).hasClass("tab-active")){

@@ -84,6 +84,16 @@ let getBannerList = function(ctx,data){
     })
 }
 
+let getAllNewList = function(ctx,data){
+    return fetch({ 
+        method: 'get',
+        url: `menhu/mhNotice/allList?pageNo=${data.pageNo}&pageSize=${data.pageSize}&title=${data.title}`,
+        headers:{
+            "token": ctx.cookies.get('gxtoken')
+        },
+        body:data
+    })
+}
 
 module.exports = {
     getNoticeList,
@@ -92,6 +102,7 @@ module.exports = {
     getCompanyList,
     getRuleList,
     getKhbzList,
-    getBannerList
+    getBannerList,
+    getAllNewList
 }
 

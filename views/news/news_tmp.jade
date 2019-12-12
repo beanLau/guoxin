@@ -24,17 +24,21 @@
                 include ../quickbtn.jade
         .col-sm-9.col-xs-12
             #nengrong_right_top
-                if newsType
-                    h5 公告通知
+                if newsType == 9
+                    h5 新闻中心
                 else
-                    h5 行业信息
+                    if newsType
+                        h5 公告通知
+                    else
+                        h5 行业信息
                 span 您的位置：
                     a(href="/") 首页&nbsp;&gt;&nbsp;
                     a(href="/news") 新闻中心&nbsp;&gt;&nbsp;
-                    if newsType
-                        a(href="#") 公告通知
-                    else
-                        a(href="#") 行业信息
+                        if newsType != 9
+                            if newsType
+                                a(href="#") 公告通知
+                            else
+                                a(href="#") 行业信息
             #nengrong_list.content
                 #my_content_div
                     div 

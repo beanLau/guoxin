@@ -88,13 +88,16 @@ nav.navbar.navbar-default
                             a(href="/warn") 失信黑名单
                         li
                             a(href="/warn?type=2") 消费争议
-            ul.nav.navbar-nav.navbar-right
+        .top-right-wrap
+                .top-search
+                    input(type="text",placeholder="请输入关键字",style="width:200px;")#topSearchInput
+                    img(src="../../images/search.png", alt="").top-search-btn
                 if gxtoken
                     li
                         a(href="#") 欢迎！ #{username}
                     li
                         span#loginout 退出
                 else
-                    li
-                        a(href="/login") 登录
+                    a(href="/login") 登录
+                        
                 

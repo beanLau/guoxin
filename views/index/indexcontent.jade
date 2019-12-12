@@ -1,7 +1,6 @@
-.top-bg
 .container.page-content(style="")
     .row
-        .col-sm-5.col-xs-12
+        .col-sm-6.col-xs-12
             .swiper-container
                 .swiper-wrapper
                     each item in bannerList
@@ -11,58 +10,77 @@
                                 .carousel-caption #{item.bannerName || ""}
                 .swiper-pagination
                 
-        .col-sm-7.col-xs-12
+        .col-sm-6.col-xs-12
             .gx-panel
-                .tab-item.tab-active 新闻中心
-                .tab-item.tab 公告专栏
-                .gx-panel-body.height-342(style="padding-bottom:0;position:relative;")
+                .gx-panel-title 新闻中心
+                div.wenjian-wrap
+                    .tab-item2.tab-active(stye="width: 140px;") 新闻中心
+                    .tab-item2.tab(stye="width: 140px;") 公告专栏
+                .gx-panel-body.height-342(style="padding-bottom:0;")
                     each item,index in newsList
                         a(href="/newsdetail?id=" + item.id).news-item 
-                            span.news-item-title #{item.title}
-                            span.news-item-time #{item.createTime}
-                    a(href="/news").tab-more 更多
-                .gx-panel-body.height-342(style="display:none;padding-bottom:0;position:relative;")
+                            .point(style="display:inline-block;")
+                            span.list-title  #{item.title}
+                            span(style="float:right;font-size:12px;color:#aaa;") #{item.createTime}
+                    a(href="/news").tab-more 更多>
+                .gx-panel-body.height-342(style="display:none;padding-bottom:0;")
                     each item,index in noticeList
-                        a(href="/newsdetail?id=" + item.id).news-item #{item.title}
-                    a(href="/news?type=1").tab-more 更多
-    .row(style="margin-top: 20px;")
-        .col-sm-9.col-xs-12
+                        a(href="/newsdetail?id=" + item.id).news-item
+                            .point(style="display:inline-block;")
+                            span.list-title  #{item.title}
+                            span(style="float:right;font-size:12px;color:#aaa;") #{item.createTime}
+                    a(href="/news?type=1").tab-more 更多>
+    .row(style="margin-top: 40px;")
+        .col-sm-6.col-xs-12
             .gx-panel
                 .gx-panel-title 政策文献
                 div.wenjian-wrap
                     .tab-item2.tab-active(stye="width: 140px;") 通用标准
                     .tab-item2.tab(stye="width: 140px;") 技术文献
                     .tab-item2.tab(stye="width: 140px;") 考核标准
-                .gx-panel-body(style="padding-bottom:0;position:relative;height:254px;")
+                .gx-panel-body(style="padding-bottom:0;height:254px;")
                     each item,index in ruleList
-                        a(href="newsdetail?id=" + item.id).news-item #{item.title}
-                    a(href="/literature").tab-more 更多
-                .gx-panel-body(style="display:none;padding-bottom:0;position:relative;height:254px;")
+                        a(href="newsdetail?id=" + item.id,style="clear:both;").news-item
+                            .point(style="display:inline-block;")
+                            span.list-title  #{item.title}
+                            span(style="float:right;font-size:12px;color:#aaa;") #{item.createTime}
+                    a(href="/literature").tab-more 更多>
+                .gx-panel-body(style="display:none;padding-bottom:0;height:254px;")
                     each item,index in literatureList
-                        a(href="newsdetail?id=" + item.id).news-item #{item.title}
-                    a(href="/literature?type=1").tab-more 更多
-                .gx-panel-body(style="display:none;padding-bottom:0;position:relative;height:254px;")
+                        a(href="newsdetail?id=" + item.id,style="clear:both;").news-item
+                            .point(style="display:inline-block;")
+                            span.list-title  #{item.title}
+                            span(style="float:right;font-size:12px;color:#aaa;") #{item.createTime}
+                    a(href="/literature?type=1").tab-more 更多>
+                .gx-panel-body(style="display:none;padding-bottom:0;height:254px;")
                     each item,index in khbzList
-                        a(href="newsdetail?id=" + item.id).news-item #{item.title}
-                    a(href="/literature?type=2").tab-more 更多
-        .col-sm-3.col-xs-12.gx-btn-list
-            <div id="main_left_title">快速查询</div>
-            a(href="/report?type=3").gx-btn 钟表型式检验报告查询
-            a(href="/report?type=1").gx-btn 司法技术鉴定报告查询
-            a(href="/report?type=2").gx-btn 二手表检验证书查询
-            a(href="/report?type=4").gx-btn 眼镜型式检验报告查询
-            a(href="/report?type=5").gx-btn 皮具型式检验证书查询
-            a(href="/report?type=6").gx-btn 皮具真伪检验证书查询
-    .row(style="margin-top: 20px;")
+                        a(href="newsdetail?id=" + item.id,style="clear:both;").news-item
+                            .point(style="display:inline-block;")
+                            span.list-title  #{item.title}
+                            span(style="float:right;font-size:12px;color:#aaa;") #{item.createTime}
+                    a(href="/literature?type=2").tab-more 更多>
+        .col-sm-6.col-xs-12.gx-btn-list
+            .gx-panel
+                    .gx-panel-title 快速查询
+                    .gx-panel-body(style="padding-top:2px;height:254px;")
+                        a(href="/report?type=3").gx-btn 钟表型式检验报告查询
+                        a(href="/report?type=1").gx-btn 司法技术鉴定报告查询
+                        a(href="/report?type=2").gx-btn 二手表检验证书查询
+                        a(href="/report?type=4").gx-btn 眼镜型式检验报告查询
+                        a(href="/report?type=5").gx-btn 皮具型式检验证书查询
+                        a(href="/report?type=6").gx-btn 皮具真伪检验证书查询
+    .row(style="margin-top: 40px;")
         .col-sm-12.col-xs-12
             .gx-panel
-                .gx-panel-title 信息公开
+                .gx-panel-title(style="position:initial;") 信息公开
                     .title-search
                         input(type="text",placeholder="请输入机构名称")#searchInput
                         img(src="../../images/search.png", alt="").search-btn
-                .gx-panel-body(style="padding-bottom:0;position:relative;height:254px;").public-list
+                .gx-panel-body(style="padding-bottom:0;height:272px;").public-list
                     each item,index in publicList
-                        a(href="publicdetail?id=" + item.id).news-item #{item.name}
-                    a(href="/public").tab-more 更多
+                        a(href="publicdetail?id=" + item.id).news-item
+                            .point(style="display:inline-block;")
+                            span.list-title(style="width: 800px;")  #{item.name}
+                            span(style="float:right;font-size:12px;color:#aaa;") #{item.createTime}
     
             

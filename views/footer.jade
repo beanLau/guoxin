@@ -1,11 +1,22 @@
 if companyList && companyList.length > 0
-    .container(style="margin-top:-20px;")
+    .container(style="padding:0;margin:0 auto;")
         .youqing-wrap
-            a(href="#").youqing-name 友情连接
+            a(href="#").youqing-name 友情连接:
             each item in companyList
                 a(href= item.orgUrl || '#' ) #{item.orgName}
-.container.footer-wrap
-    .footer
-        p 版权所有：国家消费争议商品检测中心 / 中国商业联合会钟表眼镜商品质量监督检测中心    京ICP备01293884号-1
-        p 地址：北京市东城区建国门南大街5号1号楼103室    邮编: 100005
-        p 电话：010-65593443 010-65592242    电子信箱： info@hgstc.com 
+.footer-wrap(style="background: #183952;")
+    .container(style="background: #183952;")
+        .footer
+            .footer-item
+                img(src="/images/phone.png").footer-item-pic
+                .footer-item-name 联系方式
+                .footer-item-value 010-65593443 / 010-65592242
+            .footer-item
+                img(src="/images/email.png").footer-item-pic
+                .footer-item-name 投递邮箱
+                .footer-item-value info@hgstc.com
+            .footer-item
+                img(src="/images/address.png").footer-item-pic
+                .footer-item-name 中心地址
+                .footer-item-value 北京市东城区建国门南大街5号1号楼103室
+.banquan(style="background: #162C3D;color:#52728A;font-size:14px;text-align:center;heigth:70px;line-height:70px;") 版权所有：国家消费争议商品检测中心 / 中国商业联合会钟表眼镜商品质量监督检测中心 京ICP备01293884号-1
