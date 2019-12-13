@@ -89,6 +89,7 @@
 }
 .wenjian-wrap .tab-active{
     border-bottom: 1px solid #fff;
+    border-left: 1px solid #e9e9e9;
     border-right: 1px solid #e9e9e9;
 }
 .tab-more {
@@ -123,7 +124,6 @@
 }
 
 .gx-panel {
-    border-top: 2px solid #183952;
     position: relative;
 }
 
@@ -131,10 +131,21 @@
     height: 40px;
     line-height: 40px;
     position: relative;
-    color: #fff;
-    background: #183952;
+    color: #183952;
     width: 120px;
-    text-align: center;
+    padding-left: 20px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+.gx-panel-title::before{
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 30px;
+    background: #CD1212;
+    top: 5px;
+    left: 0;
 }
 
 .panel-more {
@@ -167,6 +178,7 @@
 }
 
 .gx-panel-body {
+    border-top: 2px solid #183952;
     padding: 0 10px;
     min-height: 120px;
     overflow: hidden;
@@ -243,7 +255,7 @@
 }
 .list-title{
     display: inline-block;
-    width: 390px;
+    width: 360px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -356,7 +368,7 @@
 .title-search {
     position: absolute;
     right: 20px;
-    top: 4px;
+    top: 0;
     height: 26px;
 }
 
