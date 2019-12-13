@@ -80,7 +80,7 @@
                     each item,index in publicList
                         a(href="publicdetail?id=" + item.id).news-item
                             .point(style="display:inline-block;")
-                            span.list-title(style="width: 350px;")  #{item.name}
+                            span.list-title  #{item.name}
                             span(style="float:right;font-size:14px;color:#aaa;") #{item.createTime}
         .col-sm-6.col-xs-12
             .gx-panel
@@ -89,7 +89,7 @@
                     each item,index in warnList
                         a(href="/warndetail?type=1&id=" + item.id).news-item
                             .point(style="display:inline-block;")
-                            span.list-title(style="width: 350px;")  #{item.shopName}
+                            span.list-title  #{item.shopName}
                             span(style="float:right;font-size:14px;color:#aaa;") #{item.createTime}
     
             

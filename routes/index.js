@@ -48,6 +48,15 @@ router.get('/', async(ctx) => {
     if (resNoticeList.code == 0) {
         try {
             noticeList = resNoticeList.result.records || []
+            noticeList.map(item=>{
+                let create = item.createTime
+                if(create){
+                    create = create.split(" ")
+                    if(create.length > 0){
+                        item.createTime = create[0]
+                    }
+                }
+            })
         } catch (error) {
 
         }
@@ -56,6 +65,15 @@ router.get('/', async(ctx) => {
     if (resHangyeList.code == 0) {
         try {
             hangyeList = resHangyeList.result.records || []
+            hangyeList.map(item=>{
+                let create = item.createTime
+                if(create){
+                    create = create.split(" ")
+                    if(create.length > 0){
+                        item.createTime = create[0]
+                    }
+                }
+            })
         } catch (error) {
 
         }
@@ -64,6 +82,15 @@ router.get('/', async(ctx) => {
     if (resHangyeList.code == 0) {
         try {
             tecDocList = resTecDocList.result.records || []
+            tecDocList.map(item=>{
+                let create = item.createTime
+                if(create){
+                    create = create.split(" ")
+                    if(create.length > 0){
+                        item.createTime = create[0]
+                    }
+                }
+            })
         } catch (error) {
 
         }
@@ -72,6 +99,15 @@ router.get('/', async(ctx) => {
     if (resCompanyList.code == 0) {
         try {
             companyList = resCompanyList.result.records || []
+            companyList.map(item=>{
+                let create = item.createTime
+                if(create){
+                    create = create.split(" ")
+                    if(create.length > 0){
+                        item.createTime = create[0]
+                    }
+                }
+            })
         } catch (error) {
 
         }
@@ -81,6 +117,15 @@ router.get('/', async(ctx) => {
     if (resRuleList.code == 0) {
         try {
             ruleList = resRuleList.result.records || []
+            ruleList.map(item=>{
+                let create = item.createTime
+                if(create){
+                    create = create.split(" ")
+                    if(create.length > 0){
+                        item.createTime = create[0]
+                    }
+                }
+            })
         } catch (error) {
 
         }
@@ -90,6 +135,15 @@ router.get('/', async(ctx) => {
     if (reskhbzList.code == 0) {
         try {
             khbzList = reskhbzList.result.records || []
+            khbzList.map(item=>{
+                let create = item.createTime
+                if(create){
+                    create = create.split(" ")
+                    if(create.length > 0){
+                        item.createTime = create[0]
+                    }
+                }
+            })
         } catch (error) {
 
         }
@@ -99,6 +153,15 @@ router.get('/', async(ctx) => {
     if (resPublicList.code == 0) {
         try {
             publicList = resPublicList.result.records || []
+            publicList.map(item=>{
+                let create = item.createTime
+                if(create){
+                    create = create.split(" ")
+                    if(create.length > 0){
+                        item.createTime = create[0]
+                    }
+                }
+            })
         } catch (error) {
 
         }
@@ -117,6 +180,15 @@ router.get('/', async(ctx) => {
     if (resWarnList.code == 0) {
         try {
             warnList = resWarnList.result.records || []
+            warnList.map(item=>{
+                let create = item.createTime
+                if(create){
+                    create = create.split(" ")
+                    if(create.length > 0){
+                        item.createTime = create[0]
+                    }
+                }
+            })
         } catch (error) {
 
         }

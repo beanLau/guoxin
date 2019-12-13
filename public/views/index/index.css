@@ -255,7 +255,7 @@
 }
 .list-title{
     display: inline-block;
-    width: 360px;
+    width: 400px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
