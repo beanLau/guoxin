@@ -212,6 +212,9 @@ input[type="text"]{
     padding-left: 100px;
     margin-top: 10px;
 }
+.input-tip span{
+    font-size: 16px;
+}
 .form-inline .form-control {
     display: inline-block;
     width: 300px;

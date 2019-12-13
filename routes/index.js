@@ -1,6 +1,7 @@
 const router = require('koa-router')();
 const indexapi = require('../api/index');
 const publicapi = require('../api/public.js');
+const warnapi = require('../api/warn.js');
 
 router.get('/', async(ctx) => {
     let gxtoken = ctx.cookies.get('gxtoken') || ''
@@ -13,6 +14,7 @@ router.get('/', async(ctx) => {
     let bannerList = []
     let companyList = []
     let publicList = []
+    let warnList = []
     let renderData = {}
     let res = await Promise.all([indexapi.getNoticeList(ctx, {
         pageNo: 1,
@@ -36,6 +38,9 @@ router.get('/', async(ctx) => {
         pageNo: 1,
         pageSize: 8
     }),indexapi.getBannerList(ctx, {
+        pageNo: 1,
+        pageSize: 8
+    }),warnapi.getShixinList(ctx,{
         pageNo: 1,
         pageSize: 8
     })])
@@ -107,6 +112,15 @@ router.get('/', async(ctx) => {
 
         }
     }
+    
+    let resWarnList = res[8]
+    if (resWarnList.code == 0) {
+        try {
+            warnList = resWarnList.result.records || []
+        } catch (error) {
+
+        }
+    }
     renderData = {
         title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站',
         pagePath: ctx.request.path,
@@ -122,7 +136,8 @@ router.get('/', async(ctx) => {
         danweiList: [{ id: 1, title: "合作单位合作单位合作单位合作单位合作单位一" }],
         zhiliangList: [{ id: 1, title: "质量监督质量监督质量监督质量监督质量监督质量监督质量监督一" }],
         companyList: companyList,
-        bannerList: bannerList
+        bannerList: bannerList,
+        warnList: warnList
     }
     await ctx.render('index/index', renderData)
 })
