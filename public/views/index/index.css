@@ -210,24 +210,12 @@
 .point {
     position: absolute;
     left: 10px;
-    width: 8px;
-    height: 8px;
+    width: 6px;
+    height: 6px;
     transform: rotate(45deg);
     background: #337ab7;
     z-index: 1;
-    top: 4px;
-}
-
-.news-item::before {
-    content: "";
-    position: absolute;
-    left: 10px;
-    width: 8px;
-    height: 8px;
-    border-radius: 4px;
-    background: #337ab7;
-    z-index: 1;
-    top: 4px;
+    top: 5px;
 }
 .news-item:hover .news-item::before{
     background: #CD1212;
@@ -332,14 +320,17 @@
 .gx-btn-list .gx-btn {
     display: inline-block;
     color: #fff;
-    height: 70px;
-    line-height: 70px;
+    height: 55px;
+    line-height: 55px;
     width: 255px;
     overflow: hidden;
     background-size: cover;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 15px;
     border-radius: 5px;
+}
+.gx-btn-list .gx-btn:hover{
+    background: #CD1212;
 }
 .gx-btn-list .gx-btn:nth-child(odd){
     margin-right: 15px;
