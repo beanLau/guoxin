@@ -380,4 +380,7 @@ a:active {text-decoration: none;}
     .footer-item-value {
         min-height: 45px;
     }
+    .navbar-nav{
+        margin-top: 0 !important;
+    }
 }

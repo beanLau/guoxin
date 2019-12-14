@@ -453,4 +453,10 @@
     .gx-btn-list .gx-btn{
         width: 100%;
     }
+    .tab-more{
+        width: 60px;
+    }
+    .tab-item, .tab-item2{
+        width: 64px;
+    }
 }
