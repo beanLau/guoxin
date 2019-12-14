@@ -145,3 +145,8 @@
 .gx-btn:hover{
     background: #CC3300;
 }
+@media (max-width: 750px){
+    #nengrong_right_top {
+        height: 72px;
+    }
+}

@@ -165,8 +165,13 @@
 .news_list_ul_1 li a.a_li_list:hover{
     color: #CC3300;
 }
-@media (max-width: 375px){
+
+@media (max-width: 750px){
     #nengrong_right_top {
         height: 72px;
+    }
+    .news_list_ul_1{
+        width: 100%;
+        padding: 10px;
     }
 }

@@ -212,3 +212,9 @@ th,td{
 th{
     background-color: #eee;
 }
+
+@media (max-width: 750px){
+    #nengrong_right_top {
+        height: 72px;
+    }
+}

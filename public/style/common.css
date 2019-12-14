@@ -398,6 +398,9 @@ a:active {text-decoration: none;}
     .top-right-wrap{
         padding-right: 0;
     }
+    .gx-btn-wrap{
+        display: none;
+    }
 }
 @media (max-width: 375px){
     #nengrong_right_top span a {
