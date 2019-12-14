@@ -13,7 +13,7 @@ nav.navbar.navbar-default
                 li
                     a(href="/") 网站首页
                 if pagePath == '/orgdesc'
-                    li.dropdown.open
+                    li.dropdown.active-nav
                         a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 机构简介
                             span.caret
                         ul.dropdown-menu
@@ -41,7 +41,7 @@ nav.navbar.navbar-default
                 li
                     a(href="/news") 新闻公告
                 if pagePath == '/public'
-                    li.dropdown.open
+                    li.dropdown.active-nav
                         a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 信息公开
                             span.caret
                         ul.dropdown-menu
@@ -71,7 +71,7 @@ nav.navbar.navbar-default
                             li
                                 a(href="/public?type=4") 皮具养护服务诚信站点
                 if pagePath == '/report'
-                    li.dropdown.open
+                    li.dropdown.active-nav
                         a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 报告查询
                             span.caret
                         ul.dropdown-menu
@@ -105,7 +105,7 @@ nav.navbar.navbar-default
                             li
                                 a(href="/report?type=6") 皮具真伪检验证书查询
                 if pagePath == '/work'
-                    li.dropdown.open
+                    li.dropdown.active-nav
                         a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 办事大厅
                             span.caret
                         ul.dropdown-menu
@@ -135,7 +135,7 @@ nav.navbar.navbar-default
                             li
                                 a(href="/work?type=4") 职业技能鉴定申请
                 if pagePath == '/literature'
-                    li.dropdown.open
+                    li.dropdown.active-nav
                         a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 政策文献
                             span.caret
                         ul.dropdown-menu
@@ -157,7 +157,7 @@ nav.navbar.navbar-default
                             li
                                 a(href="/literature?type=2") 考核标准
                 if pagePath == '/warn'
-                    li.dropdown.open
+                    li.dropdown.active-nav
                         a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 消费警示
                             span.caret
                         ul.dropdown-menu
