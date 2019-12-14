@@ -182,4 +182,14 @@
 .news_list_ul_1 li a.a_li_list:hover{
     color: #CC3300;
 }
-
+@media (max-width: 768px){
+    .news_list_ul_1 li a.a_li_list {
+        width: 100%;
+    }
+    .news_list_ul_1 li img{
+        display: none;
+    }
+    .news_list_ul_1 li .news-time {
+        display: none;
+    }
+}

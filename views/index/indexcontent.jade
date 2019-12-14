@@ -1,6 +1,6 @@
 .container.page-content(style="")
     .row
-        .col-sm-6.col-xs-12
+        .col-md-6.col-sm-12.col-xs-12
             .swiper-container
                 .swiper-wrapper
                     each item in bannerList
@@ -10,7 +10,7 @@
                                 .carousel-caption #{item.bannerName || ""}
                 .swiper-pagination
                 
-        .col-sm-6.col-xs-12
+        .col-md-6.col-sm-12.col-xs-12
             .gx-panel
                 .gx-panel-title 新闻中心
                 div.wenjian-wrap
@@ -31,7 +31,7 @@
                             span(style="float:right;font-size:14px;color:#aaa;") #{item.createTime}
                     a(href="/news?type=1").tab-more 更多>
     .row(style="margin-top: 40px;")
-        .col-sm-6.col-xs-12
+        .col-md-6.col-sm-12.col-xs-12
             .gx-panel
                 .gx-panel-title 政策文献
                 div.wenjian-wrap
@@ -59,10 +59,10 @@
                             span.list-title  #{item.title}
                             span(style="float:right;font-size:14px;color:#aaa;") #{item.createTime}
                     a(href="/literature?type=2").tab-more 更多>
-        .col-sm-6.col-xs-12.gx-btn-list
+        .col-md-6.col-sm-12.col-xs-12.gx-btn-list
             .gx-panel
                     .gx-panel-title 快速查询
-                    .gx-panel-body(style="padding-top:10px;height:254px;")
+                    .gx-panel-body.quick-content
                         a(href="/report?type=3").gx-btn 钟表型式检验报告查询
                         a(href="/report?type=1").gx-btn 司法技术鉴定报告查询
                         a(href="/report?type=2").gx-btn 二手表检验证书查询
@@ -70,7 +70,7 @@
                         a(href="/report?type=5").gx-btn 皮具型式检验证书查询
                         a(href="/report?type=6").gx-btn 皮具真伪检验证书查询
     .row(style="margin-top: 40px;")
-        .col-sm-6.col-xs-12
+        .col-md-6.col-sm-12.col-xs-12
             .gx-panel
                 .gx-panel-title(style="position:initial;") 信息公开
                     .title-search
@@ -82,7 +82,7 @@
                             .point(style="display:inline-block;")
                             span.list-title  #{item.name}
                             span(style="float:right;font-size:14px;color:#aaa;") #{item.createTime}
-        .col-sm-6.col-xs-12
+        .col-md-6.col-sm-12.col-xs-12
             .gx-panel
                 .gx-panel-title(style="position:initial;") 失信黑名单
                 .gx-panel-body(style="padding-bottom:0;height:272px;").public-list
