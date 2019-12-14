@@ -191,3 +191,11 @@
     max-height: 56px;
     overflow: hidden;
 }
+@media (max-width: 375px){
+    .news_list_title_box{
+        padding: 10px;
+    }
+    .news_list_title_box h6{
+        font-size: 12px;
+    }
+}

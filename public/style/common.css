@@ -399,3 +399,14 @@ a:active {text-decoration: none;}
         padding-right: 0;
     }
 }
+@media (max-width: 375px){
+    #nengrong_right_top span a {
+        font-size: 12px;
+    }
+    #nengrong_right_top span{
+        font-size: 12px !important;
+    }
+    .active-nav>.dropdown-menu{
+        display: none;
+    }
+}

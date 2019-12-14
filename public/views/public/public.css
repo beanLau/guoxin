@@ -141,7 +141,7 @@
     list-style: none;
 }
 .news_list_ul_1 li {
-    height: 43px;
+    min-height: 43px;
     border-bottom: 1px #DDD dashed;
     line-height: 43px;
     font-size: 16px;
@@ -164,4 +164,9 @@
 }
 .news_list_ul_1 li a.a_li_list:hover{
     color: #CC3300;
+}
+@media (max-width: 375px){
+    #nengrong_right_top {
+        height: 72px;
+    }
 }
