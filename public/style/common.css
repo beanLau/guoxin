@@ -401,6 +401,17 @@ a:active {text-decoration: none;}
     .gx-btn-wrap{
         display: none;
     }
+    .page-content {
+        margin-top: 20px;
+        overflow-x: hidden;
+        padding: 10px !important;
+    }
+    #nengrong img{
+        max-width: 100%;
+    }
+    .youqing-wrap{
+        padding: 10px;
+    }
 }
 @media (max-width: 375px){
     #nengrong_right_top span a {

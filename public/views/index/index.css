@@ -432,6 +432,10 @@
     .gx-btn-list .gx-btn{
         width: 100%;
     }
+    .page-content {
+        padding: 10px 20px !important;
+        margin-top: 20px;
+    }
 }
 @media (max-width: 420px){
     .item>img {
@@ -448,7 +452,7 @@
         padding: 20px;
     }
     .list-title{
-        width: 240px;
+        width: 220px;
     }
     .gx-btn-list .gx-btn{
         width: 100%;
