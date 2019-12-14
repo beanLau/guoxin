@@ -77,8 +77,9 @@ a, a:link, a:visited {
 .dropdown-menu>li>a{
     font-size: 14px;
 }
-.dropdown-menu>li>a:hover{
-    background: #fcf8e3;
+.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus{
+    background: #fcf8e3 !important;
+    color: #CC3300 !important;
 }
 .top-right-wrap{
     position: absolute;
