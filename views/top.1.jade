@@ -3,7 +3,7 @@ nav.navbar.navbar-default
         .top-img-wrap
             img(src="/images/top_bg.png")
         .navbar-header
-            button.navbar-toggle.collapsed(data-toggle="collapse",data-target="#navbar",aria-expanded="false",aria-controls="navbar")
+            a.navbar-toggle.collapsed(role="button",data-toggle="collapse",data-target="#navbar",aria-expanded="false",aria-controls="navbar")
                 span.sr-only Toggle
                 span.icon-bar
                 span.icon-bar
@@ -174,66 +174,6 @@ nav.navbar.navbar-default
                                 a(href="/warn") 失信黑名单
                             li
                                 a(href="/warn?type=2") 消费争议
-        .phone-nav
-            .nav-item
-                a(href="/").nav-item-name 网站首页
-            .nav-item.haschild-nav
-                .nav-item-name 机构简介
-                .nav-item-icon
-                .nav-child
-                    .nav-child-title 机构简介
-                    a(href="/orgdesc").nav-child-item 关于检测中心
-                    a(href="/orgdesc?type=1").nav-child-item 组织机构
-                    a(href="/orgdesc?type=2").nav-child-item 资质证书
-                    a(href="/orgdesc?type=3").nav-child-item 历史回顾
-            .nav-item
-                a(href="/news").nav-item-name 新闻公告
-            .nav-item.haschild-nav
-                .nav-item-name 信息公开
-                .nav-item-icon
-                .nav-child
-                    .nav-child-title 信息公开
-                    a(href="/public").nav-child-item 二手表A级店铺公示
-                    a(href="/public?type=1").nav-child-item 电子商务诚信示范店公示
-                    a(href="/public?type=2").nav-child-item 高级鉴定师信息公示
-                    a(href="/public?type=3").nav-child-item 钟表售后服务诚信站点
-                    a(href="/public?type=4").nav-child-item 皮具养护服务诚信站点
-            .nav-item.haschild-nav
-                .nav-item-name 报告查询
-                .nav-item-icon
-                .nav-child
-                    .nav-child-title 报告查询
-                    a(href="/report?type=3").nav-child-item 钟表型式检验报告查询
-                    a(href="/report?type=1").nav-child-item 司法技术鉴定报告查询
-                    a(href="/report?type=2").nav-child-item 二手表检验证书查询
-                    a(href="/report?type=4").nav-child-item 眼镜型式检验报告查询
-                    a(href="/report?type=5").nav-child-item 皮具型式检验证书查询
-                    a(href="/report?type=6").nav-child-item 皮具真伪检验证书查询
-            .nav-item.haschild-nav
-                .nav-item-name 办事大厅
-                .nav-item-icon
-                .nav-child
-                    .nav-child-title 办事大厅
-                    a(href="/work").nav-child-item 委托检测
-                    a(href="/work?type=5").nav-child-item 个人委托真假鉴定
-                    a(href="/work?type=2").nav-child-item 钟表维修便民服务
-                    a(href="/work?type=3").nav-child-item 验光配镜便民服务
-                    a(href="/work?type=4").nav-child-item 职业技能鉴定申请
-            .nav-item.haschild-nav
-                .nav-item-name 政策文献
-                .nav-item-icon
-                .nav-child
-                    .nav-child-title 政策文献
-                    a(href="/literature").nav-child-item 通用标准
-                    a(href="/literature?type=1").nav-child-item 技术文献
-                    a(href="/literature?type=2").nav-child-item 考核标准
-            .nav-item.haschild-nav
-                .nav-item-name 消费警示
-                .nav-item-icon
-                .nav-child
-                    .nav-child-title 消费警示
-                    a(href="/warn").nav-child-item 失信黑名单
-                    a(href="/warn?type=2").nav-child-item 消费争议
         .top-right-wrap
                 .top-search
                     input(type="text",placeholder="请输入关键字",style="width:200px;")#topSearchInput

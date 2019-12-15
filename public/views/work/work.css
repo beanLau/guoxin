@@ -235,8 +235,11 @@ input[type="text"]{
 .sendCompanyName-wrap,.area-wrap,.prdCount-wrap,.sendTime-wrap,.buyTime-wrap,.buyType-wrap{
     display: none;
 }
-@media (max-width: 375px){
+@media (max-width: 750px){
     .form-inline .form-control{
         width: 200px;
+    }
+    .input-tip{
+        padding-left: 0;
     }
 }

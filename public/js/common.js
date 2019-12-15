@@ -1,6 +1,4 @@
 $(function () {
-
-    
     $(".dropdown").mouseover(function () {
         $(this).addClass("open");
     });
@@ -26,6 +24,17 @@ $(function () {
         var title =  $("#topSearchInput").val()
         if(title){
             window.location.href = "/news?title="+ encodeURI(title)
+        }
+    })
+
+    $(".nav-item").click(function(){
+        let dom = $(this)
+        if(dom.hasClass("active-nav")){
+            dom.removeClass("active-nav")
+            return;
+        }else{
+            $(".active-nav").removeClass("active-nav")
+            dom.addClass("active-nav")
         }
     })
 })
