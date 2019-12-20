@@ -16,32 +16,32 @@
                         if newsDetail.type==1 || newsDetail.type == 2
                             if newsDetail.type == 1
                                 li.nei_menu_on
-                                    a(href="#",title="行业信息") 行业信息
+                                    a(href="/news",title="行业信息") 行业信息
                             else
                                 li.nei_menu_off
                                     a(href="/news",title="行业信息") 行业信息
                             if  newsDetail.type == 2
                                 li.nei_menu_on
-                                    a(href="#",title="公告通知") 公告通知
+                                    a(href="/news?type=1",title="公告通知") 公告通知
                             else
                                 li.nei_menu_off
                                     a(href="/news?type=1",title="公告通知") 公告通知
                         else
                             if newsDetail.type == 3
                                 li.nei_menu_on
-                                    a(href="#",title="通用标准") 通用标准
+                                    a(href="/literature",title="通用标准") 通用标准
                             else
                                 li.nei_menu_off
                                     a(href="/literature",title="通用标准") 通用标准
                             if  newsDetail.type == 4
                                 li.nei_menu_on
-                                    a(href="#",title="技术文献") 技术文献
+                                    a(href="/literature?type=1",title="技术文献") 技术文献
                             else
                                 li.nei_menu_off
                                     a(href="/literature?type=1",title="技术文献") 技术文献
                             if  newsDetail.type == 5
                                 li.nei_menu_on
-                                    a(href="#",title="考核标准") 考核标准
+                                    a(href="/literature?type=2",title="考核标准") 考核标准
                             else
                                 li.nei_menu_off
                                     a(href="/literature?type=2",title="考核标准") 考核标准

@@ -10,13 +10,13 @@
                     ul
                         if (!warnType || warnType == 1)
                             li.nei_menu_on
-                                a(href="#",title="失信黑名单") 失信黑名单
+                                a(href="/warn",title="失信黑名单") 失信黑名单
                         else
                             li.nei_menu_off
                                 a(href="/warn",title="失信黑名单") 失信黑名单
                         if warnType == 2
                             li.nei_menu_on
-                                a(href="#",title="消费争议") 消费争议
+                                a(href="/warn?type=2",title="消费争议") 消费争议
                         else
                             li.nei_menu_off
                                 a(href="/warn?type=2",title="消费争议") 消费争议
