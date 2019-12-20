@@ -83,7 +83,7 @@
                 #detal_title #{newsDetail.title}
                 #detal_sub_title 更新：#{newsDetail.updateTime}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;阅读：#{newsDetail.readTimes}次&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;关键词：
                     a(href="#") #{newsDetail.keyWords}
-                #detal_sub_content #{newsDetail.content}
+                #detal_sub_content !{newsDetail.content}
                 #detal_fenxiang
                     div(style="float:right;")
                         #bdshare.bdshare_t.bds_tools.get-codes-bdshare

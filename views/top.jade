@@ -10,7 +10,7 @@ nav.navbar.navbar-default
                 span.icon-bar
         #navbar.navbar-collapse.collapse
             ul.nav.navbar-nav
-                li
+                li.dropdown
                     a(href="/") 网站首页
                 if pagePath == '/orgdesc'
                     li.dropdown.active-nav
@@ -38,7 +38,7 @@ nav.navbar.navbar-default
                                 a(href="/orgdesc?type=2") 资质证书
                             li
                                 a(href="/orgdesc?type=3") 历史回顾
-                li
+                li.dropdown
                     a(href="/news") 新闻公告
                 if pagePath == '/public'
                     li.dropdown.active-nav
@@ -48,13 +48,13 @@ nav.navbar.navbar-default
                             li
                                 a(href="/public") 二手表A级店铺公示
                             li
-                                a(href="/public?type=1") 电子商务诚信示范店公示
+                                a(href="/public?type=2") 电子商务诚信示范店公示
                             li
-                                a(href="/public?type=2") 高级鉴定师信息公示
+                                a(href="/public?type=3") 高级鉴定师信息公示
                             li
-                                a(href="/public?type=3") 钟表售后服务诚信站点
+                                a(href="/public?type=4") 钟表售后服务诚信站点
                             li
-                                a(href="/public?type=4") 皮具养护服务诚信站点
+                                a(href="/public?type=5") 皮具养护服务诚信站点
                 else
                     li.dropdown
                         a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 信息公开
@@ -63,13 +63,13 @@ nav.navbar.navbar-default
                             li
                                 a(href="/public") 二手表A级店铺公示
                             li
-                                a(href="/public?type=1") 电子商务诚信示范店公示
+                                a(href="/public?type=2") 电子商务诚信示范店公示
                             li
-                                a(href="/public?type=2") 高级鉴定师信息公示
+                                a(href="/public?type=3") 高级鉴定师信息公示
                             li
-                                a(href="/public?type=3") 钟表售后服务诚信站点
+                                a(href="/public?type=4") 钟表售后服务诚信站点
                             li
-                                a(href="/public?type=4") 皮具养护服务诚信站点
+                                a(href="/public?type=5") 皮具养护服务诚信站点
                 if pagePath == '/report'
                     li.dropdown.active-nav
                         a(href="#",data-toggle="dropdown",role="button",aria-haspopup="true",aria-expanded="false").dropdown-toggle 报告查询

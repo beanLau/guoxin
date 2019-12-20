@@ -57,7 +57,7 @@
                                         a(href="/newsdetail?id=" + item.id) #{item.title}
                                     h4
                                         a(href="/newsdetail?id=" + item.id) #{item.title}
-                                    div #{item.content}
+                                    div !{item.content}
                                     h6 发布时间：#{item.createTime} &nbsp; |&nbsp; 阅读：#{item.readTimes} 次
                         if literatureList && literatureList.length > 0
                             nav(aria-label="Page navigation")
