@@ -16,7 +16,6 @@
                     tr
                         th 样品编号
                         th 创建时间
-                        th 创建人
                         th 操作
                     if reportList.length == 0
                         tr
@@ -26,7 +25,6 @@
                             tr
                                 td #{item.sampleCode}
                                 td #{item.createTime}
-                                td #{item.createBy}
                                 td
                                     a(href="/reportDetail?id=" + item.sampleCode) 详情
         if reportList && reportList.length > 0
