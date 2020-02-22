@@ -452,6 +452,7 @@ a:active {text-decoration: none;}
         font-size: 16px;
         line-height: 30px;
         color: #fff!important;
+        padding-right: 10px;
     }
     .nav-child{
         position: absolute;

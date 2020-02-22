@@ -22,6 +22,7 @@ router.get('/report', async (ctx) => {
         if(resReport.code == 0){
             try {
                 reportList = resReport.result.records || []
+                console.log(JSON.stringify(reportList[0]))
                 pageInfo.current = resReport.result.current
                 pageInfo.pages = resReport.result.pages
                 pageInfo.total = resReport.result.total

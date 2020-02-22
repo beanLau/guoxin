@@ -141,7 +141,6 @@
     list-style: none;
 }
 .news_list_ul_1 li {
-    height: 43px;
     border-bottom: 1px #DDD dashed;
     line-height: 43px;
     font-size: 14px;
@@ -150,6 +149,9 @@
 .news_list_ul_1 li span {
     display: block;
     float: left;
+}
+.news_list_ul_1 li span div{
+    padding-left: 10px;
 }
 .news_list_ul_1 li a {
     vertical-align: middle;
