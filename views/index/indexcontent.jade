@@ -21,14 +21,14 @@
                         a(href="/newsdetail?id=" + item.id).news-item 
                             .point(style="display:inline-block;")
                             span.list-title  #{item.title}
-                            span(style="float:right;font-size:14px;color:#aaa;") #{item.createTime}
+                            span(style="float:right;font-size:14px;color:#aaa;") #{item.utime}
                     a(href="/news").tab-more 更多>
                 .gx-panel-body.height-342(style="display:none;padding-bottom:0;")
                     each item,index in noticeList
                         a(href="/newsdetail?id=" + item.id).news-item
                             .point(style="display:inline-block;")
                             span.list-title  #{item.title}
-                            span(style="float:right;font-size:14px;color:#aaa;") #{item.createTime}
+                            span(style="float:right;font-size:14px;color:#aaa;") #{item.utime}
                     a(href="/news?type=1").tab-more 更多>
     .row(style="margin-top: 40px;")
         .col-md-6.col-sm-12.col-xs-12
@@ -43,21 +43,21 @@
                         a(href="newsdetail?id=" + item.id,style="clear:both;").news-item
                             .point(style="display:inline-block;")
                             span.list-title  #{item.title}
-                            span(style="float:right;font-size:14px;color:#aaa;") #{item.createTime}
+                            span(style="float:right;font-size:14px;color:#aaa;") #{item.utime}
                     a(href="/literature").tab-more 更多>
                 .gx-panel-body(style="display:none;padding-bottom:0;height:254px;")
                     each item,index in literatureList
                         a(href="newsdetail?id=" + item.id,style="clear:both;").news-item
                             .point(style="display:inline-block;")
                             span.list-title  #{item.title}
-                            span(style="float:right;font-size:14px;color:#aaa;") #{item.createTime}
+                            span(style="float:right;font-size:14px;color:#aaa;") #{item.utime}
                     a(href="/literature?type=1").tab-more 更多>
                 .gx-panel-body(style="display:none;padding-bottom:0;height:254px;")
                     each item,index in khbzList
                         a(href="newsdetail?id=" + item.id,style="clear:both;").news-item
                             .point(style="display:inline-block;")
                             span.list-title  #{item.title}
-                            span(style="float:right;font-size:14px;color:#aaa;") #{item.createTime}
+                            span(style="float:right;font-size:14px;color:#aaa;") #{item.utime}
                     a(href="/literature?type=2").tab-more 更多>
         .col-md-6.col-sm-12.col-xs-12.gx-btn-list
             .gx-panel
