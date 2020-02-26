@@ -5,7 +5,7 @@
                 .swiper-wrapper
                     each item in bannerList
                         .swiper-slide
-                            a(href="/newsdetail?id="+item.id).item
+                            a(href=item.jumpUrl).item
                                 img(src="http://39.105.127.212:8080/jeecg-boot/" + item.imgUrl, alt="")
                                 .carousel-caption #{item.bannerName || ""}
                 .swiper-pagination
