@@ -1,15 +1,13 @@
 extends ../layout.jade
 head
   block headlink
-    link(rel='stylesheet',href='https://unpkg.com/swiper/css/swiper.css')
-    link(rel='stylesheet',href='https://unpkg.com/swiper/css/swiper.min.css')
+    link(rel='stylesheet',href='/plugins/swiper4/css/swiper.min.css')
     link(rel='stylesheet',href='/views/index/index.css')
 
 body
   block content
     include indexcontent.jade
   block headjs
-    script(src='https://unpkg.com/swiper/js/swiper.js')
-    script(src='https://unpkg.com/swiper/js/swiper.min.js')
+    script(src='/plugins/swiper4/js/swiper.min.js')
     script(src='/views/index/index.js')
   
