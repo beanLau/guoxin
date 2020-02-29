@@ -224,6 +224,7 @@ th{
 }
 .table-label{
     background-color: #eee;
+    vertical-align: middle !important;
 }
 .table-reportdetail td{
     width: 144px;
