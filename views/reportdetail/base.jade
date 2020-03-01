@@ -31,52 +31,47 @@ else
                 td !{reportDetail.detail.jxBss || ""}
             tr
                 td(colspan=8) 手表材质鉴定
-            tr
-                td.table-label(rowspan=3) 表壳
-                td.table-label &nbsp 
-                td(colspan=2)
-                td.table-label(rowspan=3) 表扣
-                td.table-label &nbsp  
-                td(colspan=2)
-            tr
+            tr 
+                td.table-label(rowspan=2) 表壳
                 td.table-label 表壳号
                 td(colspan=2) !{reportDetail.detail.bkeCode || ""}
-                td.table-label 表扣号 
-                td(colspan=2) !{reportDetail.detail.bkCode || ""}
-            tr
-                td.table-label 表壳材质
-                td(colspan=2) !{reportDetail.detail.bkeTexture || ""}
-                td.table-label 表扣材质 
-                td(colspan=2) !{reportDetail.detail.bkTexture || ""}
-            tr
-                td.table-label(rowspan=5) 表带
-                td.table-label(rowspan=3) &nbsp  
-                td(colspan=2,rowspan=3)
                 td.table-label(rowspan=6) 外观宝石镶嵌
                 td.table-label 表壳
                 td(colspan=2) !{reportDetail.detail.bsBke || ""}
-            tr  
+            tr
+                td.table-label 表壳材质
+                td(colspan=2) !{reportDetail.detail.bkeTexture || ""}
                 td.table-label 表盘  
                 td(colspan=2) !{reportDetail.detail.bsBp || ""}
-            tr  
+            tr
+                td.table-label(rowspan=2) 表扣
+                td.table-label 表扣号 
+                td(colspan=2) !{reportDetail.detail.bkCode || ""}
                 td.table-label 表扣  
                 td(colspan=2) !{reportDetail.detail.bsBkou || ""}
             tr
-                td.table-label 表带号
-                td(colspan=2) !{reportDetail.detail.bdCode || ""}
+                td.table-label 表扣材质 
+                td(colspan=2) !{reportDetail.detail.bkTexture || ""}
                 td.table-label 表带  
                 td(colspan=2) !{reportDetail.detail.bsBd || ""}
             tr
-                td.table-label 表带材质
-                td(colspan=2) !{reportDetail.detail.bdTexture || ""}
+                td.table-label(rowspan=2) 表带
+                td.table-label 表带号
+                td(colspan=2) !{reportDetail.detail.bdCode || ""}
                 td.table-label 表冠  
                 td(colspan=2) !{reportDetail.detail.bsBg || ""}
             tr
+                td.table-label 表带材质
+                td(colspan=2) !{reportDetail.detail.bdTexture || ""}
+                td.table-label 表针  
+                td(colspan=2) !{reportDetail.detail.bsBz || ""}
+            tr 
                 td.table-label 表盘
                 td.table-label 表盘材质
                 td(colspan=2) !{reportDetail.detail.bpTexture || ""}
-                td.table-label 表针  
-                td(colspan=2) !{reportDetail.detail.bsBz || ""}
+                td(colspan=4)
+
+
             tr
                 td(colspan=8) 机芯鉴定
             tr
@@ -88,12 +83,66 @@ else
                 td !{reportDetail.detail.jxOrder || ""}
                 td.table-label 原装 
                 td !{reportDetail.detail.jxYuanzhuang || ""}
-            tr(style="min-height:160px;")
-                td.table-label 机芯工艺
-                td(colspan=7) ----
-            tr(style="min-height:160px;")
-                td.table-label 机芯功能
-                td(colspan=7) ----
+            tr
+                td.table-label(rowspan=8) 机芯功能
+                td.table-label 时分秒
+                td !{reportDetail.detail.jxSfm || ""}
+                td.table-label 时分
+                td !{reportDetail.detail.jxSf || ""}
+                td.table-label 日历
+                td !{reportDetail.detail.jxRl || ""}
+                td
+            tr
+                td.table-label 星期
+                td !{reportDetail.detail.jxXq || ""}
+                td.table-label 周立
+                td !{reportDetail.detail.jxZl || ""}
+                td.table-label 月份
+                td !{reportDetail.detail.jxYf || ""}
+                td
+            tr
+                td.table-label 月相
+                td !{reportDetail.detail.jxYx || ""}
+                td.table-label 年历
+                td !{reportDetail.detail.jxNl || ""}
+                td.table-label 万年历
+                td !{reportDetail.detail.jxWnl || ""}
+                td
+            tr
+                td.table-label 星辰
+                td !{reportDetail.detail.jxXc || ""}
+                td.table-label 响闹
+                td !{reportDetail.detail.jxXn || ""}
+                td.table-label 打簧问表
+                td !{reportDetail.detail.jxDhwb || ""}
+                td
+            tr
+                td.table-label 飞返指针
+                td !{reportDetail.detail.jxFfzz || ""}
+                td.table-label 动力储存
+                td !{reportDetail.detail.jxDlcc || ""}
+                td.table-label 世界时
+                td !{reportDetail.detail.jxSjs || ""}
+                td
+            tr
+                td.table-label 陀飞轮
+                td !{reportDetail.detail.jxTfl || ""}
+                td.table-label 附加时段计时
+                td !{reportDetail.detail.jxFjsdjs || ""}
+                td.table-label 双时区
+                td !{reportDetail.detail.jxSsq || ""}
+                td
+            tr
+                td.table-label 24小时
+                td !{reportDetail.detail.jxHour || ""}
+                td.table-label 快乐钻
+                td !{reportDetail.detail.jxKlz || ""}
+                td.table-label 翻转表
+                td !{reportDetail.detail.jxFzb || ""}
+                td
+            tr
+                td.table-label 其它功能
+                td(colspan=6) !{reportDetail.detail.jxQtgn || ""}
             tr
                 td(colspan=8) 正面照
             tr(style="height:200px;")
