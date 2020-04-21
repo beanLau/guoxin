@@ -1,0 +1,57 @@
+#nengrong_list.content
+    #my_content_div
+        form.form-inline#searchForm(action="/report?type=" + reportType,method="get")
+            .row
+                .form-group.col-lg-4
+                    label(for="samplecode",style="width:100px;") 系统识别号：
+                    input(type="text",name="samplecode",id="samplecode",placeholder="请输入样品编号",value=formData.samplecode).form-control.input-sm.gx-input
+                    input(type="hidden",name="type",value=7)
+                .form-group.col-lg-4
+                    button(type="submit").btn.btn-primary.btn-sm.search-btn 查 询
+                    a(href="/report?type=" + reportType).btn.btn-primary.btn-sm.search-btn 重 置
+                
+        .table-content
+            table(width="100%",border="0",cellpadding="0",cellspacing="1").table.table-bordered
+                tbody
+                    tr
+                        th 系统识别号
+                        th 创建时间
+                        th 操作
+                    if reportList.length == 0
+                        tr
+                            td(colspan="8").no-data 暂无数据
+                    else
+                        each item in reportList 
+                            tr
+                                td #{item.shibieCode}
+                                td #{item.createTime}
+                                td
+                                    a(href="/reportDetail?id=" + item.shibieCode + "&type=7") 详情
+        if reportList && reportList.length > 0
+            nav(aria-label="Page navigation")
+                ul.pagination
+                    if pageInfo.current == 1
+                        li.disabled
+                            a(href="#",aria-label="Previous")
+                                span(aria-hidden="true") &laquo;
+                    else
+                        li
+                            a(href="/report?type="+reportType + "&page=" + (pageInfo.current - 1) + "&sampleCode=" + formData.sampleCode + "&sampleCode=" + formData.sampleCode,aria-label="Previous")
+                                span(aria-hidden="true") &laquo;
+                    - let n = 1;
+                    while n <= pageInfo.pages
+                        if n == pageInfo.current
+                            li.active
+                                a(href="#") #{n++}
+                        else
+                            li
+                                a(href="/report?type="+reportType + "&page=" + n + "&sampleCode=" + formData.sampleCode + "&sampleCode=" + formData.sampleCode) #{n++}
+                    
+                    if  pageInfo.current == pageInfo.pages || pageInfo.current == pageInfo.pages-1
+                        li.disabled
+                            a(href="#",aria-label="Next")
+                                span(aria-hidden="true") &raquo;
+                    else
+                        li
+                            a(href="/report?type="+reportType + "&page=" + (pageInfo.current + 1) + "&sampleCode=" + formData.sampleCode + "&sampleCode=" + formData.sampleCode,aria-label="Next")
+                                span(aria-hidden="true") &raquo;

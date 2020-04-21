@@ -20,15 +20,22 @@ router.get('/report', async (ctx) => {
             pageSize: 10
         });
         if(resReport.code == 0){
-            try {
-                reportList = resReport.result.records || []
-                console.log(JSON.stringify(reportList[0]))
-                pageInfo.current = resReport.result.current
-                pageInfo.pages = resReport.result.pages
-                pageInfo.total = resReport.result.total
-            } catch (error) {
-                
+            if(formData.type == 7){
+                reportList = [resReport.result]
+                pageInfo.current = 1
+                pageInfo.pages = 1
+                pageInfo.total = 1
+            }else{
+                try {
+                    reportList = resReport.result.records || []
+                    pageInfo.current = resReport.result.current
+                    pageInfo.pages = resReport.result.pages
+                    pageInfo.total = resReport.result.total
+                } catch (error) {
+                    
+                }
             }
+            
         }
     }
     
@@ -54,7 +61,8 @@ router.get('/reportDetail', async (ctx) => {
     };
     let resReport;
     resReport = await reportapi.getReportDetail(ctx,{
-        id: encodeURI(queryData.id || 1)
+        id: encodeURI(queryData.id || 1),
+        type: queryData.type
     });
     if(resReport.code == 0){
         try {
@@ -64,12 +72,16 @@ router.get('/reportDetail', async (ctx) => {
         }
     }
     try {
+        let reportType = queryData.type || 1
+        if(reportDetail.mhReport && reportDetail.mhReport.type){
+            reportType = reportDetail.mhReport.type
+        }
         await ctx.render('reportdetail/reportdetail', {
             title: '中国商业联合会钟表眼镜商品质量监督检测中心 国家消费争议商品检测中心 官方网站-联系我们-联系方式',
             pagePath: ctx.request.path,
             gxtoken: gxtoken,
             username: username,
-            reportType: reportDetail.mhReport.type || 1,
+            reportType: reportType || 1,
             reportDetail: reportDetail
         })
     } catch (error) {

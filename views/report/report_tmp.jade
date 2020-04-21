@@ -44,6 +44,12 @@
                         else
                             li.nei_menu_off
                                 a(href="/report?type=6",title="皮具真伪检验证书查询") 皮具真伪检验证书查询
+                        if  reportType == 7
+                            li.nei_menu_on
+                                a(href="/report?type=7",title="钟表维修保卡查询") 钟表维修保卡查询
+                        else
+                            li.nei_menu_off
+                                a(href="/report?type=7",title="钟表维修保卡查询") 钟表维修保卡查询
         .col-sm-8.col-md-9.col-xs-12
             #nengrong_right_top
                 if reportType == 3
@@ -56,8 +62,10 @@
                     h5 眼镜型式检验报告查询
                 else if reportType == 5
                     h5 皮具型式检验证书查询
-                else
+                else if reportType == 6
                     h5 皮具真伪检验证书查询
+                else
+                    h5 钟表维修保卡查询
                 span 您的位置：
                     a(href="/") 首页&nbsp;&gt;&nbsp;
                     a(href="/report") 报告查询&nbsp;&gt;&nbsp;
@@ -71,8 +79,10 @@
                         a(href="/report?type=4") 眼镜型式检验报告查询
                     else if reportType == 5
                         a(href="/report?type=5") 皮具型式检验证书查询
-                    else
+                    else if reportType == 6
                         a(href="/report?type=6") 皮具真伪检验证书查询
+                    else
+                        a(href="/report?type=7") 钟表维修保卡查询
             if reportType == 3
                 include zb.jade
             else if reportType == 1
@@ -83,5 +93,7 @@
                 include yj.jade
             else if reportType == 5
                 include pjxs.jade
-            else
+            else if reportType == 6
                 include pjzw.jade
+            else
+                include bxk.jade
