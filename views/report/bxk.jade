@@ -2,7 +2,7 @@
     #my_content_div
         form.form-inline#searchForm(action="/report?type=" + reportType,method="get")
             .row
-                .form-group.col-lg-4
+                .form-group.col-lg-5
                     label(for="samplecode",style="width:100px;") 系统识别号：
                     input(type="text",name="samplecode",id="samplecode",placeholder="请输入样品编号",value=formData.samplecode).form-control.input-sm.gx-input
                     input(type="hidden",name="type",value=7)
