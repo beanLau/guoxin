@@ -16,7 +16,7 @@ let getNoticeList = function(ctx, data){
 let getHangyeList = function(ctx,data){
     return fetch({ 
         method: 'get',
-        url: `menhu/mhNotice/hangyeList?pageNo=${data.pageNo}&pageSize=${data.pageSize}`,
+        url: `menhu/mhNotice/hangyeList?column=utime&order=desc&pageNo=${data.pageNo}&pageSize=${data.pageSize}`,
         headers:{
             "token": ctx.cookies.get('gxtoken')
         },
