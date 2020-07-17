@@ -13,6 +13,8 @@ router.get('/report', async (ctx) => {
         total: 0
     }
     if(formData.samplecode){
+        formData.samplecode = formData.samplecode.replace("）",")")
+        formData.samplecode = formData.samplecode.replace("（","(")
         resReport = await reportapi.getReportList(ctx,{
             type: formData.type || 1,
             sampleCode:  formData.samplecode || "",
